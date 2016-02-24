@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Rackspace Cloud Guide &mdash; Ansible Documentation</title>
+  <title>Rackspace Cloud Guide &mdash; Ansible v1.9.0-0.2.rc2 Documentation</title>
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.9.0-0.2.rc2 Documentation" href="index.html"/>
         <link rel="up" title="Detailed Guides" href="guides.html"/>
         <link rel="next" title="Google Cloud Platform Guide" href="guide_gce.html"/>
         <link rel="prev" title="Amazon Web Services Guide" href="guide_aws.html"/> 
@@ -76,9 +76,6 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
-
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,29 +85,78 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
   <!-- End Google Tag Manager -->
 
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
-
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -124,8 +170,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -137,20 +182,16 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_filters.html">Jinja2 filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_conditionals.html">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -159,19 +200,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="guides.html">Detailed Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_strategies.html">Testing Strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a><ul>
@@ -180,7 +218,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -207,17 +244,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +285,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +337,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +367,17 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+<!-- AnsibleFest and free eBook preview stuff -->
+<center>
+<a href="http://www.ansible.com/tower?utm_source=docs">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636235-png/DL_Folder/festlondon-docs.png">
+</a>
+<a href="http://www.ansible.com/ansible-book">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636250-png/DL_Folder/Ebook-docs.png">
+</a>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+</center>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -369,10 +395,10 @@
   <div class="section" id="rackspace-cloud-guide">
 <h1>Rackspace Cloud Guide<a class="headerlink" href="#rackspace-cloud-guide" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<span id="rax-introduction"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This section of the documentation is under construction. We are in the process of adding more examples about the Rackspace modules and how they work together.  Once complete, there will also be examples for Rackspace Cloud in <a class="reference external" href="https://github.com/ansible/ansible-examples/">ansible-examples</a>.</p>
+<p class="last">This section of the documentation is under construction. We are in the process of adding more examples about the Rackspace modules and how they work together.  Once complete, there will also be examples for Rackspace Cloud in <a class="reference external" href="http://github.com/ansible/ansible-examples/">ansible-examples</a>.</p>
 </div>
 <p>Ansible contains a number of core modules for interacting with Rackspace Cloud.</p>
 <p>The purpose of this section is to explain how to put Ansible modules together
@@ -400,7 +426,7 @@ to add localhost to the inventory file.  (Ansible may not require this manual st
 </div>
 </div>
 <div class="section" id="credentials-file">
-<span id="id1"></span><h2>Credentials File<a class="headerlink" href="#credentials-file" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Credentials File<a class="headerlink" href="#credentials-file" title="Permalink to this headline">¶</a></h2>
 <p>The <cite>rax.py</cite> inventory script and all <cite>rax</cite> modules support a standard <cite>pyrax</cite> credentials file that looks like:</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[rackspace_cloud]</span>
 <span class="na">username</span> <span class="o">=</span> <span class="s">myraxusername</span>
@@ -426,7 +452,7 @@ this information.</p>
 </div>
 </div>
 <div class="section" id="provisioning">
-<span id="id2"></span><h2>Provisioning<a class="headerlink" href="#provisioning" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Provisioning<a class="headerlink" href="#provisioning" title="Permalink to this headline">¶</a></h2>
 <p>Now for the fun parts.</p>
 <p>The &#8216;rax&#8217; module provides the ability to provision instances within Rackspace Cloud.  Typically the provisioning task will be performed from your Ansible control server (in our example, localhost) against the Rackspace cloud API.  This is done for several reasons:</p>
 <blockquote>
@@ -462,17 +488,13 @@ file.</p>
 </pre></div>
 </div>
 <p>The rax module returns data about the nodes it creates, like IP addresses, hostnames, and login passwords.  By registering the return value of the step, it is possible used this data to dynamically add the resulting hosts to inventory (temporarily, in memory). This facilitates performing configuration actions on the hosts in a follow-on task.  In the following example, the servers that were successfully created using the above task are dynamically added to a group called &#8220;raxhosts&#8221;, with each nodes hostname, IP address, and root password being added to the inventory.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Ansible 2.0 has deprecated the “ssh” from <code class="docutils literal"><span class="pre">ansible_ssh_user</span></code>, <code class="docutils literal"><span class="pre">ansible_ssh_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_ssh_port</span></code> to become <code class="docutils literal"><span class="pre">ansible_user</span></code>, <code class="docutils literal"><span class="pre">ansible_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_port</span></code>. If you are using a version of Ansible prior to 2.0,  you should continue using the older style variables (<code class="docutils literal"><span class="pre">ansible_ssh_*</span></code>). These shorter variables are ignored, without warning, in older versions of Ansible.</p>
-</div>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Add the instances we created (by public IP) to the group &#39;raxhosts&#39;</span>
   <span class="l l-Scalar l-Scalar-Plain">local_action</span><span class="p p-Indicator">:</span>
       <span class="l l-Scalar l-Scalar-Plain">module</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">add_host</span>
       <span class="l l-Scalar l-Scalar-Plain">hostname</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">ansible_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
       <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_adminpass</span><span class="nv"> </span><span class="s">}}&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">groups</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">raxhosts</span>
+      <span class="l l-Scalar l-Scalar-Plain">groupname</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">raxhosts</span>
   <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rax.success</span>
   <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rax.action == &#39;create&#39;</span>
 </pre></div>
@@ -490,7 +512,7 @@ file.</p>
 to the next section.</p>
 </div>
 <div class="section" id="host-inventory">
-<span id="id3"></span><h2>Host Inventory<a class="headerlink" href="#host-inventory" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Host Inventory<a class="headerlink" href="#host-inventory" title="Permalink to this headline">¶</a></h2>
 <p>Once your nodes are spun up, you&#8217;ll probably want to talk to them again.  The best way to handle his is to use the &#8220;rax&#8221; inventory plugin, which dynamically queries Rackspace Cloud and tells Ansible what nodes you have to manage.  You might want to use this even if you are spinning up Ansible via other tools, including the Rackspace Cloud user interface. The inventory plugin can be used to group resources by metadata, region, OS, etc.  Utilizing metadata is highly recommended in &#8220;rax&#8221; and can provide an easy way to sort between host groups and roles. If you don&#8217;t want to use the <code class="docutils literal"><span class="pre">rax.py</span></code> dynamic inventory script, you could also still choose to manually manage your INI inventory file, though this is less recommended.</p>
 <p>In Ansible it is quite possible to use multiple dynamic inventory plugins along with INI file data.  Just put them in a common directory and be sure the scripts are chmod +x, and the INI-based ones are not.</p>
 <div class="section" id="rax-py">
@@ -503,7 +525,7 @@ to the next section.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Users of <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a> will note that dynamic inventory is natively supported by Tower, and all you have to do is associate a group with your Rackspace Cloud credentials, and it will easily synchronize without going through these steps:</p>
-<div class="last highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$ RAX_CREDS_FILE=~/.raxpub ansible all -i rax.py -m setup</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>$ RAX_CREDS_FILE=~/.raxpub ansible all -i rax.py -m setup
 </pre></div>
 </div>
 </div>
@@ -525,7 +547,7 @@ following information, which will be utilized for inventory and variables.</p>
     <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;hostvars&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;ansible_host&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1.1.1&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;ansible_ssh_host&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1.1.1&quot;</span><span class="p">,</span>
                 <span class="nt">&quot;rax_accessipv4&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1.1.1&quot;</span><span class="p">,</span>
                 <span class="nt">&quot;rax_accessipv6&quot;</span><span class="p">:</span> <span class="s2">&quot;2607:f0d0:1002:51::4&quot;</span><span class="p">,</span>
                 <span class="nt">&quot;rax_addresses&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -611,7 +633,7 @@ following information, which will be utilized for inventory and variables.</p>
 </div>
 </div>
 <div class="section" id="standard-inventory">
-<span id="id4"></span><h3>Standard Inventory<a class="headerlink" href="#standard-inventory" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>Standard Inventory<a class="headerlink" href="#standard-inventory" title="Permalink to this headline">¶</a></h3>
 <p>When utilizing a standard ini formatted inventory file (as opposed to the inventory plugin), it may still be advantageous to retrieve discoverable hostvar information  from the Rackspace API.</p>
 <p>This can be achieved with the <code class="docutils literal"><span class="pre">rax_facts</span></code> module and an inventory file similar to the following:</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[test_servers]</span>
@@ -631,7 +653,7 @@ following information, which will be utilized for inventory and variables.</p>
         <span class="l l-Scalar l-Scalar-Plain">region</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">rax_region</span><span class="nv"> </span><span class="s">}}&quot;</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Map some facts</span>
       <span class="l l-Scalar l-Scalar-Plain">set_fact</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">ansible_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </pre></div>
 </div>
 <p>While you don&#8217;t need to know how it works, it may be interesting to know what kind of variables are returned.</p>
@@ -726,7 +748,7 @@ following information, which will be utilized for inventory and variables.</p>
 <h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <p>This section covers some additional usage examples built around a specific use case.</p>
 <div class="section" id="network-and-server">
-<span id="id5"></span><h3>Network and Server<a class="headerlink" href="#network-and-server" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>Network and Server<a class="headerlink" href="#network-and-server" title="Permalink to this headline">¶</a></h3>
 <p>Create an isolated cloud network and build a server</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Build Servers on an Isolated Network</span>
   <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
@@ -765,7 +787,7 @@ following information, which will be utilized for inventory and variables.</p>
 </div>
 </div>
 <div class="section" id="complete-environment">
-<span id="id6"></span><h3>Complete Environment<a class="headerlink" href="#complete-environment" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>Complete Environment<a class="headerlink" href="#complete-environment" title="Permalink to this headline">¶</a></h3>
 <p>Build a complete webserver environment with servers, custom networks and load balancers, install nginx and create a custom index.html</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Build environment</span>
@@ -824,10 +846,10 @@ following information, which will be utilized for inventory and variables.</p>
       <span class="l l-Scalar l-Scalar-Plain">local_action</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">module</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">add_host</span>
         <span class="l l-Scalar l-Scalar-Plain">hostname</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">ansible_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
         <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_adminpass</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-        <span class="l l-Scalar l-Scalar-Plain">groups</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+        <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+        <span class="l l-Scalar l-Scalar-Plain">groupname</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
       <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rax.success</span>
       <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rax.action == &#39;create&#39;</span>
 
@@ -873,7 +895,7 @@ following information, which will be utilized for inventory and variables.</p>
 <p>For simplicity, these examples are joined, however both are only needed when using RackConnect.  When only using Managed Cloud, the RackConnect portion can be ignored.</p>
 <p>The RackConnect portions only apply to RackConnect version 2.</p>
 <div class="section" id="using-a-control-machine">
-<span id="id7"></span><h4>Using a Control Machine<a class="headerlink" href="#using-a-control-machine" title="Permalink to this headline">¶</a></h4>
+<span id="id8"></span><h4>Using a Control Machine<a class="headerlink" href="#using-a-control-machine" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Create an exact count of servers</span>
   <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
   <span class="l l-Scalar l-Scalar-Plain">connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
@@ -899,9 +921,9 @@ following information, which will be utilized for inventory and variables.</p>
       <span class="l l-Scalar l-Scalar-Plain">local_action</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">module</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">add_host</span>
         <span class="l l-Scalar l-Scalar-Plain">hostname</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">ansible_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_accessipv4</span><span class="nv"> </span><span class="s">}}&quot;</span>
         <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_adminpass</span><span class="nv"> </span><span class="s">}}&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+        <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
         <span class="l l-Scalar l-Scalar-Plain">rax_id</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item.rax_id</span><span class="nv"> </span><span class="s">}}&quot;</span>
         <span class="l l-Scalar l-Scalar-Plain">groups</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">web,new_web</span>
       <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rax.success</span>
@@ -946,7 +968,7 @@ following information, which will be utilized for inventory and variables.</p>
 </div>
 </div>
 <div class="section" id="using-ansible-pull">
-<span id="id8"></span><h4>Using Ansible Pull<a class="headerlink" href="#using-ansible-pull" title="Permalink to this headline">¶</a></h4>
+<span id="id9"></span><h4>Using Ansible Pull<a class="headerlink" href="#using-ansible-pull" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ensure Rackconnect and Managed Cloud Automation is complete</span>
   <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
@@ -1000,7 +1022,7 @@ following information, which will be utilized for inventory and variables.</p>
 </div>
 </div>
 <div class="section" id="using-ansible-pull-with-xenstore">
-<span id="id9"></span><h4>Using Ansible Pull with XenStore<a class="headerlink" href="#using-ansible-pull-with-xenstore" title="Permalink to this headline">¶</a></h4>
+<span id="id10"></span><h4>Using Ansible Pull with XenStore<a class="headerlink" href="#using-ansible-pull-with-xenstore" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ensure Rackconnect and Managed Cloud Automation is complete</span>
   <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
@@ -1069,7 +1091,7 @@ following information, which will be utilized for inventory and variables.</p>
 </div>
 </div>
 <div class="section" id="advanced-usage">
-<span id="id10"></span><h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
+<span id="id11"></span><h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="autoscaling-with-tower">
 <span id="awx-autoscale"></span><h3>Autoscaling with Tower<a class="headerlink" href="#autoscaling-with-tower" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="tower.html"><em>Ansible Tower</em></a> also contains a very nice feature for auto-scaling use cases.
@@ -1109,21 +1131,12 @@ and less information has to be shared with remote hosts.</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
