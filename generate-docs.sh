@@ -21,6 +21,7 @@ for tag in $(cd $basedir/_ansible ; git tag -l | grep  -v '^0') ; do
   if [ ! -d $basedir/_docs/$tag ] ; then
     (cd $basedir/_ansible/docsite ; make viewdocs)
     cp -r $basedir/_ansible/docsite/htmlout $basedir/_docs/$tag
+    cp -r $basedir/_ansible/docsite/_static $basedir/_docs/$tag
     (cd $basedir/_docs ; git add $tag ; git commit -m "Ansible $tag documentation")
   fi
 done
