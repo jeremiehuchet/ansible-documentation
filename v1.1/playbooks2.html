@@ -1,0 +1,1300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Advanced Playbooks &mdash; Ansible v1.1 Documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/ansible-local.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-scrollspy.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Ansible v1.1 Documentation" href="index.html" />
+    <link rel="next" title="Best Practices" href="bestpractices.html" />
+    <link rel="prev" title="Playbooks" href="playbooks.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($span, minLevel) {
+    var $tocList = $("<ul/>").attr('class', "dropdown-menu"),
+      findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 10 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          // Add list element.
+          $tocList.append($("<li/>").append($item));
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    // Start construction and return.
+    findA($span);
+
+    // Wipe out old list and patch in new one.
+    return $span.empty("ul").append($tocList);
+  };
+
+  $(document).ready(function () {
+    // Patch the global and local TOC's to be bootstrap-compliant.
+    patchToc($("span.globaltoc"), 1);
+    patchToc($("span.localtoc"), 2);
+
+    // Activate.
+    $('#topbar').dropdown();
+  });
+}());
+</script>
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-29861888-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<script type="text/javascript">
+// Set the maximum height of drop down menus to just less than the height
+// of the viewport.
+var set_max_menu_height = function () {
+
+  // set menu max height to 75 less than viewport height
+  $('.dropdown-menu').css('max-height', $(window).height() - 75); 
+}
+
+// Set this when we set the page up and on each resize.
+$(window).resize(set_max_menu_height);
+$(window).ready(set_max_menu_height);
+
+</script>
+
+
+  </head>
+  <body role="document">
+  <div class="topbar" data-scrollspy="scrollspy" >
+    <div class="topbar-inner">
+      <div class="container">
+        <!-- <a class="brand" href="index.html">Ansible v1.1</a> -->
+        <ul class="nav">
+          
+            <li><a href="/">Home</A>
+	    <li class="dropdown" data-dropdown="dropdown">
+  <a href="index.html"
+     class="dropdown-toggle">Chapter</a>
+  <span class="globaltoc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patterns.html">Inventory &amp; Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command Line Examples And Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Ansible Modules</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Advanced Playbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ansible/ansible-examples">Example Playbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API &amp; Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduledev.html">Module Development</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Ansible Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+</span>
+</li>
+            <li class="dropdown" data-dropdown="dropdown">
+  <a href="#"
+     class="dropdown-toggle">Section</a>
+  <span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Advanced Playbooks</a><ul>
+<li><a class="reference internal" href="#tags">Tags</a></li>
+<li><a class="reference internal" href="#playbooks-including-playbooks">Playbooks Including Playbooks</a></li>
+<li><a class="reference internal" href="#ignoring-failed-commands">Ignoring Failed Commands</a></li>
+<li><a class="reference internal" href="#accessing-complex-variable-data">Accessing Complex Variable Data</a></li>
+<li><a class="reference internal" href="#magic-variables-and-how-to-access-information-about-other-hosts">Magic Variables, and How To Access Information About Other Hosts</a></li>
+<li><a class="reference internal" href="#variable-file-separation">Variable File Separation</a></li>
+<li><a class="reference internal" href="#prompting-for-sensitive-data">Prompting For Sensitive Data</a></li>
+<li><a class="reference internal" href="#passing-variables-on-the-command-line">Passing Variables On The Command Line</a></li>
+<li><a class="reference internal" href="#conditional-execution">Conditional Execution</a></li>
+<li><a class="reference internal" href="#conditional-execution-simplified">Conditional Execution (Simplified)</a></li>
+<li><a class="reference internal" href="#conditional-imports">Conditional Imports</a></li>
+<li><a class="reference internal" href="#loops">Loops</a></li>
+<li><a class="reference internal" href="#lookup-plugins-accessing-outside-data">Lookup Plugins - Accessing Outside Data</a></li>
+<li><a class="reference internal" href="#setting-the-environment-and-working-with-proxies">Setting the Environment (and Working With Proxies)</a></li>
+<li><a class="reference internal" href="#getting-values-from-files">Getting values from files</a></li>
+<li><a class="reference internal" href="#selecting-files-and-templates-based-on-variables">Selecting Files And Templates Based On Variables</a></li>
+<li><a class="reference internal" href="#asynchronous-actions-and-polling">Asynchronous Actions and Polling</a></li>
+<li><a class="reference internal" href="#local-playbooks">Local Playbooks</a></li>
+<li><a class="reference internal" href="#turning-off-facts">Turning Off Facts</a></li>
+<li><a class="reference internal" href="#pull-mode-playbooks">Pull-Mode Playbooks</a></li>
+<li><a class="reference internal" href="#register-variables">Register Variables</a></li>
+<li><a class="reference internal" href="#rolling-updates">Rolling Updates</a></li>
+<li><a class="reference internal" href="#delegation">Delegation</a></li>
+<li><a class="reference internal" href="#fireball-mode">Fireball Mode</a></li>
+<li><a class="reference internal" href="#understanding-variable-precedence">Understanding Variable Precedence</a></li>
+<li><a class="reference internal" href="#check-mode-dry-run-check">Check Mode (&#8220;Dry Run&#8221;) &#8211;check</a></li>
+<li><a class="reference internal" href="#showing-differences-with-diff">Showing Differences with &#8211;diff</a></li>
+<li><a class="reference internal" href="#dictionary-nested-complex-arguments">Dictionary &amp; Nested (Complex) Arguments</a></li>
+<li><a class="reference internal" href="#style-points">Style Points</a></li>
+</ul>
+</li>
+</ul>
+</span>
+</li>
+          
+        </ul>
+        <ul class="nav secondary-nav">
+          
+            
+<form class="pull-left" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+   
+  <div class="section" id="advanced-playbooks">
+<h1><a class="toc-backref" href="#contents">Advanced Playbooks</a><a class="headerlink" href="#advanced-playbooks" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="http://ansibleworks.com/fest"><img alt="ansiblefest 2013" src="http://ansible.cc/docs/_static/ansible_fest_2013.png" /></a>
+<p>Here are some advanced features of the playbooks language.  Using all of these features
+are not neccessary, but many of them will prove useful.  If a feature doesn&#8217;t seem immediately
+relevant, feel free to skip it.  For many people, the features documented in <cite>playbooks</cite> will
+be 90% or more of what they use in Ansible.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#advanced-playbooks" id="id1">Advanced Playbooks</a><ul>
+<li><a class="reference internal" href="#tags" id="id2">Tags</a></li>
+<li><a class="reference internal" href="#playbooks-including-playbooks" id="id3">Playbooks Including Playbooks</a></li>
+<li><a class="reference internal" href="#ignoring-failed-commands" id="id4">Ignoring Failed Commands</a></li>
+<li><a class="reference internal" href="#accessing-complex-variable-data" id="id5">Accessing Complex Variable Data</a></li>
+<li><a class="reference internal" href="#magic-variables-and-how-to-access-information-about-other-hosts" id="id6">Magic Variables, and How To Access Information About Other Hosts</a></li>
+<li><a class="reference internal" href="#variable-file-separation" id="id7">Variable File Separation</a></li>
+<li><a class="reference internal" href="#prompting-for-sensitive-data" id="id8">Prompting For Sensitive Data</a></li>
+<li><a class="reference internal" href="#passing-variables-on-the-command-line" id="id9">Passing Variables On The Command Line</a></li>
+<li><a class="reference internal" href="#conditional-execution" id="id10">Conditional Execution</a></li>
+<li><a class="reference internal" href="#conditional-execution-simplified" id="id11">Conditional Execution (Simplified)</a></li>
+<li><a class="reference internal" href="#conditional-imports" id="id12">Conditional Imports</a></li>
+<li><a class="reference internal" href="#loops" id="id13">Loops</a></li>
+<li><a class="reference internal" href="#lookup-plugins-accessing-outside-data" id="id14">Lookup Plugins - Accessing Outside Data</a></li>
+<li><a class="reference internal" href="#setting-the-environment-and-working-with-proxies" id="id15">Setting the Environment (and Working With Proxies)</a></li>
+<li><a class="reference internal" href="#getting-values-from-files" id="id16">Getting values from files</a></li>
+<li><a class="reference internal" href="#selecting-files-and-templates-based-on-variables" id="id17">Selecting Files And Templates Based On Variables</a></li>
+<li><a class="reference internal" href="#asynchronous-actions-and-polling" id="id18">Asynchronous Actions and Polling</a></li>
+<li><a class="reference internal" href="#local-playbooks" id="id19">Local Playbooks</a></li>
+<li><a class="reference internal" href="#turning-off-facts" id="id20">Turning Off Facts</a></li>
+<li><a class="reference internal" href="#pull-mode-playbooks" id="id21">Pull-Mode Playbooks</a></li>
+<li><a class="reference internal" href="#register-variables" id="id22">Register Variables</a></li>
+<li><a class="reference internal" href="#rolling-updates" id="id23">Rolling Updates</a></li>
+<li><a class="reference internal" href="#delegation" id="id24">Delegation</a></li>
+<li><a class="reference internal" href="#fireball-mode" id="id25">Fireball Mode</a></li>
+<li><a class="reference internal" href="#understanding-variable-precedence" id="id26">Understanding Variable Precedence</a></li>
+<li><a class="reference internal" href="#check-mode-dry-run-check" id="id27">Check Mode (&#8220;Dry Run&#8221;) &#8211;check</a></li>
+<li><a class="reference internal" href="#showing-differences-with-diff" id="id28">Showing Differences with &#8211;diff</a></li>
+<li><a class="reference internal" href="#dictionary-nested-complex-arguments" id="id29">Dictionary &amp; Nested (Complex) Arguments</a></li>
+<li><a class="reference internal" href="#style-points" id="id30">Style Points</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tags">
+<h2><a class="toc-backref" href="#contents">Tags</a><a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.6.</span></p>
+</div>
+<p>If you have a large playbook it may become useful to be able to run a
+specific part of the configuration.  Both plays and tasks support a
+&#8220;tags:&#8221; attribute for this reason.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+
+    - action: yum name=$item state=installed
+      with_items:
+         - httpd
+         - memcached
+      tags:
+         - packages
+
+    - action: template src=templates/src.j2 dest=/etc/foo.conf
+      tags:
+         - configuration
+</pre></div>
+</div>
+<p>If you wanted to just run the &#8220;configuration&#8221; and &#8220;packages&#8221; part of a very long playbook, you could do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible-playbook example.yml --tags &quot;configuration,packages&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="playbooks-including-playbooks">
+<h2><a class="toc-backref" href="#contents">Playbooks Including Playbooks</a><a class="headerlink" href="#playbooks-including-playbooks" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.6.</span></p>
+</div>
+<p>To further advance the concept of include files, playbook files can
+include other playbook files.  Suppose you define the behavior of all
+your webservers in &#8220;webservers.yml&#8221; and all your database servers in
+&#8220;dbservers.yml&#8221;.  You can create a &#8220;site.yml&#8221; that would reconfigure
+all of your systems like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>----
+- include: playbooks/webservers.yml
+- include: playbooks/dbservers.yml
+</pre></div>
+</div>
+<p>This concept works great with tags to rapidly select exactly what plays you want to run, and exactly
+what parts of those plays.</p>
+</div>
+<div class="section" id="ignoring-failed-commands">
+<h2><a class="toc-backref" href="#contents">Ignoring Failed Commands</a><a class="headerlink" href="#ignoring-failed-commands" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.6.</span></p>
+</div>
+<p>Generally playbooks will stop executing any more steps on a host that
+has a failure.  Sometimes, though, you want to continue on.  To do so,
+write a task that looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: this will not be counted as a failure
+  action: command /bin/false
+  ignore_errors: yes
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-complex-variable-data">
+<h2><a class="toc-backref" href="#contents">Accessing Complex Variable Data</a><a class="headerlink" href="#accessing-complex-variable-data" title="Permalink to this headline">¶</a></h2>
+<p>Some provided facts, like networking information, are made available as nested data structures.  To access
+them a simple &#8216;$foo&#8217; is not sufficient, but it is still easy to do.   Here&#8217;s how we get an IP address:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>${ansible_eth0.ipv4.address}
+</pre></div>
+</div>
+<p>It is also possible to access variables whose elements are arrays:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>${somelist[0]}
+</pre></div>
+</div>
+<p>And the array and hash reference syntaxes can be mixed.</p>
+<p>In templates, the simple access form still holds, but they can also be accessed from Jinja2 in more Python-native ways if
+that is preferred:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">ansible_eth0</span><span class="p">[</span><span class="s2">&quot;ipv4&quot;</span><span class="p">][</span><span class="s2">&quot;address&quot;</span><span class="p">]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="magic-variables-and-how-to-access-information-about-other-hosts">
+<h2><a class="toc-backref" href="#contents">Magic Variables, and How To Access Information About Other Hosts</a><a class="headerlink" href="#magic-variables-and-how-to-access-information-about-other-hosts" title="Permalink to this headline">¶</a></h2>
+<p>Even if you didn&#8217;t define them yourself, ansible provides a few variables for you, automatically.
+The most important of these are &#8216;hostvars&#8217;, &#8216;group_names&#8217;, and &#8216;groups&#8217;.</p>
+<p>Hostvars lets you ask about the variables of another host, including facts that have been gathered
+about that host.  If, at this point, you haven&#8217;t talked to that host yet in any play in the playbook
+or set of playbooks, you can get at the variables, but you will not be able to see the facts.</p>
+<p>If your database server wants to use the value of a &#8216;fact&#8217; from another node, or an inventory variable
+assigned to another node, it&#8217;s easy to do so within a template or even an action line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>${hostvars.hostname.factname}
+</pre></div>
+</div>
+<p>Note in playbooks if your hostname contains a dash or periods in it, escape it like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>${hostvars.{test.example.com}.ansible_distribution}
+</pre></div>
+</div>
+<p>In Jinja2 templates, this can also be expressed as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">hostvars</span><span class="p">[</span><span class="s1">&#39;test.example.com&#39;</span><span class="p">][</span><span class="s1">&#39;ansible_distribution&#39;</span><span class="p">]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>Additionally, <em>group_names</em> is a list (array) of all the groups the current host is in.  This can be used in templates using Jinja2 syntax to make template source files that vary based on the group membership (or role) of the host:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{% if &#39;webserver&#39; in group_names %}
+   # some part of a configuration file that only applies to webservers
+{% endif %}
+</pre></div>
+</div>
+<p><em>groups</em> is a list of all the groups (and hosts) in the inventory.  This can be used to enumerate all hosts within a group.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{% for host in groups[&#39;app_servers&#39;] %}
+   # something that applies to all app servers.
+{% endfor %}
+</pre></div>
+</div>
+<p>A frequently used idiom is walking a group to find all IP addresses in that group:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{% for host in groups[&#39;app_servers&#39;] %}
+   {{ hostvars[host][&#39;ansible_eth0&#39;][&#39;ipv4&#39;][&#39;address&#39;] }}
+{% endfor %}
+</pre></div>
+</div>
+<p>An example of this could include pointing a frontend proxy server to all of the app servers, setting up the correct firewall rules between servers, etc.</p>
+<p>Just a few other &#8216;magic&#8217; variables are available...  There aren&#8217;t many.</p>
+<p>Additionally, <em>inventory_hostname</em> is the name of the hostname as configured in Ansible&#8217;s inventory host file.  This can
+be useful for when you don&#8217;t want to rely on the discovered hostname <cite>ansible_hostname</cite> or for other mysterious
+reasons.  If you have a long FQDN, <em>inventory_hostname_short</em> also contains the part up to the first
+period, without the rest of the domain.</p>
+<p>Don&#8217;t worry about any of this unless you think you need it.  You&#8217;ll know when you do.</p>
+<p>Also available, <em>inventory_dir</em> is the pathname of the directory holding Ansible&#8217;s inventory host file.</p>
+</div>
+<div class="section" id="variable-file-separation">
+<h2><a class="toc-backref" href="#contents">Variable File Separation</a><a class="headerlink" href="#variable-file-separation" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s a great idea to keep your playbooks under source control, but
+you may wish to make the playbook source public while keeping certain
+important variables private.  Similarly, sometimes you may just
+want to keep certain information in different files, away from
+the main playbook.</p>
+<p>You can do this by using an external variables file, or files, just like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  user: root
+  vars:
+    favcolor: blue
+  vars_files:
+    - /vars/external_vars.yml
+  tasks:
+  - name: this is just a placeholder
+    action: command /bin/echo foo
+</pre></div>
+</div>
+<p>This removes the risk of sharing sensitive data with others when
+sharing your playbook source with them.</p>
+<p>The contents of each variables file is a simple YAML dictionary, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# in the above example, this would be vars/external_vars.yml
+somevar: somevalue
+password: magic
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It&#8217;s also possible to keep per-host and per-group variables in very
+similar files, this is covered in <a class="reference internal" href="patterns.html#patterns"><span>Inventory &amp; Patterns</span></a>.</p>
+</div>
+</div>
+<div class="section" id="prompting-for-sensitive-data">
+<h2><a class="toc-backref" href="#contents">Prompting For Sensitive Data</a><a class="headerlink" href="#prompting-for-sensitive-data" title="Permalink to this headline">¶</a></h2>
+<p>You may wish to prompt the user for certain input, and can
+do so with the similarly named &#8216;vars_prompt&#8217; section.  This has uses
+beyond security, for instance, you may use the same playbook for all
+software releases and would prompt for a particular release version
+in a push-script:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  user: root
+  vars:
+    from: &quot;camelot&quot;
+  vars_prompt:
+    name: &quot;what is your name?&quot;
+    quest: &quot;what is your quest?&quot;
+    favcolor: &quot;what is your favorite color?&quot;
+</pre></div>
+</div>
+<p>There are full examples of both of these items in the github examples/playbooks directory.</p>
+<p>An alternative form of vars_prompt allows for hiding input from the user, and may later support
+some other options, but otherwise works equivalently:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars_prompt:
+  - name: &quot;some_password&quot;
+    prompt: &quot;Enter password&quot;
+    private: yes
+  - name: &quot;release_version&quot;
+    prompt: &quot;Product release version&quot;
+    private: no
+</pre></div>
+</div>
+<p>If <a class="reference external" href="http://pythonhosted.org/passlib/">Passlib</a> is installed, vars_prompt can also crypt the
+entered value so you can use it, for instance, with the user module to define a password:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars_prompt:
+  - name: &quot;my_password2&quot;
+    prompt: &quot;Enter password2&quot;
+    private: yes
+    encrypt: &quot;md5_crypt&quot;
+    confirm: yes
+    salt_size: 7
+</pre></div>
+</div>
+<p>You can use any crypt scheme supported by &#8216;Passlib&#8217;:</p>
+<ul class="simple">
+<li><em>des_crypt</em> - DES Crypt</li>
+<li><em>bsdi_crypt</em> - BSDi Crypt</li>
+<li><em>bigcrypt</em> - BigCrypt</li>
+<li><em>crypt16</em> - Crypt16</li>
+<li><em>md5_crypt</em> - MD5 Crypt</li>
+<li><em>bcrypt</em> - BCrypt</li>
+<li><em>sha1_crypt</em> - SHA-1 Crypt</li>
+<li><em>sun_md5_crypt</em> - Sun MD5 Crypt</li>
+<li><em>sha256_crypt</em> - SHA-256 Crypt</li>
+<li><em>sha512_crypt</em> - SHA-512 Crypt</li>
+<li><em>apr_md5_crypt</em> - Apache’s MD5-Crypt variant</li>
+<li><em>phpass</em> - PHPass’ Portable Hash</li>
+<li><em>pbkdf2_digest</em> - Generic PBKDF2 Hashes</li>
+<li><em>cta_pbkdf2_sha1</em> - Cryptacular’s PBKDF2 hash</li>
+<li><em>dlitz_pbkdf2_sha1</em> - Dwayne Litzenberger’s PBKDF2 hash</li>
+<li><em>scram</em> - SCRAM Hash</li>
+<li><em>bsd_nthash</em> - FreeBSD’s MCF-compatible nthash encoding</li>
+</ul>
+<p>However, the only parameters accepted are &#8216;salt&#8217; or &#8216;salt_size&#8217;. You can use you own salt using
+&#8216;salt&#8217;, or have one generated automatically using &#8216;salt_size&#8217;. If nothing is specified, a salt
+of size 8 will be generated.</p>
+</div>
+<div class="section" id="passing-variables-on-the-command-line">
+<h2><a class="toc-backref" href="#contents">Passing Variables On The Command Line</a><a class="headerlink" href="#passing-variables-on-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>In addition to <cite>vars_prompt</cite> and <cite>vars_files</cite>, it is possible to send variables over
+the ansible command line.  This is particularly useful when writing a generic release playbook
+where you may want to pass in the version of the application to deploy:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible-playbook release.yml --extra-vars &quot;version=1.23.45 other_variable=foo&quot;
+</pre></div>
+</div>
+<p>This is useful, for, among other things, setting the hosts group or the user for the playbook.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>-----
+- user: $user
+  hosts: $hosts
+  tasks:
+     - ...
+
+ansible-playbook release.yml --extra-vars &quot;hosts=vipers user=starbuck&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditional-execution">
+<h2><a class="toc-backref" href="#contents">Conditional Execution</a><a class="headerlink" href="#conditional-execution" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you will want to skip a particular step on a particular host.  This could be something
+as simple as not installing a certain package if the operating system is a particular version,
+or it could be something like performing some cleanup steps if a filesystem is getting full.</p>
+<p>This is easy to do in Ansible, with the <cite>only_if</cite> clause, which actually is a Python expression.
+Don&#8217;t panic &#8211; it&#8217;s actually pretty simple:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars:
+  favcolor: blue
+  is_favcolor_blue: &quot;&#39;$favcolor&#39; == &#39;blue&#39;&quot;
+  is_centos: &quot;&#39;$facter_operatingsystem&#39; == &#39;CentOS&#39;&quot;
+
+tasks:
+  - name: &quot;shutdown if my favorite color is blue&quot;
+    action: command /sbin/shutdown -t now
+    only_if: &#39;$is_favcolor_blue&#39;
+</pre></div>
+</div>
+<p>Variables from tools like <cite>facter</cite> and <cite>ohai</cite> can be used here, if installed, or you can
+use variables that bubble up from ansible, which many are provided by the <span class="xref std std-ref">setup</span> module.   As a reminder,
+these variables are prefixed, so it&#8217;s <cite>$facter_operatingsystem</cite>, not <cite>$operatingsystem</cite>.  Ansible&#8217;s
+built in variables are prefixed with <cite>ansible_</cite>.</p>
+<p>The only_if expression is actually a tiny small bit of Python, so be sure to quote variables and make something
+that evaluates to <cite>True</cite> or <cite>False</cite>.  It is a good idea to use &#8216;vars_files&#8217; instead of &#8216;vars&#8217; to define
+all of your conditional expressions in a way that makes them very easy to reuse between plays
+and playbooks.</p>
+<p>You cannot use live checks here, like &#8216;os.path.exists&#8217;, so don&#8217;t try.</p>
+<p>It&#8217;s also easy to provide your own facts if you want, which is covered in <a class="reference internal" href="moduledev.html"><em>Module Development</em></a>.  To run them, just
+make a call to your own custom fact gathering module at the top of your list of tasks, and variables returned
+there will be accessible to future tasks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - name: gather site specific fact data
+      action: site_facts
+    - action: command echo ${my_custom_fact_can_be_used_now}
+</pre></div>
+</div>
+<p>One common useful trick with only_if is to key off the changed result of a last command.  As an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - action: template src=/templates/foo.j2 dest=/etc/foo.conf
+      register: last_result
+    - action: command echo &#39;the file has changed&#39;
+      only_if: &#39;${last_result.changed}&#39;
+</pre></div>
+</div>
+<p>$last_result is a variable set by the register directive. This assumes Ansible 0.8 and later.</p>
+<p>In Ansible 0.8, a few shortcuts are available for testing whether a variable is defined or not:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - action: command echo hi
+      only_if: is_set(&#39;$some_variable&#39;)
+</pre></div>
+</div>
+<p>There is a matching &#8216;is_unset&#8217; that works the same way.  Quoting the variable inside the function is mandatory.</p>
+<p>When combining <cite>only_if</cite> with <cite>with_items</cite>, be aware that the <cite>only_if</cite> statement is processed separately for each item.
+This is by design:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - action: command echo $item
+      with_item: [ 0, 2, 4, 6, 8, 10 ]
+      only_if: &quot;$item &gt; 5&quot;
+</pre></div>
+</div>
+<p>While <cite>only_if</cite> is a pretty good option for advanced users, it exposes more guts than we&#8217;d like, and
+we can do better.  In 1.0, we added &#8216;when&#8217;, which is like syntactic sugar for <cite>only_if</cite> and hides
+this level of complexity.  See more on this below.</p>
+</div>
+<div class="section" id="conditional-execution-simplified">
+<h2><a class="toc-backref" href="#contents">Conditional Execution (Simplified)</a><a class="headerlink" href="#conditional-execution-simplified" title="Permalink to this headline">¶</a></h2>
+<p>In Ansible 0.9, we realized that only_if was a bit syntactically complicated, and exposed too much Python
+to the user.  As a result, the &#8216;when&#8217; set of keywords was added.  The &#8216;when&#8217; statements do not have
+to be quoted or casted to specify types, but you should separate any variables used with whitespace.  In
+most cases users will be able to use &#8216;when&#8217;, but for more complex cases, only_if may still be required.</p>
+<p>Here are various examples of &#8216;when&#8217; in use.  &#8216;when&#8217; is incompatible with &#8216;only_if&#8217; in the same task:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: &quot;do this if my favcolor is blue, and my dog is named fido&quot;
+  action: shell /bin/false
+  when_string: $favcolor == &#39;blue&#39; and $dog == &#39;fido&#39;
+
+- name: &quot;do this if my favcolor is not blue, and my dog is named fido&quot;
+  action: shell /bin/true
+  when_string: $favcolor != &#39;blue&#39; and $dog == &#39;fido&#39;
+
+- name: &quot;do this if my SSN is over 9000&quot;
+  action: shell /bin/true
+  when_integer: $ssn &gt; 9000
+
+- name: &quot;do this if I have one of these SSNs&quot;
+  action: shell /bin/true
+  when_integer:  $ssn in [ 8675309, 8675310, 8675311 ]
+
+- name: &quot;do this if a variable named hippo is NOT defined&quot;
+  action: shell /bin/true
+  when_unset: $hippo
+
+- name: &quot;do this if a variable named hippo is defined&quot;
+  action: shell /bin/true
+  when_set: $hippo
+
+- name: &quot;do this if a variable named hippo is true&quot;
+  action: shell /bin/true
+  when_boolean: $hippo
+</pre></div>
+</div>
+<p>The when_boolean check will look for variables that look to be true as well, such as the string &#8216;True&#8217; or
+&#8216;true&#8217;, non-zero numbers, and so on.</p>
+<p>In 1.0, we also added when_changed and when_failed so users can execute tasks based on the status of previously
+registered tasks.  As an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: &quot;register a task that might fail&quot;
+  action: shell /bin/false
+  register: result
+  ignore_errors: True
+
+- name: &quot;do this if the registered task failed&quot;
+  action: shell /bin/true
+  when_failed: $result
+
+- name: &quot;register a task that might change&quot;
+  action: yum pkg=httpd state=latest
+  register: result
+
+- name: &quot;do this if the registered task changed&quot;
+  action: shell /bin/true
+  when_changed: $result
+</pre></div>
+</div>
+<p>Note that if you have several tasks that all share the same conditional statement, you can affix the conditional
+to a task include statement as below.  Note this does not work with playbook includes, just task includes.  All the tasks
+get evaluated, but the conditional is applied to each and every task:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- include: tasks/sometasks.yml
+  when_string: &quot;&#39;reticulating splines&#39; in $output&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditional-imports">
+<h2><a class="toc-backref" href="#contents">Conditional Imports</a><a class="headerlink" href="#conditional-imports" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you will want to do certain things differently in a playbook based on certain criteria.
+Having one playbook that works on multiple platforms and OS versions is a good example.</p>
+<p>As an example, the name of the Apache package may be different between CentOS and Debian,
+but it is easily handled with a minimum of syntax in an Ansible Playbook:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  user: root
+  vars_files:
+    - &quot;vars/common.yml&quot;
+    - [ &quot;vars/$facter_operatingsystem.yml&quot;, &quot;vars/os_defaults.yml&quot; ]
+  tasks:
+  - name: make sure apache is running
+    action: service name=$apache state=running
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The variable (<cite>$facter_operatingsystem</cite>) is being interpolated into
+the list of filenames being defined for vars_files.</p>
+</div>
+<p>As a reminder, the various YAML files contain just keys and values:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# for vars/CentOS.yml
+apache: httpd
+somethingelse: 42
+</pre></div>
+</div>
+<p>How does this work?  If the operating system was &#8216;CentOS&#8217;, the first file Ansible would try to import
+would be &#8216;vars/CentOS.yml&#8217;, followed up by &#8216;/vars/os_defaults.yml&#8217; if that file
+did not exist.   If no files in the list were found, an error would be raised.
+On Debian, it would instead first look towards &#8216;vars/Debian.yml&#8217; instead of &#8216;vars/CentOS.yml&#8217;, before
+falling back on &#8216;vars/os_defaults.yml&#8217;. Pretty simple.</p>
+<p>To use this conditional import feature, you&#8217;ll need facter or ohai installed prior to running the playbook, but
+you can of course push this out with Ansible if you like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span># for facter
+ansible -m yum -a &quot;pkg=facter ensure=installed&quot;
+ansible -m yum -a &quot;pkg=ruby-json ensure=installed&quot;
+
+# for ohai
+ansible -m yum -a &quot;pkg=ohai ensure=installed&quot;
+</pre></div>
+</div>
+<p>Ansible&#8217;s approach to configuration &#8211; separating variables from tasks, keeps your playbooks
+from turning into arbitrary code with ugly nested ifs, conditionals, and so on - and results
+in more streamlined &amp; auditable configuration rules &#8211; especially because there are a
+minimum of decision points to track.</p>
+</div>
+<div class="section" id="loops">
+<h2><a class="toc-backref" href="#contents">Loops</a><a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
+<p>To save some typing, repeated tasks can be written in short-hand like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: add several users
+  action: user name=$item state=present groups=wheel
+  with_items:
+     - testuser1
+     - testuser2
+</pre></div>
+</div>
+<p>If you have defined a YAML list in a variables file, or the &#8216;vars&#8217; section, you can also do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>with_items: $somelist
+</pre></div>
+</div>
+<p>The above would be the equivalent of:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: add user testuser1
+  action: user name=testuser1 state=present groups=wheel
+- name: add user testuser2
+  action: user name=testuser2 state=present groups=wheel
+</pre></div>
+</div>
+<p>The yum and apt modules use with_items to execute fewer package manager transactions.</p>
+<p>Note that the types of items you iterate over with &#8216;with_items&#8217; do not have to be simple lists of strings.
+If you have a list of hashes, you can reference subkeys using things like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>${item.subKeyName}
+</pre></div>
+</div>
+</div>
+<div class="section" id="lookup-plugins-accessing-outside-data">
+<h2><a class="toc-backref" href="#contents">Lookup Plugins - Accessing Outside Data</a><a class="headerlink" href="#lookup-plugins-accessing-outside-data" title="Permalink to this headline">¶</a></h2>
+<p>Various &#8216;lookup plugins&#8217; allow additional ways to iterate over data.  Ansible will have more of these
+over time.  You can write your own, as is covered in the API section.  Each typically takes a list and
+can accept more than one parameter.</p>
+<p>&#8216;with_fileglob&#8217; matches all files in a single directory, non-recursively, that match a pattern.  It can
+be used like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>----
+- hosts: all
+
+  tasks:
+
+    # first ensure our target directory exists
+    - action: file dest=/etc/fooapp state=directory
+
+    # copy each file over that matches the given pattern
+    - action: copy src=$item dest=/etc/fooapp/ owner=root mode=600
+      with_fileglob:
+        - /playbooks/files/fooapp/*
+</pre></div>
+</div>
+<p>&#8216;with_file&#8217; loads data in from a file directly:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- action: authorized_key user=foo key=$item
+  with_file:
+     - /home/foo/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>As an alternative, lookup plugins can also be accessed in variables like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars:
+    motd_value: $FILE(/etc/motd)
+    hosts_value: $LOOKUP(file,/etc/hosts)
+</pre></div>
+</div>
+<p>Many new lookup abilities were added in 0.9.  Remeber lookup plugins are run on the &#8220;controlling&#8221; machine:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+
+  tasks:
+
+     - action: debug msg=&quot;$item is an environment variable&quot;
+       with_env:
+         - HOME
+         - LANG
+
+     - action: debug msg=&quot;$item is a line from the result of this command&quot;
+       with_lines:
+         - cat /etc/motd
+
+     - action: debug msg=&quot;$item is the raw result of running this command&quot;
+       with_pipe:
+          - date
+
+     - action: debug msg=&quot;$item is value in Redis for somekey&quot;
+       with_redis_kv:
+         - redis://localhost:6379,somekey
+
+     - action: debug msg=&quot;$item is a DNS TXT record for example.com&quot;
+       with_dnstxt:
+         - example.com
+
+     - action: debug msg=&quot;$item is a value from evaluation of this template&quot;
+       with_template:
+          - ./some_template.j2
+</pre></div>
+</div>
+<p>You can also assign these to variables, should you wish to do this instead, that will be evaluated
+when they are used in a task (or template):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars:
+    redis_value: $LOOKUP(redis,redis://localhost:6379,info_${inventory_hostname})
+    auth_key_value: $FILE(/home/mdehaan/.ssh/id_rsa.pub)
+
+tasks:
+    - debug: msg=Redis value for host is $redis_value
+</pre></div>
+</div>
+<p>&#8216;with_sequence&#8217; generates a sequence of items in ascending numerical order. You
+can specify a start, end, and an optional step value.</p>
+<p>Arguments can be either key-value pairs or as a shortcut in the format
+&#8220;[start-]end[/stride][:format]&#8221;.  The format is a printf style string.</p>
+<p>Numerical values can be specified in decimal, hexadecimal (0x3f8) or octal (0600).
+Negative numbers are not supported.  This works as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+
+  tasks:
+
+    # create groups
+    - group: name=evens state=present
+    - group: name=odds state=present
+
+    # create 32 test users
+    - user: name=$item state=present groups=odds
+      with_sequence: 32/2:testuser%02x
+
+    - user: name=$item state=present groups=evens
+      with_sequence: 2-32/2:testuser%02x
+
+    # create a series of directories for some reason
+    - file: dest=/var/stuff/$item state=directory
+      with_sequence: start=4 end=16
+
+    # a simpler way to use the sequence plugin
+    # create 4 groups
+    - group: name=group${item} state=present
+      with_sequence: count=4
+</pre></div>
+</div>
+<p>&#8216;with_password&#8217; and associated macro &#8220;$PASSWORD&#8221; generate a random plaintext password and store it in
+a file at a given filepath.  Support for crypted save modes (as with vars_prompt) are pending.  If the file exists previously, &#8220;$PASSWORD&#8221;/&#8217;with_password&#8217; will retrieve its contents, behaving just like $FILE/&#8217;with_file&#8217;. Usage of variables like &#8220;${inventory_hostname}&#8221; in the filepath can be used to set up random passwords per host.</p>
+<p>Generated passwords contain a random mix of upper and lowercase ASCII letters, the
+numbers 0-9 and punctuation (&#8221;. , : - _&#8221;). The default length of a generated password is 30 characters. This length can be changed by passing an extra parameter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+
+  tasks:
+
+    # create a mysql user with a random password:
+    - mysql_user: name=$client
+                  password=$PASSWORD(credentials/$client/$tier/$role/mysqlpassword)
+                  priv=$client_$tier_$role.*:ALL
+
+    (...)
+
+    # dump a mysql database with a given password (this example showing the other form).
+    - mysql_db: name=$client_$tier_$role
+                login_user=$client
+                login_password=$item
+                state=dump
+                target=/tmp/$client_$tier_$role_backup.sql
+      with_password: credentials/$client/$tier/$role/mysqlpassword
+
+    # make a longer or shorter password by appending a length parameter:
+    - mysql_user: name=some_name
+                  password=$item
+      with_password: files/same/password/everywhere length=15
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-the-environment-and-working-with-proxies">
+<h2><a class="toc-backref" href="#contents">Setting the Environment (and Working With Proxies)</a><a class="headerlink" href="#setting-the-environment-and-working-with-proxies" title="Permalink to this headline">¶</a></h2>
+<p>It is quite possible that you may need to get package updates through a proxy, or even get some package
+updates through a proxy and access other packages not through a proxy.  Ansible makes it easy for you
+to configure your environment by using the &#8216;environment&#8217; keyword.  Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts: all
+  user: root
+
+  tasks:
+
+    - apt: name=cobbler state=installed
+      environment:
+        http_proxy: http://proxy.example.com:8080
+</pre></div>
+</div>
+<p>The environment can also be stored in a variable, and accessed like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts: all
+  user: root
+
+  # here we make a variable named &quot;env&quot; that is a dictionary
+  vars:
+    proxy_env:
+      http_proxy: http://proxy.example.com:8080
+
+  tasks:
+
+    - apt: name=cobbler state=installed
+      environment: $proxy_env
+</pre></div>
+</div>
+<p>While just proxy settings were shown above, any number of settings can be supplied.  The most logical place
+to define an environment hash might be a group_vars file, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>----
+# file: group_vars/boston
+
+ntp_server: ntp.bos.example.com
+backup: bak.bos.example.com
+proxy_env:
+  http_proxy: http://proxy.bos.example.com:8080
+  https_proxy: http://proxy.bos.example.com:8080
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-values-from-files">
+<h2><a class="toc-backref" href="#contents">Getting values from files</a><a class="headerlink" href="#getting-values-from-files" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.8.</span></p>
+</div>
+<p>Sometimes you&#8217;ll want to include the content of a file directly into a playbook.  You can do so using a macro.
+This syntax will remain in future versions, though we will also will provide ways to do this via lookup plugins (see &#8220;More Loops&#8221;) as well.  What follows
+is an example using the authorized_key module, which requires the actual text of the SSH key as a parameter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - name: enable key-based ssh access for users
+      authorized_key: user=$item key=&#39;$FILE(/keys/$item)&#39;
+      with_items:
+         - pinky
+         - brain
+         - snowball
+</pre></div>
+</div>
+<p>The &#8220;$PIPE&#8221; macro works just like file, except you would feed it a command string instead.  It executes locally, not remotely, as does $FILE.</p>
+<p>Because Ansible uses lazy evaluation, a &#8220;$PIPE&#8221; macro will be executed each time it is used. For
+example, it will be executed separately for each host, and if it is used in a variable definition,
+it will be executed each time the variable is evaluated.</p>
+</div>
+<div class="section" id="selecting-files-and-templates-based-on-variables">
+<h2><a class="toc-backref" href="#contents">Selecting Files And Templates Based On Variables</a><a class="headerlink" href="#selecting-files-and-templates-based-on-variables" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes a configuration file you want to copy, or a template you will use may depend on a variable.
+The following construct selects the first available file appropriate for the variables of a given host, which is often much cleaner than putting a lot of if conditionals in a template.</p>
+<p>The following example shows how to template out a configuration file that was very different between, say, CentOS and Debian:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: template a file
+  action: template src=$item dest=/etc/myapp/foo.conf
+  first_available_file:
+    - /srv/templates/myapp/${ansible_distribution}.conf
+    - /srv/templates/myapp/default.conf
+</pre></div>
+</div>
+<p>first_available_file is only available to the copy and template modules.</p>
+</div>
+<div class="section" id="asynchronous-actions-and-polling">
+<h2><a class="toc-backref" href="#contents">Asynchronous Actions and Polling</a><a class="headerlink" href="#asynchronous-actions-and-polling" title="Permalink to this headline">¶</a></h2>
+<p>By default tasks in playbooks block, meaning the connections stay open
+until the task is done on each node.  If executing playbooks with
+a small parallelism value (aka <code class="docutils literal"><span class="pre">--forks</span></code>), you may wish that long
+running operations can go faster.  The easiest way to do this is
+to kick them off all at once and then poll until they are done.</p>
+<p>You will also want to use asynchronous mode on very long running
+operations that might be subject to timeout.</p>
+<p>To launch a task asynchronously, specify its maximum runtime
+and how frequently you would like to poll for status.  The default
+poll value is 10 seconds if you do not specify a value for <cite>poll</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  user: root
+  tasks:
+  - name: simulate long running op (15 sec), wait for up to 45, poll every 5
+    action: command /bin/sleep 15
+    async: 45
+    poll: 5
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is no default for the async time limit.  If you leave off the
+&#8216;async&#8217; keyword, the task runs synchronously, which is Ansible&#8217;s
+default.</p>
+</div>
+<p>Alternatively, if you do not need to wait on the task to complete, you may
+&#8220;fire and forget&#8221; by specifying a poll value of 0:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  user: root
+  tasks:
+  - name: simulate long running op, allow to run for 45, fire and forget
+    action: command /bin/sleep 15
+    async: 45
+    poll: 0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You shouldn&#8217;t &#8220;fire and forget&#8221; with operations that require
+exclusive locks, such as yum transactions, if you expect to run other
+commands later in the playbook against those same resources.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Using a higher value for <code class="docutils literal"><span class="pre">--forks</span></code> will result in kicking off asynchronous
+tasks even faster.  This also increases the efficiency of polling.</p>
+</div>
+</div>
+<div class="section" id="local-playbooks">
+<h2><a class="toc-backref" href="#contents">Local Playbooks</a><a class="headerlink" href="#local-playbooks" title="Permalink to this headline">¶</a></h2>
+<p>It may be useful to use a playbook locally, rather than by connecting over SSH.  This can be useful
+for assuring the configuration of a system by putting a playbook on a crontab.  This may also be used
+to run a playbook inside a OS installer, such as an Anaconda kickstart.</p>
+<p>To run an entire playbook locally, just set the &#8220;hosts:&#8221; line to &#8220;hosts:127.0.0.1&#8221; and then run the playbook like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible-playbook playbook.yml --connection=local
+</pre></div>
+</div>
+<p>Alternatively, a local connection can be used in a single playbook play, even if other plays in the playbook
+use the default remote connection type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>hosts: 127.0.0.1
+connection: local
+</pre></div>
+</div>
+</div>
+<div class="section" id="turning-off-facts">
+<h2><a class="toc-backref" href="#contents">Turning Off Facts</a><a class="headerlink" href="#turning-off-facts" title="Permalink to this headline">¶</a></h2>
+<p>If you know you don&#8217;t need any fact data about your hosts, and know everything about your systems centrally, you
+can turn off fact gathering.  This has advantages in scaling ansible in push mode with very large numbers of
+systems, mainly, or if you are using Ansible on experimental platforms.   In any play, just do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts: whatever
+  gather_facts: no
+</pre></div>
+</div>
+</div>
+<div class="section" id="pull-mode-playbooks">
+<h2><a class="toc-backref" href="#contents">Pull-Mode Playbooks</a><a class="headerlink" href="#pull-mode-playbooks" title="Permalink to this headline">¶</a></h2>
+<p>The use of playbooks in local mode (above) is made extremely powerful with the addition of <cite>ansible-pull</cite>.
+A script for setting up ansible-pull is provided in the examples/playbooks directory of the source
+checkout.</p>
+<p>The basic idea is to use Ansible to set up a remote copy of ansible on each managed node, each set to run via
+cron and update playbook source via git.  This inverts the default push architecture of ansible into a pull
+architecture, which has near-limitless scaling potential.  The setup playbook can be tuned to change
+the cron frequency, logging locations, and parameters to ansible-pull.</p>
+<p>This is useful both for extreme scale-out as well as periodic remediation.  Usage of the &#8216;fetch&#8217; module to retrieve
+logs from ansible-pull runs would be an excellent way to gather and analyze remote logs from ansible-pull.</p>
+</div>
+<div class="section" id="register-variables">
+<h2><a class="toc-backref" href="#contents">Register Variables</a><a class="headerlink" href="#register-variables" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.7.</span></p>
+</div>
+<p>Often in a playbook it may be useful to store the result of a given command in a variable and access
+it later.  Use of the command module in this way can in many ways eliminate the need to write site specific facts, for
+instance, you could test for the existance of a particular program.</p>
+<p>The &#8216;register&#8217; keyword decides what variable to save a result in.  The resulting variables can be used in templates, action lines, or only_if statements.  It looks like this (in an obviously trivial example):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: test play
+  hosts: all
+
+  tasks:
+
+      - action: shell cat /etc/motd
+        register: motd_contents
+
+      - action: shell echo &quot;motd contains the word hi&quot;
+        only_if: &quot;&#39;${motd_contents.stdout}&#39;.find(&#39;hi&#39;) != -1&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="rolling-updates">
+<h2><a class="toc-backref" href="#contents">Rolling Updates</a><a class="headerlink" href="#rolling-updates" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.7.</span></p>
+</div>
+<p>By default ansible will try to manage all of the machines referenced in a play in parallel.  For a rolling updates
+use case, you can define how many hosts ansible should manage at a single time by using the &#8216;&#8217;serial&#8217;&#8217; keyword:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: test play
+  hosts: webservers
+  serial: 3
+</pre></div>
+</div>
+<p>In the above example, if we had 100 hosts, 3 hosts in the group &#8216;webservers&#8217;
+would complete the play completely before moving on to the next 3 hosts.</p>
+</div>
+<div class="section" id="delegation">
+<h2><a class="toc-backref" href="#contents">Delegation</a><a class="headerlink" href="#delegation" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.7.</span></p>
+</div>
+<p>If you want to perform a task on one host with reference to other hosts, use the &#8216;delegate_to&#8217; keyword on a task.
+This is ideal for placing nodes in a load balanced pool, or removing them.  It is also very useful for controlling
+outage windows.  Using this with the &#8216;serial&#8217; keyword to control the number of hosts executing at one time is also
+a good idea:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: webservers
+  serial: 5
+
+  tasks:
+  - name: take out of load balancer pool
+    action: command /usr/bin/take_out_of_pool $inventory_hostname
+    delegate_to: 127.0.0.1
+
+  - name: actual steps would go here
+    action: yum name=acme-web-stack state=latest
+
+  - name: add back to load balancer pool
+    action: command /usr/bin/add_back_to_pool $inventory_hostname
+    delegate_to: 127.0.0.1
+</pre></div>
+</div>
+<p>These commands will run on 127.0.0.1, which is the machine running Ansible. There is also a shorthand syntax that
+you can use on a per-task basis: &#8216;local_action&#8217;. Here is the same playbook as above, but using the shorthand
+syntax for delegating to 127.0.0.1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# ...
+  tasks:
+  - name: take out of load balancer pool
+    local_action: command /usr/bin/take_out_of_pool $inventory_hostname
+
+# ...
+
+  - name: add back to load balancer pool
+    local_action: command /usr/bin/add_back_to_pool $inventory_hostname
+</pre></div>
+</div>
+<p>A common pattern is to use a local action to call &#8216;rsync&#8217; to recursively copy files to the managed servers.
+Here is an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# ...
+  tasks:
+  - name: recursively copy files from management server to target
+    local_action: command rsync -a /path/to/files $inventory_hostname:/path/to/target/
+</pre></div>
+</div>
+<p>Note that you must have passphrase-less SSH keys or an ssh-agent configured for this to work, otherwise rsync
+will need to ask for a passphrase.</p>
+</div>
+<div class="section" id="fireball-mode">
+<h2><a class="toc-backref" href="#contents">Fireball Mode</a><a class="headerlink" href="#fireball-mode" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.8.</span></p>
+</div>
+<p>Ansible&#8217;s core connection types of &#8216;local&#8217;, &#8216;paramiko&#8217;, and &#8216;ssh&#8217; are augmented in version 0.8 and later by a new extra-fast
+connection type called &#8216;fireball&#8217;.  It can only be used with playbooks and does require some additional setup
+outside the lines of ansible&#8217;s normal &#8220;no bootstrapping&#8221; philosophy.  You are not required to use fireball mode
+to use Ansible, though some users may appreciate it.</p>
+<p>Fireball mode works by launching a temporary 0mq daemon from SSH that by default lives for only 30 minutes before
+shutting off.  Fireball mode once running uses temporary AES keys to encrypt a session, and requires direct
+communication to given nodes on the configured port.  The default is 5099.  The fireball daemon runs as any user you
+set it down as.  So it can run as you, root, or so on.  If multiple users are running Ansible as the same batch of hosts,
+take care to use unique ports.</p>
+<p>Fireball mode is roughly 10 times faster than paramiko for communicating with nodes and may be a good option
+if you have a large number of hosts:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+
+# set up the fireball transport
+- hosts: all
+  gather_facts: no
+  connection: ssh # or paramiko
+  sudo: yes
+  tasks:
+      - action: fireball
+
+# these operations will occur over the fireball transport
+- hosts: all
+  connection: fireball
+  tasks:
+      - action: shell echo &quot;Hello ${item}&quot;
+        with_items:
+            - one
+            - two
+</pre></div>
+</div>
+<p>In order to use fireball mode, certain dependencies must be installed on both ends.   You can use this playbook as a basis for initial bootstrapping on
+any platform.  You will also need gcc and zeromq-devel installed from your package manager, which you can of course also get Ansible to install:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  sudo: yes
+  gather_facts: no
+  connection: ssh
+  tasks:
+      - action: easy_install name=pip
+      - action: pip name=$item state=present
+        with_items:
+          - pyzmq
+          - pyasn1
+          - PyCrypto
+          - python-keyczar
+</pre></div>
+</div>
+<p>Fedora and EPEL also have Ansible RPM subpackages available for fireball-dependencies.</p>
+<p>Also see the module documentation section.</p>
+</div>
+<div class="section" id="understanding-variable-precedence">
+<h2><a class="toc-backref" href="#contents">Understanding Variable Precedence</a><a class="headerlink" href="#understanding-variable-precedence" title="Permalink to this headline">¶</a></h2>
+<p>You have already learned about inventory host and group variables, &#8216;vars&#8217;, and &#8216;vars_files&#8217;.</p>
+<p>If a variable name is defined in more than one place with the same name, priority is as follows
+to determine which place sets the value of the variable.  Lower numbered items have the highest
+priority.</p>
+<ol class="arabic simple">
+<li>Any variables specified with &#8211;extra-vars (-e) on the ansible-playbook command line.</li>
+<li>Variables loaded from YAML files mentioned in &#8216;vars_files&#8217; in a playbook.</li>
+<li>facts, whether built in or custom, or variables assigned from the &#8216;register&#8217; keyword.</li>
+<li>variables passed to parameterized task include statements.</li>
+<li>&#8216;vars&#8217; as defined in the playbook.</li>
+<li>Host variables from inventory.</li>
+<li>Group variables from inventory in inheritance order.  This means if a group includes a sub-group, the variables
+in the subgroup have higher precedence.</li>
+</ol>
+<p>Therefore, if you want to set a default value for something you wish to override somewhere else, the best
+place to set such a default is in a group variable.  The &#8216;group_vars/all&#8217; file makes an excellent place to put global
+variables that are true across your entire site, since everything has higher priority than these values.</p>
+</div>
+<div class="section" id="check-mode-dry-run-check">
+<h2><a class="toc-backref" href="#contents">Check Mode (&#8220;Dry Run&#8221;) &#8211;check</a><a class="headerlink" href="#check-mode-dry-run-check" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<p>When ansible-playbook is executed with &#8211;check it will not make any changes on remote systems.  Instead, any module
+instrumented to support &#8216;check mode&#8217; (which contains the primary core modules, but it is not required that all modules do
+this) will report what changes they would have made.  Other modules that do not support check mode will also take no
+action, but just will not report what changes they might have made.</p>
+<p>Check mode is just a simulation, and if you have steps that use conditionals that depend on the results of prior commands,
+it may be less useful for you.  However it is great for one-node-at-time basic configuration management use cases.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible-playbook foo.yml --check
+</pre></div>
+</div>
+</div>
+<div class="section" id="showing-differences-with-diff">
+<h2><a class="toc-backref" href="#contents">Showing Differences with &#8211;diff</a><a class="headerlink" href="#showing-differences-with-diff" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<p>The &#8211;diff option to ansible-playbook works great with &#8211;check (detailed above) but can also be used by itself.  When this flag is supplied, if any templated files on the remote system are changed, and the ansible-playbook CLI will report back
+the textual changes made to the file (or, if used with &#8211;check, the changes that would have been made).  Since the diff
+feature produces a large amount of output, it is best used when checking a single host at a time, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible-playbook foo.yml --check --diff --limit foo.example.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictionary-nested-complex-arguments">
+<h2><a class="toc-backref" href="#contents">Dictionary &amp; Nested (Complex) Arguments</a><a class="headerlink" href="#dictionary-nested-complex-arguments" title="Permalink to this headline">¶</a></h2>
+<p>As a review, most tasks in ansbile are of this form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+
+  - name: ensure the cobbler package is installed
+    yum: name=cobbler state=installed
+</pre></div>
+</div>
+<p>However, in some cases, it may be useful to feed arguments directly in from a hash (dictionary).  In fact, a very small
+number of modules (the CloudFormations module is one) actually require complex arguments.  They work like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+
+  - name: call a module that requires some complex arguments
+    foo_module:
+       fibonacci_list:
+         - 1
+         - 1
+         - 2
+         - 3
+       my_pets:
+         dogs:
+           - fido
+           - woof
+         fish:
+           - limpet
+           - nemo
+           - ${other_fish_name}
+</pre></div>
+</div>
+<p>You can of course use variables inside these, as noted above.</p>
+<p>If using local_action, you can do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: call a module that requires some complex arguments
+  local_action:
+    module: foo_module
+    arg1: 1234
+    arg2: &#39;asdf&#39;
+</pre></div>
+</div>
+<p>Which of course means, though more verbose, this is also technically legal syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: foo
+  template: { src: &#39;/templates/motd.j2&#39;, dest: &#39;/etc/motd&#39; }
+</pre></div>
+</div>
+</div>
+<div class="section" id="style-points">
+<h2><a class="toc-backref" href="#contents">Style Points</a><a class="headerlink" href="#style-points" title="Permalink to this headline">¶</a></h2>
+<p>Ansible playbooks are colorized.  If you do not like this, set the ANSIBLE_NOCOLOR=1 environment variable.</p>
+<p>Ansible playbooks also look more impressive with cowsay installed, and we encourage installing this package.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="YAMLSyntax.html"><em>YAML Syntax</em></a></dt>
+<dd>Learn about YAML syntax</dd>
+<dt><a class="reference internal" href="playbooks.html"><em>Playbooks</em></a></dt>
+<dd>Review the basic playbook features</dd>
+<dt><a class="reference internal" href="bestpractices.html"><em>Best Practices</em></a></dt>
+<dd>Various tips about playbooks in the real world</dd>
+<dt><a class="reference internal" href="modules.html"><em>Ansible Modules</em></a></dt>
+<dd>Learn about available modules</dd>
+<dt><a class="reference internal" href="moduledev.html"><em>Module Development</em></a></dt>
+<dd>Learn how to extend Ansible by writing your own modules</dd>
+<dt><a class="reference internal" href="patterns.html"><em>Inventory &amp; Patterns</em></a></dt>
+<dd>Learn about how to select hosts</dd>
+<dt><a class="reference external" href="https://github.com/ansible/ansible/tree/devel/examples/playbooks">Github examples directory</a></dt>
+<dd>Complete playbook files from the github project source</dd>
+<dt><a class="reference external" href="http://groups.google.com/group/ansible-project">Mailing List</a></dt>
+<dd>Questions? Help? Ideas?  Stop by the list on Google Groups</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+<br/>
+</div>
+<footer class="footer">
+<center>
+<a href="http://ansibleworks.com"><img src="http://ansible.cc/img/AnsibleWorks.png" alt="AnsibleWorks"></a>
+<p>
+        &copy; Copyright 2013 AnsibleWorks.<br/>
+      Last updated on Feb 24, 2016.<br/>
+    </p>
+</div>
+</center>
+</footer>
+  </body>
+</html>
