@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Getting Started &mdash; Ansible Documentation</title>
+  <title>Getting Started &mdash; Ansible v1.9.2-0.1.rc1 Documentation</title>
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.9.2-0.1.rc1 Documentation" href="index.html"/>
         <link rel="up" title="Introduction" href="intro.html"/>
         <link rel="next" title="Inventory" href="intro_inventory.html"/>
         <link rel="prev" title="Installation" href="intro_installation.html"/> 
@@ -76,9 +76,6 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
-
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,29 +85,78 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
   <!-- End Google Tag Manager -->
 
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
-
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -124,8 +170,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -137,20 +182,16 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_filters.html">Jinja2 filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_conditionals.html">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -159,19 +200,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_strategies.html">Testing Strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a><ul>
@@ -180,7 +218,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -207,17 +244,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +285,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +330,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +337,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +367,17 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+<!-- AnsibleFest and free eBook preview stuff -->
+<center>
+<a href="http://www.ansible.com/tower?utm_source=docs">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636235-png/DL_Folder/festlondon-docs.png">
+</a>
+<a href="http://www.ansible.com/ansible-book">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636250-png/DL_Folder/Ebook-docs.png">
+</a>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+</center>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -384,32 +410,33 @@
 <span id="gs-about"></span><h2><a class="toc-backref" href="#id4">Foreword</a><a class="headerlink" href="#foreword" title="Permalink to this headline">¶</a></h2>
 <p>Now that you&#8217;ve read <a class="reference internal" href="intro_installation.html"><em>Installation</em></a> and installed Ansible, it&#8217;s time to dig in and get
 started with some commands.</p>
-<p>What we are showing first are not the powerful configuration/deployment/orchestration features of Ansible.
-These features are handled by playbooks which are covered in a separate section.</p>
-<p>This section is about how to initially get going.  Once you have these concepts down, read <a class="reference internal" href="intro_adhoc.html"><em>Introduction To Ad-Hoc Commands</em></a> for some more
+<p>What we are showing first are not the powerful configuration/deployment/orchestration of Ansible, called playbooks.
+Playbooks are covered in a separate section.</p>
+<p>This section is about how to get going initially.  Once you have these concepts down, read <a class="reference internal" href="intro_adhoc.html"><em>Introduction To Ad-Hoc Commands</em></a> for some more
 detail, and then you&#8217;ll be ready to dive into playbooks and explore the most interesting parts!</p>
 </div>
 <div class="section" id="remote-connection-information">
 <span id="id1"></span><h2><a class="toc-backref" href="#id5">Remote Connection Information</a><a class="headerlink" href="#remote-connection-information" title="Permalink to this headline">¶</a></h2>
-<p>Before we get started, it&#8217;s important to understand how Ansible communicates with remote
+<p>Before we get started, it&#8217;s important to understand how Ansible is communicating with remote
 machines over SSH.</p>
 <p>By default, Ansible 1.3 and later will try to use native
-OpenSSH for remote communication when possible.  This enables ControlPersist (a performance feature), Kerberos, and options in ~/.ssh/config such as Jump Host setup.  However, when using Enterprise Linux 6 operating systems as the control machine (Red Hat Enterprise Linux and derivatives such as CentOS), the version of OpenSSH may be too old to support ControlPersist. On these operating systems, Ansible will fallback into using a high-quality Python implementation of
+OpenSSH for remote communication  when possible.  This enables both ControlPersist (a performance feature), Kerberos, and options in ~/.ssh/config such as Jump Host setup.  When using Enterprise Linux 6 operating systems as the control machine (Red Hat Enterprise Linux and derivatives such as CentOS), however, the version of OpenSSH may be too old to support ControlPersist. On these operating systems, Ansible will fallback into using a high-quality Python implementation of
 OpenSSH called &#8216;paramiko&#8217;.  If you wish to use features like Kerberized SSH and more, consider using Fedora, OS X, or Ubuntu as your control machine until a newer version of OpenSSH is available for your platform &#8211; or engage &#8216;accelerated mode&#8217; in Ansible.  See <a class="reference internal" href="playbooks_acceleration.html"><em>Accelerated Mode</em></a>.</p>
-<p>In releases up to and including Ansible 1.2, the default was strictly paramiko.  Native SSH had to be explicitly selected with the -c ssh option or set in the configuration file.</p>
-<p>Occasionally you&#8217;ll encounter a device that doesn&#8217;t support SFTP. This is rare, but should it occur, you can switch to SCP mode in <a class="reference internal" href="intro_configuration.html"><em>Configuration file</em></a>.</p>
-<p>When speaking with remote machines, Ansible by default assumes you are using SSH keys.  SSH keys are encouraged but password authentication can also be used where needed by supplying the option <code class="docutils literal"><span class="pre">--ask-pass</span></code>.  If using sudo features and when sudo requires a password, also supply <code class="docutils literal"><span class="pre">--ask-become-pass</span></code> (previously <code class="docutils literal"><span class="pre">--ask-sudo-pass</span></code> which has been deprecated).</p>
-<p>While it may be common sense, it is worth sharing: Any management system benefits from being run near the machines being managed. If you are running Ansible in a cloud, consider running it from a machine inside that cloud.  In most cases this will work better than on the open Internet.</p>
+<p>In Ansible 1.2 and before, the default was strictly paramiko and native SSH had to be explicitly selected with -c ssh or set in the configuration file.</p>
+<p>Occasionally you&#8217;ll encounter a device that doesn&#8217;t do SFTP. This is rare, but if talking with some remote devices that don&#8217;t support SFTP, you can switch to SCP mode in <a class="reference internal" href="intro_configuration.html"><em>The Ansible Configuration File</em></a>.</p>
+<p>When speaking with remote machines, Ansible will by default assume you are using SSH keys &#8211; which we encourage &#8211; but passwords are fine too.  To enable password auth, supply the option <code class="docutils literal"><span class="pre">--ask-pass</span></code> where needed.  If using sudo features and when sudo requires a password, also supply <code class="docutils literal"><span class="pre">--ask-sudo-pass</span></code> as appropriate.</p>
+<p>While it may be common sense, it is worth sharing: Any management system benefits from being run near the machines being managed. If running in a cloud, consider running Ansible from a machine inside that cloud.  It will work better than on the open
+internet in most cases.</p>
 <p>As an advanced topic, Ansible doesn&#8217;t just have to connect remotely over SSH.  The transports are pluggable, and there are options for managing things locally, as well as managing chroot, lxc, and jail containers.  A mode called &#8216;ansible-pull&#8217; can also invert the system and have systems &#8216;phone home&#8217; via scheduled git checkouts to pull configuration directives from a central repository.</p>
 </div>
 <div class="section" id="your-first-commands">
 <span id="id2"></span><h2><a class="toc-backref" href="#id6">Your first commands</a><a class="headerlink" href="#your-first-commands" title="Permalink to this headline">¶</a></h2>
 <p>Now that you&#8217;ve installed Ansible, it&#8217;s time to get started with some basics.</p>
-<p>Edit (or create) /etc/ansible/hosts and put one or more remote systems in it. Your
-public SSH key should be located in <code class="docutils literal"><span class="pre">authorized_keys</span></code> on those systems:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">192.168.1.50</span>
-<span class="l l-Scalar l-Scalar-Plain">aserver.example.org</span>
-<span class="l l-Scalar l-Scalar-Plain">bserver.example.org</span>
+<p>Edit (or create) /etc/ansible/hosts and put one or more remote systems in it, for
+which you have your SSH key in <code class="docutils literal"><span class="pre">authorized_keys</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>192.168.1.50
+aserver.example.org
+bserver.example.org
 </pre></div>
 </div>
 <p>This is an inventory file, which is also explained in greater depth here:  <a class="reference internal" href="intro_inventory.html"><em>Inventory</em></a>.</p>
@@ -433,12 +460,6 @@ $ ansible all -m ping -u bruce
 $ ansible all -m ping -u bruce --sudo
 <span class="c1"># as bruce, sudoing to batman</span>
 $ ansible all -m ping -u bruce --sudo --sudo-user batman
-
-<span class="c1"># With latest version of ansible `sudo` is deprecated so use become</span>
-<span class="c1"># as bruce, sudoing to root</span>
-$ ansible all -m ping -u bruce -b
-<span class="c1"># as bruce, sudoing to batman</span>
-$ ansible all -m ping -u bruce -b --become-user batman
 </pre></div>
 </div>
 <p>(The sudo implementation is changeable in Ansible&#8217;s configuration file if you happen to want to use a sudo
@@ -447,9 +468,9 @@ replacement.  Flags passed to sudo (like -H) can also be set there.)</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ ansible all -a <span class="s2">&quot;/bin/echo hello&quot;</span>
 </pre></div>
 </div>
-<p>Congratulations!  You&#8217;ve just contacted your nodes with Ansible.  It&#8217;s
-soon going to be time to: read about some more real-world cases in <a class="reference internal" href="intro_adhoc.html"><em>Introduction To Ad-Hoc Commands</em></a>,
-explore what you can do with different modules, and to learn about the Ansible
+<p>Congratulations.  You&#8217;ve just contacted your nodes with Ansible.  It&#8217;s
+soon going to be time to read some of the more real-world <a class="reference internal" href="intro_adhoc.html"><em>Introduction To Ad-Hoc Commands</em></a>, and explore
+what you can do with different modules, as well as the Ansible
 <a class="reference internal" href="playbooks.html"><em>Playbooks</em></a> language.  Ansible is not just about running commands, it
 also has powerful configuration management and deployment features.  There&#8217;s more to
 explore, but you already have a fully working infrastructure!</p>
@@ -458,9 +479,9 @@ explore, but you already have a fully working infrastructure!</p>
 <span id="a-note-about-host-key-checking"></span><h2><a class="toc-backref" href="#id7">Host Key Checking</a><a class="headerlink" href="#host-key-checking" title="Permalink to this headline">¶</a></h2>
 <p>Ansible 1.2.1 and later have host key checking enabled by default.</p>
 <p>If a host is reinstalled and has a different key in &#8216;known_hosts&#8217;, this will result in an error message until corrected.  If a host is not initially in &#8216;known_hosts&#8217; this will result in prompting for confirmation of the key, which results in an interactive experience if using Ansible, from say, cron.  You might not want this.</p>
-<p>If you understand the implications and wish to disable this behavior, you can do so by editing /etc/ansible/ansible.cfg or ~/.ansible.cfg:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">defaults</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">host_key_checking = False</span>
+<p>If you wish to disable this behavior and understand the implications, you can do so by editing /etc/ansible/ansible.cfg or ~/.ansible.cfg:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">defaults</span><span class="p">]</span>
+<span class="n">host_key_checking</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
 <p>Alternatively this can be set by an environment variable:</p>
@@ -468,8 +489,8 @@ explore, but you already have a fully working infrastructure!</p>
 </pre></div>
 </div>
 <p>Also note that host key checking in paramiko mode is reasonably slow, therefore switching to &#8216;ssh&#8217; is also recommended when using this feature.</p>
-<p id="a-note-about-logging">Ansible will log some information about module arguments on the remote system in the remote syslog, unless a task or play is marked with a &#8220;no_log: True&#8221; attribute. This is explained later.</p>
-<p>To enable basic logging on the control machine see <a class="reference internal" href="intro_configuration.html"><em>Configuration file</em></a> document and set the &#8216;log_path&#8217; configuration file setting.  Enterprise users may also be interested in <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>.  Tower provides a very robust database logging feature where it is possible to drill down and see history based on hosts, projects, and particular inventories over time &#8211; explorable both graphically and through a REST API.</p>
+<p id="a-note-about-logging">Ansible will log some information about module arguments on the remote system in the remote syslog, unless a task or play is marked with a &#8220;no_log: True&#8221; attribute, explained later.</p>
+<p>To enable basic logging on the control machine see <a class="reference internal" href="intro_configuration.html"><em>The Ansible Configuration File</em></a> document and set the &#8216;log_path&#8217; configuration file setting.  Enterprise users may also be interested in <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>.  Tower provides a very robust database logging feature where it is possible to drill down and see history based on hosts, projects, and particular inventories over time &#8211; explorable both graphically and through a REST API.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
@@ -505,21 +526,12 @@ explore, but you already have a fully working infrastructure!</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
