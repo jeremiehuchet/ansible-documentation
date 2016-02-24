@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Intro to Playbooks &mdash; Ansible Documentation</title>
+  <title>Intro to Playbooks &mdash; Ansible v2.0.0-0.1.alpha1 Documentation</title>
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v2.0.0-0.1.alpha1 Documentation" href="index.html"/>
         <link rel="up" title="Playbooks" href="playbooks.html"/>
         <link rel="next" title="Playbook Roles and Include Statements" href="playbooks_roles.html"/>
         <link rel="prev" title="Playbooks" href="playbooks.html"/> 
@@ -93,7 +93,7 @@
       src="_static/images/logo_invert.png"
       alt="Ansible Logo">
     <div class="DocSiteNav-title">
-      Documentation
+      Documentation v2.0.0-0.1.alpha1
     </div>
   </a>
 
@@ -113,6 +113,71 @@
         </a>
       </div>
 
+      <div class="wy-side-nav-search" style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
+
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
+      </div>
+
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
@@ -125,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -143,14 +208,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become.html">Ansible Privilege Escalation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -169,7 +233,6 @@
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
 </ul>
@@ -180,7 +243,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -210,14 +272,12 @@
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +311,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +356,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +363,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +393,15 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+          <!-- Tower ads -->
+          <a class="DocSiteBanner" href="http://www.ansible.com/tower?utm_source=docs">
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_1.png">
+            </div>
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_2.png">
+            </div>
+          </a>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -378,7 +428,7 @@ unlike any that already exist, and one that is very well suited to deploying com
 any manual ordered process, even as different steps must bounce back and forth
 between sets of machines in particular orders.  They can launch tasks
 synchronously or asynchronously.</p>
-<p>While you might run the main <code class="docutils literal"><span class="pre">/usr/bin/ansible</span></code> program for ad-hoc
+<p>While you might run the main /usr/bin/ansible program for ad-hoc
 tasks, playbooks are more likely to be kept in source control and used
 to push out your configuration or assure the configurations of your
 remote systems are in spec.</p>
@@ -395,7 +445,7 @@ tries to not be a programming language or script, but rather a model of a config
 <p>Each playbook is composed of one or more &#8216;plays&#8217; in a list.</p>
 <p>The goal of a play is to map a group of hosts to some well defined roles, represented by
 things ansible calls tasks.  At a basic level, a task is nothing more than a call
-to an ansible module (see <code class="xref doc docutils literal"><span class="pre">Modules</span></code>).</p>
+to an ansible module, which you should have learned about in earlier chapters.</p>
 <p>By composing a playbook of multiple &#8216;plays&#8217;, it is possible to
 orchestrate multi-machine deployments, running certain steps on all
 machines in the webservers group, then certain steps on the database
@@ -412,7 +462,7 @@ can run different plays at different times.</p>
   <span class="l l-Scalar l-Scalar-Plain">remote_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
   <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure apache is at the latest version</span>
-    <span class="l l-Scalar l-Scalar-Plain">yum</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">name=httpd state=latest</span>
+    <span class="l l-Scalar l-Scalar-Plain">yum</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pkg=httpd state=latest</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">write the apache config file</span>
     <span class="l l-Scalar l-Scalar-Plain">template</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
     <span class="l l-Scalar l-Scalar-Plain">notify</span><span class="p p-Indicator">:</span>
@@ -428,7 +478,7 @@ can run different plays at different times.</p>
 types to supply module arguments. This can be helpful when working with tasks
 that have really long parameters or modules that take many parameters to keep
 them well structured. Below is another version of the above example but using
-YAML dictionaries to supply the modules with their <code class="docutils literal"><span class="pre">key=value</span></code> arguments.:</p>
+YAML dictionaries to supply the modules with their key=value arguments.:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
   <span class="l l-Scalar l-Scalar-Plain">vars</span><span class="p p-Indicator">:</span>
@@ -438,7 +488,7 @@ YAML dictionaries to supply the modules with their <code class="docutils literal
   <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure apache is at the latest version</span>
     <span class="l l-Scalar l-Scalar-Plain">yum</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+      <span class="l l-Scalar l-Scalar-Plain">pkg</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
       <span class="l l-Scalar l-Scalar-Plain">state</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">write the apache config file</span>
     <span class="l l-Scalar l-Scalar-Plain">template</span><span class="p p-Indicator">:</span>
@@ -465,7 +515,7 @@ the web servers, and then the database servers. For example:</p>
 
   <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure apache is at the latest version</span>
-    <span class="l l-Scalar l-Scalar-Plain">yum</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">name=httpd state=latest</span>
+    <span class="l l-Scalar l-Scalar-Plain">yum</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pkg=httpd state=latest</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">write the apache config file</span>
     <span class="l l-Scalar l-Scalar-Plain">template</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
 
@@ -491,9 +541,9 @@ bottom.</p>
 <span id="playbook-hosts-and-users"></span><h3>Hosts and Users<a class="headerlink" href="#hosts-and-users" title="Permalink to this headline">¶</a></h3>
 <p>For each play in a playbook, you get to choose which machines in your infrastructure
 to target and what remote user to complete the steps (called tasks) as.</p>
-<p>The <code class="docutils literal"><span class="pre">hosts</span></code> line is a list of one or more groups or host patterns,
+<p>The <cite>hosts</cite> line is a list of one or more groups or host patterns,
 separated by colons, as described in the <a class="reference internal" href="intro_patterns.html"><em>Patterns</em></a>
-documentation.  The <code class="docutils literal"><span class="pre">remote_user</span></code> is just the name of the user account:</p>
+documentation.  The <cite>remote_user</cite> is just the name of the user account:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
   <span class="l l-Scalar l-Scalar-Plain">remote_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
@@ -501,7 +551,7 @@ documentation.  The <code class="docutils literal"><span class="pre">remote_user
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal"><span class="pre">remote_user</span></code> parameter was formerly called just <code class="docutils literal"><span class="pre">user</span></code>. It was renamed in Ansible 1.4 to make it more distinguishable from the <strong>user</strong> module (used to create users on remote systems).</p>
+<p class="last">The <cite>remote_user</cite> parameter was formerly called just <cite>user</cite>. It was renamed in Ansible 1.4 to make it more distinguishable from the <cite>user</cite> module (used to create users on remote systems).</p>
 </div>
 <p>Remote users can also be defined per task:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
@@ -515,16 +565,16 @@ documentation.  The <code class="docutils literal"><span class="pre">remote_user
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal"><span class="pre">remote_user</span></code> parameter for tasks was added in 1.4.</p>
+<p class="last">The <cite>remote_user</cite> parameter for tasks was added in 1.4.</p>
 </div>
-<p>Support for running things as another user is also available (see <a class="reference internal" href="become.html"><em>Become (Privilege Escalation)</em></a>):</p>
+<p>Support for running things as another user is also available (see <a class="reference internal" href="become.html"><em>Ansible Privilege Escalation</em></a>):</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
   <span class="l l-Scalar l-Scalar-Plain">remote_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yourname</span>
-  <span class="l l-Scalar l-Scalar-Plain">become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+  <span class="l l-Scalar l-Scalar-Plain">sudo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
 </pre></div>
 </div>
-<p>You can also use become on a particular task instead of the whole play:</p>
+<p>You can also use sudo on a particular task instead of the whole play:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
   <span class="l l-Scalar l-Scalar-Plain">remote_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yourname</span>
@@ -554,20 +604,20 @@ documentation.  The <code class="docutils literal"><span class="pre">remote_user
   <span class="l l-Scalar l-Scalar-Plain">become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">su</span>
 </pre></div>
 </div>
-<p>If you need to specify a password to sudo, run <code class="docutils literal"><span class="pre">ansible-playbook</span></code> with <code class="docutils literal"><span class="pre">--ask-become-pass</span></code> or
-when using the old sudo syntax <code class="docutils literal"><span class="pre">--ask-sudo-pass</span></code> (<code class="docutils literal"><span class="pre">-K</span></code>).  If you run a become playbook and the
+<p>If you need to specify a password to sudo, run <cite>ansible-playbook</cite> with <code class="docutils literal"><span class="pre">--ask-become-pass</span></code> or
+when using the old sudo syntax <code class="docutils literal"><span class="pre">--ask-sudo-pass</span></code> (<cite>-K</cite>).  If you run a become playbook and the
 playbook seems to hang, it&#8217;s probably stuck at the privilege escalation prompt.
 Just <cite>Control-C</cite> to kill it and run it again adding the appropriate password.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">When using <code class="docutils literal"><span class="pre">become_user</span></code> to a user other than root, the module
-arguments are briefly written into a random tempfile in <code class="docutils literal"><span class="pre">/tmp</span></code>.
+<p class="last">When using <cite>become_user</cite> to a user other than root, the module
+arguments are briefly written into a random tempfile in /tmp.
 These are deleted immediately after the command is executed.  This
 only occurs when changing privileges from a user like &#8216;bob&#8217; to &#8216;timmy&#8217;,
 not when going from &#8216;bob&#8217; to &#8216;root&#8217;, or logging in directly as &#8216;bob&#8217; or
 &#8216;root&#8217;.  If it concerns you that this data is briefly readable
 (not writable), avoid transferring unencrypted passwords with
-<cite>become_user</cite> set.  In other cases, <code class="docutils literal"><span class="pre">/tmp</span></code> is not used and this does
+<cite>become_user</cite> set.  In other cases, &#8216;/tmp&#8217; is not used and this does
 not come into play. Ansible also takes care to not log password
 parameters.</p>
 </div>
@@ -588,35 +638,35 @@ again, they will make only the changes they must in order to bring the
 system to the desired state.  This makes it very safe to rerun
 the same playbook multiple times.  They won&#8217;t change things
 unless they have to change things.</p>
-<p>The <strong>command</strong> and <strong>shell</strong> modules will typically rerun the same command again,
+<p>The <cite>command</cite> and <cite>shell</cite> modules will typically rerun the same command again,
 which is totally ok if the command is something like
-<code class="docutils literal"><span class="pre">chmod</span></code> or <code class="docutils literal"><span class="pre">setsebool</span></code>, etc.  Though there is a <code class="docutils literal"><span class="pre">creates</span></code> flag available which can
+&#8216;chmod&#8217; or &#8216;setsebool&#8217;, etc.  Though there is a &#8216;creates&#8217; flag available which can
 be used to make these modules also idempotent.</p>
-<p>Every task should have a <code class="docutils literal"><span class="pre">name</span></code>, which is included in the output from
+<p>Every task should have a <cite>name</cite>, which is included in the output from
 running the playbook.   This is output for humans, so it is
 nice to have reasonably good descriptions of each task step.  If the name
 is not provided though, the string fed to &#8216;action&#8217; will be used for
 output.</p>
-<p>Tasks can be declared using the legacy <code class="docutils literal"><span class="pre">action:</span> <span class="pre">module</span> <span class="pre">options</span></code> format, but
-it is recommended that you use the more conventional <code class="docutils literal"><span class="pre">module:</span> <span class="pre">options</span></code> format.
+<p>Tasks can be declared using the legacy &#8220;action: module options&#8221; format, but
+it is recommended that you use the more conventional &#8220;module: options&#8221; format.
 This recommended format is used throughout the documentation, but you may
 encounter the older format in some playbooks.</p>
 <p>Here is what a basic task looks like. As with most modules,
-the service module takes <code class="docutils literal"><span class="pre">key=value</span></code> arguments:</p>
+the service module takes key=value arguments:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">make sure apache is running</span>
     <span class="l l-Scalar l-Scalar-Plain">service</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">name=httpd state=running</span>
 </pre></div>
 </div>
-<p>The <strong>command</strong> and <strong>shell</strong> modules are the only modules that just take a list
-of arguments and don&#8217;t use the <code class="docutils literal"><span class="pre">key=value</span></code> form.  This makes
+<p>The <cite>command</cite> and <cite>shell</cite> modules are the only modules that just take a list
+of arguments and don&#8217;t use the key=value form.  This makes
 them work as simply as you would expect:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">disable selinux</span>
     <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/sbin/setenforce 0</span>
 </pre></div>
 </div>
-<p>The <strong>command</strong> and <strong>shell</strong> module care about return codes, so if you have a command
+<p>The command and shell module care about return codes, so if you have a command
 whose successful exit code is not zero, you may wish to do this:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">run this command and ignore the result</span>
@@ -639,7 +689,7 @@ a space and indent any continuation lines:</p>
 </pre></div>
 </div>
 <p>Variables can be used in action lines.   Suppose you defined
-a variable called <code class="docutils literal"><span class="pre">vhost</span></code> in the <code class="docutils literal"><span class="pre">vars</span></code> section, you could do this:</p>
+a variable called &#8216;vhost&#8217; in the &#8216;vars&#8217; section, you could do this:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">create a virtual host file for {{ vhost }}</span>
     <span class="l l-Scalar l-Scalar-Plain">template</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">src=somefile.j2 dest=/etc/httpd/conf.d/{{ vhost }}</span>
@@ -647,7 +697,7 @@ a variable called <code class="docutils literal"><span class="pre">vhost</span><
 </div>
 <p>Those same variables are usable in templates, which we&#8217;ll get to later.</p>
 <p>Now in a very basic playbook all the tasks will be listed directly in that play, though it will usually
-make more sense to break up tasks using the <code class="docutils literal"><span class="pre">include:</span></code> directive.  We&#8217;ll show that a bit later.</p>
+make more sense to break up tasks using the &#8216;include:&#8217; directive.  We&#8217;ll show that a bit later.</p>
 </div>
 </div>
 <div class="section" id="action-shorthand">
@@ -684,7 +734,7 @@ change, but only if the file changes:</p>
      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">restart apache</span>
 </pre></div>
 </div>
-<p>The things listed in the <code class="docutils literal"><span class="pre">notify</span></code> section of a task are called
+<p>The things listed in the &#8216;notify&#8217; section of a task are called
 handlers.</p>
 <p>Handlers are lists of tasks, not really any different from regular
 tasks, that are referenced by a globally unique name.  Handlers are
@@ -708,22 +758,19 @@ won&#8217;t need them for much else.</p>
 <li>Handler names live in a global namespace.</li>
 <li>If two handler tasks have the same name, only one will run.
 <a class="reference external" href="https://github.com/ansible/ansible/issues/4943">*</a></li>
-<li>You cannot notify a handler that is defined inside of an include</li>
 </ul>
 </div>
-<p>Roles are described later on, but it&#8217;s worthwhile to point out that:</p>
-<ul class="simple">
-<li>handlers notified within <code class="docutils literal"><span class="pre">pre_tasks</span></code>, <code class="docutils literal"><span class="pre">tasks</span></code>, and <code class="docutils literal"><span class="pre">post_tasks</span></code> sections are automatically flushed in the end of section where they were notified;</li>
-<li>handlers notified within <code class="docutils literal"><span class="pre">roles</span></code> section are automatically flushed in the end of <code class="docutils literal"><span class="pre">tasks</span></code> section, but before any <code class="docutils literal"><span class="pre">tasks</span></code> handlers.</li>
-</ul>
-<p>If you ever want to flush all the handler commands immediately though, in 1.2 and later, you can:</p>
+<p>Roles are described later on.  It&#8217;s worthwhile to point out that handlers are
+automatically processed between &#8216;pre_tasks&#8217;, &#8216;roles&#8217;, &#8216;tasks&#8217;, and &#8216;post_tasks&#8217;
+sections.  If you ever want to flush all the handler commands immediately though,
+in 1.2 and later, you can:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some tasks go here</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">meta</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">flush_handlers</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some other tasks</span>
 </pre></div>
 </div>
-<p>In the above example any queued up handlers would be processed early when the <code class="docutils literal"><span class="pre">meta</span></code>
+<p>In the above example any queued up handlers would be processed early when the &#8216;meta&#8217;
 statement was reached.  This is a bit of a niche case but can come in handy from
 time to time.</p>
 </div>
@@ -739,11 +786,11 @@ Let&#8217;s run a playbook using a parallelism level of 10:</p>
 <span id="id7"></span><h2>Ansible-Pull<a class="headerlink" href="#ansible-pull" title="Permalink to this headline">¶</a></h2>
 <p>Should you want to invert the architecture of Ansible, so that nodes check in to a central location, instead
 of pushing configuration out to them, you can.</p>
-<p>The <code class="docutils literal"><span class="pre">ansible-pull</span></code> is a small script that will checkout a repo of configuration instructions from git, and then
-run <code class="docutils literal"><span class="pre">ansible-playbook</span></code> against that content.</p>
-<p>Assuming you load balance your checkout location, <code class="docutils literal"><span class="pre">ansible-pull</span></code> scales essentially infinitely.</p>
+<p>Ansible-pull is a small script that will checkout a repo of configuration instructions from git, and then
+run ansible-playbook against that content.</p>
+<p>Assuming you load balance your checkout location, ansible-pull scales essentially infinitely.</p>
 <p>Run <code class="docutils literal"><span class="pre">ansible-pull</span> <span class="pre">--help</span></code> for details.</p>
-<p>There&#8217;s also a <a class="reference external" href="https://github.com/ansible/ansible-examples/blob/master/language_features/ansible_pull.yml">clever playbook</a> available to configure <code class="docutils literal"><span class="pre">ansible-pull</span></code> via a crontab from push mode.</p>
+<p>There&#8217;s also a <a class="reference external" href="https://github.com/ansible/ansible-examples/blob/master/language_features/ansible_pull.yml">clever playbook</a> available to configure ansible-pull via a crontab from push mode.</p>
 </div>
 <div class="section" id="tips-and-tricks">
 <span id="id8"></span><h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h2>
@@ -800,17 +847,8 @@ can do this:</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
