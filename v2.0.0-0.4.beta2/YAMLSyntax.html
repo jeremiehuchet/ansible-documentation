@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>YAML Syntax &mdash; Ansible Documentation</title>
+  <title>YAML Syntax &mdash; Ansible v2.0.0-0.4.beta2 Documentation</title>
   
 
   
@@ -51,8 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
-        <link rel="next" title="Porting Guide" href="porting_guide_2.0.html"/>
+    <link rel="top" title="Ansible v2.0.0-0.4.beta2 Documentation" href="index.html"/>
         <link rel="prev" title="Glossary" href="glossary.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -92,7 +91,7 @@
       src="_static/images/logo_invert.png"
       alt="Ansible Logo">
     <div class="DocSiteNav-title">
-      Documentation
+      Documentation v2.0.0-0.4.beta2
     </div>
   </a>
 
@@ -112,6 +111,71 @@
         </a>
       </div>
 
+      <div class="wy-side-nav-search" style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
+
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
+      </div>
+
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
@@ -124,7 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -142,14 +206,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become.html">Ansible Privilege Escalation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -168,7 +231,6 @@
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
 </ul>
@@ -179,7 +241,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -295,21 +356,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -317,9 +363,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -340,17 +393,15 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+          <!-- Tower ads -->
+          <a class="DocSiteBanner" href="http://www.ansible.com/tower?utm_source=docs">
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_1.png">
+            </div>
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_2.png">
+            </div>
+          </a>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -380,47 +431,48 @@ is used in practice.</p>
 Each item in the list is a list of key/value pairs, commonly
 called a &#8220;hash&#8221; or a &#8220;dictionary&#8221;.  So, we need to know how
 to write lists and dictionaries in YAML.</p>
-<p>There&#8217;s another small quirk to YAML.  All YAML files (regardless of their association with Ansible or not) can optionally
-begin with <code class="docutils literal"><span class="pre">---</span></code> and end with <code class="docutils literal"><span class="pre">...</span></code>.  This is part of the YAML format and indicates the start and end of a document.</p>
-<p>All members of a list are lines beginning at the same indentation level starting with a <code class="docutils literal"><span class="pre">&quot;-</span> <span class="pre">&quot;</span></code> (a dash and a space):</p>
+<p>There&#8217;s another small quirk to YAML.  All YAML files (regardless of their association with
+Ansible or not) should begin with <code class="docutils literal"><span class="pre">---</span></code>.  This is part of the YAML
+format and indicates the start of a document.</p>
+<p>All members of a list are lines beginning at the same indentation level starting
+with a <code class="docutils literal"><span class="pre">&quot;-</span> <span class="pre">&quot;</span></code> (a dash and a space):</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="c1"># A list of tasty fruits</span>
-<span class="l l-Scalar l-Scalar-Plain">fruits</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Apple</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Orange</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Strawberry</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Mango</span>
-<span class="nn">...</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Apple</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Orange</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Strawberry</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Mango</span>
 </pre></div>
 </div>
 <p>A dictionary is represented in a simple <code class="docutils literal"><span class="pre">key:</span> <span class="pre">value</span></code> form (the colon must be followed by a space):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1"># An employee record</span>
-<span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">martin</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Martin D&#39;vloper</span>
-    <span class="l l-Scalar l-Scalar-Plain">job</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Developer</span>
-    <span class="l l-Scalar l-Scalar-Plain">skill</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Elite</span>
-</pre></div>
-</div>
-<p>Dictionaries and lists can also be represented in an abbreviated form if you really want to:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="l l-Scalar l-Scalar-Plain">employees</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">martin</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">name</span><span class="p p-Indicator">:</span> <span class="nv">Martin D&#39;vloper</span><span class="p p-Indicator">,</span> <span class="nv">job</span><span class="p p-Indicator">:</span> <span class="nv">Developer</span><span class="p p-Indicator">,</span> <span class="nv">skill</span><span class="p p-Indicator">:</span> <span class="nv">Elite</span><span class="p p-Indicator">}</span>
-<span class="l l-Scalar l-Scalar-Plain">fruits</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;Apple&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;Orange&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;Strawberry&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;Mango&#39;</span><span class="p p-Indicator">]</span>
+<span class="c1"># An employee record</span>
+<span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Example Developer</span>
+<span class="l l-Scalar l-Scalar-Plain">job</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Developer</span>
+<span class="l l-Scalar l-Scalar-Plain">skill</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Elite</span>
 </pre></div>
 </div>
-<p id="truthiness">Ansible doesn&#8217;t really use these too much, but you can also specify a boolean value (true/false) in several forms:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">create_key</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<p>Dictionaries can also be represented in an abbreviated form if you really want to:</p>
+<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="c1"># An employee record</span>
+<span class="p p-Indicator">{</span><span class="nv">name</span><span class="p p-Indicator">:</span> <span class="nv">Example Developer</span><span class="p p-Indicator">,</span> <span class="nv">job</span><span class="p p-Indicator">:</span> <span class="nv">Developer</span><span class="p p-Indicator">,</span> <span class="nv">skill</span><span class="p p-Indicator">:</span> <span class="nv">Elite</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<p id="truthiness">Ansible doesn&#8217;t really use these too much, but you can also specify a
+boolean value (true/false) in several forms:</p>
+<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="l l-Scalar l-Scalar-Plain">create_key</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
 <span class="l l-Scalar l-Scalar-Plain">needs_agent</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
 <span class="l l-Scalar l-Scalar-Plain">knows_oop</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="l l-Scalar l-Scalar-Plain">likes_emacs</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">TRUE</span>
 <span class="l l-Scalar l-Scalar-Plain">uses_cvs</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
-<p>Let&#8217;s combine what we learned so far in an arbitrary YAML example.
-This really has nothing to do with Ansible, but will give you a feel for the format:</p>
+<p>Let&#8217;s combine what we learned so far in an arbitrary YAML example.  This really
+has nothing to do with Ansible, but will give you a feel for the format:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="c1"># An employee record</span>
-<span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Martin D&#39;vloper</span>
+<span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Example Developer</span>
 <span class="l l-Scalar l-Scalar-Plain">job</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Developer</span>
 <span class="l l-Scalar l-Scalar-Plain">skill</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Elite</span>
 <span class="l l-Scalar l-Scalar-Plain">employed</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -435,7 +487,8 @@ This really has nothing to do with Ansible, but will give you a feel for the for
     <span class="l l-Scalar l-Scalar-Plain">dotnet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Lame</span>
 </pre></div>
 </div>
-<p>That&#8217;s all you really need to know about YAML to start writing <cite>Ansible</cite> playbooks.</p>
+<p>That&#8217;s all you really need to know about YAML to start writing
+<cite>Ansible</cite> playbooks.</p>
 </div>
 <div class="section" id="gotchas">
 <h2>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h2>
@@ -451,13 +504,6 @@ This really has nothing to do with Ansible, but will give you a feel for the for
 <p>Further, Ansible uses &#8220;{{ var }}&#8221; for variables.  If a value after a colon starts
 with a &#8220;{&#8221;, YAML will think it is a dictionary, so you must quote it, like so:</p>
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">foo</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">variable</span><span class="nv"> </span><span class="s">}}&quot;</span>
-</pre></div>
-</div>
-<p>The same applies for strings that start or contain any YAML special characters `` [] {} : &gt; | `` .</p>
-<p>Boolean conversion is helpful, but this can be a problem when you want a literal <cite>yes</cite> or other boolean values as a string.
-In these cases just use quotes:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">non_boolean</span><span class="p p-Indicator">:</span> <span class="s">&quot;yes&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">other_string</span><span class="p p-Indicator">:</span> <span class="s">&quot;False&quot;</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -485,8 +531,6 @@ In these cases just use quotes:</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="porting_guide_2.0.html" class="btn btn-neutral float-right" title="Porting Guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
-      
       
         <a href="glossary.html" class="btn btn-neutral" title="Glossary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
@@ -495,17 +539,8 @@ In these cases just use quotes:</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
