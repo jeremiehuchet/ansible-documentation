@@ -14,15 +14,14 @@ test -d $basedir/_ansible || git clone git@github.com:ansible/ansible.git $based
 test -d $basedir/_docs || git clone git@github.com:jeremiehuchet/ansible-documentation.git $basedir/_docs
 (cd $basedir/_docs ; git fetch origin ; git checkout -f gh-pages)
 
-for branch in $(cd $basedir/_ansible ; git branch -la | grep '^ *remotes/origin/release' | sed 's/^ *remotes\/origin\///') ; do
+for tag in $(cd $basedir/_ansible ; git tag -l | grep  -v '^0') ; do
   echo
-  echo ">>> $branch"
+  echo ">>> $tag"
   echo
-  version=$(echo $branch | sed 's/^release//')
-  if [ ! -d $basedir/_docs/$version ] ; then
+  if [ ! -d $basedir/_docs/$tag ] ; then
     (cd $basedir/_ansible/docsite ; make viewdocs)
-    cp -r $basedir/_ansible/docsite/htmlout $basedir/_docs/$version
-    (cd $basedir/_docs ; git commit -a -m "Ansible $version documentation")
+    cp -r $basedir/_ansible/docsite/htmlout $basedir/_docs/$tag
+    (cd $basedir/_docs ; git add $tag ; git commit -m "Ansible $tag documentation")
   fi
 done
 
