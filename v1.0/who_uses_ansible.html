@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Ansible Modules &mdash; Ansible v1.0 Documentation</title>
+    <title>Who Uses Ansible &mdash; Ansible v1.0 Documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -29,8 +29,8 @@
     <script type="text/javascript" src="_static/bootstrap-scrollspy.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Ansible v1.0 Documentation" href="index.html" />
-    <link rel="next" title="Playbooks" href="playbooks.html" />
-    <link rel="prev" title="Command Line Examples And Next Steps" href="examples.html" />
+    <link rel="next" title="Ansible Resources" href="contrib.html" />
+    <link rel="prev" title="Module Development" href="moduledev.html" />
 <script type="text/javascript">
 (function () {
   /**
@@ -116,11 +116,11 @@ s.parentNode.insertBefore(ga, s);
 	    <li class="dropdown" data-dropdown="dropdown">
   <a href="index.html"
      class="dropdown-toggle">Chapter</a>
-  <span class="globaltoc"><ul class="current">
+  <span class="globaltoc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patterns.html">Inventory &amp; Patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Command Line Examples And Next Steps</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Ansible Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Ansible Modules</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
@@ -132,8 +132,8 @@ s.parentNode.insertBefore(ga, s);
 <li class="toctree-l1"><a class="reference internal" href="api.html">API &amp; Integrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moduledev.html">Module Development</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="who_uses_ansible.html">Who Uses Ansible</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Who Uses Ansible</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Ansible Resources</a></li>
 </ul>
 </span>
@@ -142,11 +142,7 @@ s.parentNode.insertBefore(ga, s);
   <a href="#"
      class="dropdown-toggle">Page</a>
   <span class="localtoc"><ul>
-<li><a class="reference internal" href="#">Ansible Modules</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#writing-your-own-modules">Writing your own modules</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Who Uses Ansible</a></li>
 </ul>
 </span>
 </li>
@@ -169,76 +165,35 @@ s.parentNode.insertBefore(ga, s);
 
 <div class="container">
    
-  <div class="section" id="ansible-modules">
-<h1><a class="toc-backref" href="#contents">Ansible Modules</a><a class="headerlink" href="#ansible-modules" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
-<ul class="simple">
-<li><a class="reference internal" href="#ansible-modules" id="id1">Ansible Modules</a><ul>
-<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
-<li><a class="reference internal" href="#writing-your-own-modules" id="id3">Writing your own modules</a></li>
+  <div class="section" id="who-uses-ansible">
+<span id="id1"></span><h1>Who Uses Ansible<a class="headerlink" href="#who-uses-ansible" title="Permalink to this headline">¶</a></h1>
+<p>The following is an opt-in list of just some of the folks using Ansible &#8211; to get your company details here, <a class="reference external" href="mailto:michael&#46;dehaan&#37;&#52;&#48;gmail&#46;com">Email Michael</a>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.altalang.com">Alta Language Services</a> - language testing, solutions, and translation services</li>
+<li><a class="reference external" href="http://www.aspiro.com/en/TV/">Aspiro TV</a> - Media Streaming</li>
+<li><a class="reference external" href="http://basho.com">Basho</a> - makers of NoSQL engine Riak</li>
+<li><a class="reference external" href="http://catn.com">CatN Hosting</a> - scalable Cloud hosting</li>
+<li><a class="reference external" href="http://cygate.se">Cygate AB</a> - IT solutions from Malmo, Sweeden</li>
+<li><a class="reference external" href="http://dsquare.be">D square NV</a> - Process industry data mining, Belgium</li>
+<li><a class="reference external" href="http://dagit.net">Dag IT Solutions</a> - Enterprise Linux &amp; Beyond</li>
+<li><a class="reference external" href="http://duke.edu">Duke University Economics</a> - Research &amp; Education</li>
+<li><a class="reference external" href="http://www.eucalyptus.com">Eucalyptus Systems Inc.</a> - Makers of the AWS-compatible private cloud platform</li>
+<li><a class="reference external" href="http://fedoraproject.org">The Fedora Project</a> - Produces the Popular Linux Distribution</li>
+<li><a class="reference external" href="http://fourkitchens.com">Four Kitchens</a> - The Drupal Experts</li>
+<li><a class="reference external" href="http://hp.com">HP (Germany)</a> - HP</li>
+<li><a class="reference external" href="http://lizenzfrei.at/">Lizenfrei.at</a> - Open Source consulting and development, Austria</li>
+<li><a class="reference external" href="http://www.schmoozecom.com/">Schmooze Com</a> - Creators of Industry Leading PBX Platforms</li>
+<li><a class="reference external" href="http://www.grid.auth.gr/en/">Scientific Computing Center, Aristotle Univ. of Thessaloniki</a> - Grid/Cloud-Based Scientific Computing</li>
+<li><a class="reference external" href="http://skylines.io">Skylines.io</a> - Real time photo search engine</li>
+<li><a class="reference external" href="http://steelhouse.com">Steelhouse</a> - Behavioral commerce</li>
+<li><a class="reference external" href="http://tranquilhosting.com">Tranquil Hosting</a> - Managed Linux Hosting Services</li>
+<li><a class="reference external" href="http://www.t-f-t.net/">Tomorrow Focus Technologies GmbH</a> - Running some of the biggest web sites in Europe</li>
+<li><a class="reference external" href="http://123i.com.br">123i.com.br</a> - Find real estate in Brazil</li>
+<li><a class="reference external" href="http://ginsys.eu/">Ginsys</a> - Linux infrastructure consulting from Belgium</li>
+<li><a class="reference external" href="http://www.action.io/">Action.IO</a> - Action.IO Cloud Development Platform</li>
 </ul>
-</li>
-</ul>
-</div>
-<div class="section" id="introduction">
-<h2><a class="toc-backref" href="#contents">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Ansible ships with a number of modules (called the &#8216;module library&#8217;)
-that can be executed directly on remote hosts or through <a class="reference internal" href="playbooks.html"><em>Playbooks</em></a>.
-Users can also write their own modules.   These modules can control system
-resources, like services, packages, or files (anything really), or
-handle executing system commands.</p>
-<p>Let&#8217;s review how we execute three different modules from the command line:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>ansible webservers -m service -a &quot;name=httpd state=running&quot;
-ansible webservers -m ping
-ansible webservers -m command -a &quot;/sbin/reboot -t now&quot;
-</pre></div>
-</div>
-<p>Each module supports taking arguments.  Nearly all modules take <code class="docutils literal"><span class="pre">key=value</span></code>
-arguments, space delimited.  Some modules take no arguments, and the
-command/shell modules simply take the string of the command you want to run.</p>
-<p>From playbooks, Ansible modules are executed in a very similar way:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>- name: reboot the servers
-  action: command /sbin/reboot -t now
-</pre></div>
-</div>
-<p>Version 0.8 and higher support the following shorter syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>- name: reboot the servers
-  command: /sbin/reboot -t now
-</pre></div>
-</div>
-<p>All modules technically return JSON format data, though if you are using the
-command line or playbooks, you don&#8217;t really need to know much about
-that.  If you&#8217;re writing your own module, you care, and this means you do
-not have to write modules in any particular language &#8211; you get to choose.</p>
-<p>Modules are <cite>idempotent</cite>, meaning they will seek to avoid changes to the system unless a change needs to be made.  When using Ansible
-playbooks, these modules can trigger &#8216;change events&#8217; in the form of notifying &#8216;handlers&#8217;
-to run additional tasks.</p>
-<p>Let&#8217;s see what&#8217;s available in the Ansible module library, out of the box:</p>
-</div>
-<div class="section" id="writing-your-own-modules">
-<h2><a class="toc-backref" href="#contents">Writing your own modules</a><a class="headerlink" href="#writing-your-own-modules" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="moduledev.html"><em>Module Development</em></a>.</p>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="contrib.html"><em>Ansible Resources</em></a></dt>
-<dd>User contributed playbooks, modules, and articles</dd>
-<dt><a class="reference internal" href="examples.html"><em>Command Line Examples And Next Steps</em></a></dt>
-<dd>Examples of using modules in /usr/bin/ansible</dd>
-<dt><a class="reference internal" href="playbooks.html"><em>Playbooks</em></a></dt>
-<dd>Examples of using modules with /usr/bin/ansible-playbook</dd>
-<dt><a class="reference internal" href="moduledev.html"><em>Module Development</em></a></dt>
-<dd>How to write your own modules</dd>
-<dt><a class="reference internal" href="api.html"><em>API &amp; Integrations</em></a></dt>
-<dd>Examples of using modules with the Python API</dd>
-<dt><a class="reference external" href="http://groups.google.com/group/ansible-project">Mailing List</a></dt>
-<dd>Questions? Help? Ideas?  Stop by the list on Google Groups</dd>
-<dt><a class="reference external" href="http://irc.freenode.net">irc.freenode.net</a></dt>
-<dd>#ansible IRC chat channel</dd>
-</dl>
-</div>
-</div>
+</div></blockquote>
 </div>
 
 
