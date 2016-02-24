@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Frequently Asked Questions &mdash; Ansible Documentation</title>
+  <title>Frequently Asked Questions &mdash; Ansible v1.9.1-1 Documentation</title>
   
 
   
@@ -51,9 +51,9 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.9.1-1 Documentation" href="index.html"/>
         <link rel="next" title="Glossary" href="glossary.html"/>
-        <link rel="prev" title="Testing Strategies" href="test_strategies.html"/> 
+        <link rel="prev" title="Ansible Galaxy" href="galaxy.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -75,9 +75,6 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
-
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,29 +84,78 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
   <!-- End Google Tag Manager -->
 
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
-
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -123,8 +169,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -136,20 +181,16 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_filters.html">Jinja2 filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_conditionals.html">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -158,19 +199,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_strategies.html">Testing Strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a><ul>
@@ -179,7 +217,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -206,17 +243,14 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -250,21 +284,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -295,21 +329,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -317,9 +336,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -340,17 +366,17 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+<!-- AnsibleFest and free eBook preview stuff -->
+<center>
+<a href="http://www.ansible.com/tower?utm_source=docs">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636235-png/DL_Folder/festlondon-docs.png">
+</a>
+<a href="http://www.ansible.com/ansible-book">
+<img src="http://www.ansible.com/hs-fs/hub/330046/file-2031636250-png/DL_Folder/Ebook-docs.png">
+</a>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+</center>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -368,37 +394,35 @@
   <div class="section" id="frequently-asked-questions">
 <h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
 <p>Here are some commonly-asked questions and their answers.</p>
-<div class="section" id="how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">
-<span id="set-environment"></span><h2>How can I set the PATH or any other environment variable for a task or entire playbook?<a class="headerlink" href="#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook" title="Permalink to this headline">¶</a></h2>
-<p>Setting environment variables can be done with the <cite>environment</cite> keyword. It can be used at task or play level:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">PATH</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">ansible_env.PATH</span><span class="nv"> </span><span class="s">}}:/thingy/bin&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">SOME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
-</pre></div>
-</div>
-</div>
+<p id="users-and-ports">If you are looking to set environment varialbes remotely for your project (in a task, not locally for Ansible)
+The keyword is simply <cite>environment</cite></p>
+<dl class="docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a></dt>
+<dd><dl class="first last docutils">
+<dt>environment:</dt>
+<dd>PATH:$PATH:/thingy/bin</dd>
+</dl>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
 <div class="section" id="how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">
 <h2>How do I handle different machines needing different user accounts or ports to log in with?<a class="headerlink" href="#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with" title="Permalink to this headline">¶</a></h2>
 <p>Setting inventory variables in the inventory file is the easiest way.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Ansible 2.0 has deprecated the “ssh” from <code class="docutils literal"><span class="pre">ansible_ssh_user</span></code>, <code class="docutils literal"><span class="pre">ansible_ssh_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_ssh_port</span></code> to become <code class="docutils literal"><span class="pre">ansible_user</span></code>, <code class="docutils literal"><span class="pre">ansible_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_port</span></code>. If you are using a version of Ansible prior to 2.0,  you should continue using the older style variables (<code class="docutils literal"><span class="pre">ansible_ssh_*</span></code>). These shorter variables are ignored, without warning, in older versions of Ansible.</p>
-</div>
 <p>For instance, suppose these hosts have different usernames and ports:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">webservers</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">asdf.example.com  ansible_port=5000   ansible_user=alice</span>
-<span class="l l-Scalar l-Scalar-Plain">jkl.example.com   ansible_port=5001   ansible_user=bob</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[webservers]
+asdf.example.com  ansible_ssh_port=5000   ansible_ssh_user=alice
+jkl.example.com   ansible_ssh_port=5001   ansible_ssh_user=bob
 </pre></div>
 </div>
 <p>You can also dictate the connection type to be used, if you want:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">testcluster</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">localhost           ansible_connection=local</span>
-<span class="l l-Scalar l-Scalar-Plain">/path/to/chroot1    ansible_connection=chroot</span>
-<span class="l l-Scalar l-Scalar-Plain">foo.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">bar.example.com</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[testcluster]
+localhost           ansible_connection=local
+/path/to/chroot1    ansible_connection=chroot
+foo.example.com
+bar.example.com
 </pre></div>
 </div>
-<p>You may also wish to keep these in group variables instead, or file them in a group_vars/&lt;groupname&gt; file.
+<p>You may also wish to keep these in group variables instead, or file in them in a group_vars/&lt;groupname&gt; file.
 See the rest of the documentation for more information about how to organize variables.</p>
 </div>
 <div class="section" id="how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">
@@ -412,32 +436,6 @@ older clients.  If you are using RHEL 6, CentOS 6, SLES 10 or SLES 11 the versio
 consider managing from a Fedora or openSUSE client even though you are managing older nodes, or just use paramiko.</p>
 <p>We keep paramiko as the default as if you are first installing Ansible on an EL box, it offers a better experience
 for new users.</p>
-</div>
-<div class="section" id="how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">
-<span id="use-ssh-jump-hosts"></span><h2>How do I configure a jump host to access servers that I have no direct access to?<a class="headerlink" href="#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to" title="Permalink to this headline">¶</a></h2>
-<p>With Ansible 2, you can set a <cite>ProxyCommand</cite> in the
-<cite>ansible_ssh_common_args</cite> inventory variable. Any arguments specified in
-this variable are added to the sftp/scp/ssh command line when connecting
-to the relevant host(s). Consider the following inventory group:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">gatewayed</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">foo ansible_host=192.0.2.1</span>
-<span class="l l-Scalar l-Scalar-Plain">bar ansible_host=192.0.2.2</span>
-</pre></div>
-</div>
-<p>You can create <cite>group_vars/gatewayed.yml</cite> with the following contents:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_ssh_common_args</span><span class="p p-Indicator">:</span> <span class="s">&#39;-o</span><span class="nv"> </span><span class="s">ProxyCommand=&quot;ssh</span><span class="nv"> </span><span class="s">-W</span><span class="nv"> </span><span class="s">%h:%p</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">user@gateway.example.com&quot;&#39;</span>
-</pre></div>
-</div>
-<p>Ansible will append these arguments to the command line when trying to
-connect to any hosts in the group <cite>gatewayed</cite>. (These arguments are used
-in addition to any <cite>ssh_args</cite> from <cite>ansible.cfg</cite>, so you do not need to
-repeat global <cite>ControlPersist</cite> settings in <cite>ansible_ssh_common_args</cite>.)</p>
-<p>Note that <cite>ssh -W</cite> is available only with OpenSSH 5.4 or later. With
-older versions, it&#8217;s necessary to execute <cite>nc %h:%p</cite> or some equivalent
-command on the bastion host.</p>
-<p>With earlier versions of Ansible, it was necessary to configure a
-suitable <cite>ProxyCommand</cite> for one or more hosts in <cite>~/.ssh/config</cite>,
-or globally by setting <cite>ssh_args</cite> in <cite>ansible.cfg</cite>.</p>
 </div>
 <div class="section" id="how-do-i-speed-up-management-inside-ec2">
 <span id="ec2-cloud-performance"></span><h2>How do I speed up management inside EC2?<a class="headerlink" href="#how-do-i-speed-up-management-inside-ec2" title="Permalink to this headline">¶</a></h2>
@@ -467,48 +465,41 @@ self-contained, and works well with things like git submodules for sharing conte
 </div>
 <div class="section" id="where-does-the-configuration-file-live-and-what-can-i-configure-in-it">
 <span id="configuration-file"></span><h2>Where does the configuration file live and what can I configure in it?<a class="headerlink" href="#where-does-the-configuration-file-live-and-what-can-i-configure-in-it" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="intro_configuration.html"><em>Configuration file</em></a>.</p>
+<p>See <a class="reference internal" href="intro_configuration.html"><em>The Ansible Configuration File</em></a>.</p>
 </div>
 <div class="section" id="how-do-i-disable-cowsay">
 <span id="who-would-ever-want-to-disable-cowsay-but-ok-here-is-how"></span><h2>How do I disable cowsay?<a class="headerlink" href="#how-do-i-disable-cowsay" title="Permalink to this headline">¶</a></h2>
 <p>If cowsay is installed, Ansible takes it upon itself to make your day happier when running playbooks.  If you decide
 that you would like to work in a professional cow-free environment, you can either uninstall cowsay, or set an environment variable:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">export ANSIBLE_NOCOWS=1</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>export ANSIBLE_NOCOWS=1
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-do-i-see-a-list-of-all-of-the-ansible-variables">
 <span id="browse-facts"></span><h2>How do I see a list of all of the ansible_ variables?<a class="headerlink" href="#how-do-i-see-a-list-of-all-of-the-ansible-variables" title="Permalink to this headline">¶</a></h2>
 <p>Ansible by default gathers &#8220;facts&#8221; about the machines under management, and these facts can be accessed in Playbooks and in templates. To see a list of all of the facts that are available about a machine, you can run the &#8220;setup&#8221; module as an ad-hoc action:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible -m setup hostname</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible -m setup hostname
 </pre></div>
 </div>
-<p>This will print out a dictionary of all of the facts that are available for that particular host. You might want to pipe the output to a pager.</p>
-</div>
-<div class="section" id="how-do-i-see-all-the-inventory-vars-defined-for-my-host">
-<span id="browse-inventory-vars"></span><h2>How do I see all the inventory vars defined for my host?<a class="headerlink" href="#how-do-i-see-all-the-inventory-vars-defined-for-my-host" title="Permalink to this headline">¶</a></h2>
-<p>You can see the resulting vars you define in inventory running the following command:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible -m debug -a &quot;var=hostvars[&#39;hostname&#39;]&quot; localhost</span>
-</pre></div>
-</div>
+<p>This will print out a dictionary of all of the facts that are available for that particular host.</p>
 </div>
 <div class="section" id="how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">
 <span id="host-loops"></span><h2>How do I loop over a list of hosts in a group, inside of a template?<a class="headerlink" href="#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template" title="Permalink to this headline">¶</a></h2>
 <p>A pretty common pattern is to iterate over a list of hosts inside of a host group, perhaps to populate a template configuration
 file with a list of servers. To do this, you can just access the &#8220;$groups&#8221; dictionary in your template, like this:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{% for host in groups[&#39;db_servers&#39;] %}
+<div class="highlight-python"><div class="highlight"><pre><span></span>{% for host in groups[&#39;db_servers&#39;] %}
     {{ host }}
 {% endfor %}
 </pre></div>
 </div>
 <p>If you need to access facts about these hosts, for instance, the IP address of each hostname, you need to make sure that the facts have been populated. For example, make sure you have a play that talks to db_servers:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">db_servers</span>
-  <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="c1"># doesn&#39;t matter what you do, just that they were talked to previously.</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts:  db_servers
+  tasks:
+    - # doesn&#39;t matter what you do, just that they were talked to previously.
 </pre></div>
 </div>
 <p>Then you can use the facts inside your template, like this:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{% for host in groups[&#39;db_servers&#39;] %}
+<div class="highlight-python"><div class="highlight"><pre><span></span>{% for host in groups[&#39;db_servers&#39;] %}
    {{ hostvars[host][&#39;ansible_eth0&#39;][&#39;ipv4&#39;][&#39;address&#39;] }}
 {% endfor %}
 </pre></div>
@@ -518,7 +509,7 @@ file with a list of servers. To do this, you can just access the &#8220;$groups&
 <span id="programatic-access-to-a-variable"></span><h2>How do I access a variable name programmatically?<a class="headerlink" href="#how-do-i-access-a-variable-name-programmatically" title="Permalink to this headline">¶</a></h2>
 <p>An example may come up where we need to get the ipv4 address of an arbitrary interface, where the interface to be used may be supplied
 via a role parameter or other input.  Variable names can be built by adding strings together, like so:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">hostvars</span><span class="p p-Indicator">[</span><span class="nv">inventory_hostname</span><span class="p p-Indicator">][</span><span class="s">&#39;ansible_&#39;</span> <span class="nv">+ which_interface</span><span class="p p-Indicator">][</span><span class="s">&#39;ipv4&#39;</span><span class="p p-Indicator">][</span><span class="s">&#39;address&#39;</span><span class="p p-Indicator">]</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">hostvars</span><span class="p">[</span><span class="n">inventory_hostname</span><span class="p">][</span><span class="s1">&#39;ansible_&#39;</span> <span class="o">+</span> <span class="n">which_interface</span><span class="p">][</span><span class="s1">&#39;ipv4&#39;</span><span class="p">][</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>The trick about going through hostvars is necessary because it&#8217;s a dictionary of the entire namespace of variables.  &#8216;inventory_hostname&#8217;
@@ -531,16 +522,17 @@ are using dynamic inventory, which host is the &#8216;first&#8217; may not be co
 was static and predictable.  (If you are using <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>, it will use database order, so this isn&#8217;t a problem even if you are using cloud
 based inventory scripts).</p>
 <p>Anyway, here&#8217;s the trick:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">hostvars</span><span class="p p-Indicator">[</span><span class="nv">groups</span><span class="p p-Indicator">[</span><span class="s">&#39;webservers&#39;</span><span class="p p-Indicator">][</span><span class="nv">0</span><span class="p p-Indicator">]][</span><span class="s">&#39;ansible_eth0&#39;</span><span class="p p-Indicator">][</span><span class="s">&#39;ipv4&#39;</span><span class="p p-Indicator">][</span><span class="s">&#39;address&#39;</span><span class="p p-Indicator">]</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">hostvars</span><span class="p">[</span><span class="n">groups</span><span class="p">[</span><span class="s1">&#39;webservers&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="s1">&#39;ansible_eth0&#39;</span><span class="p">][</span><span class="s1">&#39;ipv4&#39;</span><span class="p">][</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Notice how we&#8217;re pulling out the hostname of the first machine of the webservers group.  If you are doing this in a template, you
 could use the Jinja2 &#8216;#set&#8217; directive to simplify this, or in a playbook, you could also use set_fact:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">set_fact</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">headnode={{ groups[[&#39;webservers&#39;][0]] }}</span>
-
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg={{ hostvars[headnode].ansible_eth0.ipv4.address }}</span>
-</pre></div>
-</div>
+<blockquote>
+<div><ul class="simple">
+<li>set_fact: headnode={{ groups[[&#8216;webservers&#8217;][0]] }}</li>
+<li>debug: msg={{ hostvars[headnode].ansible_eth0.ipv4.address }}</li>
+</ul>
+</div></blockquote>
 <p>Notice how we interchanged the bracket syntax for dots &#8211; that can be done anywhere.</p>
 </div>
 <div class="section" id="how-do-i-copy-files-recursively-onto-a-target-host">
@@ -551,22 +543,22 @@ could use the Jinja2 &#8216;#set&#8217; directive to simplify this, or in a play
 <span id="shell-env"></span><h2>How do I access shell environment variables?<a class="headerlink" href="#how-do-i-access-shell-environment-variables" title="Permalink to this headline">¶</a></h2>
 <p>If you just need to access existing variables, use the &#8216;env&#8217; lookup plugin.  For example, to access the value of the HOME
 environment variable on management machine:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="c1"># ...</span>
-  <span class="l l-Scalar l-Scalar-Plain">vars</span><span class="p p-Indicator">:</span>
-     <span class="l l-Scalar l-Scalar-Plain">local_home</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">lookup(&#39;env&#39;,&#39;HOME&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# ...
+  vars:
+     local_home: &quot;{{ lookup(&#39;env&#39;,&#39;HOME&#39;) }}&quot;
 </pre></div>
 </div>
 <p>If you need to set environment variables, see the Advanced Playbooks section about environments.</p>
 <p>Ansible 1.4 will also make remote environment variables available via facts in the &#8216;ansible_env&#8217; variable:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">ansible_env.SOME_VARIABLE</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">ansible_env</span><span class="o">.</span><span class="n">SOME_VARIABLE</span> <span class="p">}}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-do-i-generate-crypted-passwords-for-the-user-module">
 <span id="user-passwords"></span><h2>How do I generate crypted passwords for the user module?<a class="headerlink" href="#how-do-i-generate-crypted-passwords-for-the-user-module" title="Permalink to this headline">¶</a></h2>
 <p>The mkpasswd utility that is available on most Linux systems is a great option:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">mkpasswd --method=SHA-512</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">mkpasswd</span> <span class="o">--</span><span class="n">method</span><span class="o">=</span><span class="n">SHA</span><span class="o">-</span><span class="mi">512</span>
 </pre></div>
 </div>
 <p>If this utility is not installed on your system (e.g. you are using OS X) then you can still easily
@@ -575,14 +567,13 @@ password hashing library is installed.</p>
 <blockquote>
 <div>pip install passlib</div></blockquote>
 <p>Once the library is ready, SHA512 password values can then be generated as follows:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">python -c &quot;from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>python -c &quot;from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="can-i-get-training-on-ansible-or-find-commercial-support">
 <span id="commercial-support"></span><h2>Can I get training on Ansible or find commercial support?<a class="headerlink" href="#can-i-get-training-on-ansible-or-find-commercial-support" title="Permalink to this headline">¶</a></h2>
-<p>Yes!  See our <a class="reference external" href="http://www.ansible.com/services">services page</a> for information on our services and training offerings. Support is also included with <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>. Email <a class="reference external" href="mailto:info&#37;&#52;&#48;ansible&#46;com">info<span>&#64;</span>ansible<span>&#46;</span>com</a> for further details.</p>
-<p>We also offer free web-based training classes on a regular basis. See our <a class="reference external" href="http://www.ansible.com/webinars-training">webinar page</a> for more info on upcoming webinars.</p>
+<p>Yes!  See <a class="reference external" href="http://www.ansible.com/ansible-guru">our Guru offering</a> for online support, and support is also included with <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>. You can also read our <a class="reference external" href="http://www.ansible.com/ansible-services">service page</a> and email <a class="reference external" href="mailto:info&#37;&#52;&#48;ansible&#46;com">info<span>&#64;</span>ansible<span>&#46;</span>com</a> for further details.</p>
 </div>
 <div class="section" id="is-there-a-web-interface-rest-api-etc">
 <span id="web-interface"></span><h2>Is there a web interface / REST API / etc?<a class="headerlink" href="#is-there-a-web-interface-rest-api-etc" title="Permalink to this headline">¶</a></h2>
@@ -596,23 +587,23 @@ and easy to use. See <a class="reference internal" href="tower.html"><em>Ansible
 <div class="section" id="how-do-i-keep-secret-data-in-my-playbook">
 <span id="keep-secret-data"></span><h2>How do I keep secret data in my playbook?<a class="headerlink" href="#how-do-i-keep-secret-data-in-my-playbook" title="Permalink to this headline">¶</a></h2>
 <p>If you would like to keep secret data in your Ansible content and still share it publicly or keep things in source control, see <a class="reference internal" href="playbooks_vault.html"><em>Vault</em></a>.</p>
-<p>In Ansible 1.8 and later, if you have a task that you don&#8217;t want to show the results or command given to it when using -v (verbose) mode, the following task or playbook attribute can be useful:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">secret task</span>
-  <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/bin/do_something --value={{ secret_value }}</span>
-  <span class="l l-Scalar l-Scalar-Plain">no_log</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<p id="i-dont-see-my-question">In Ansible 1.8 and later, if you have a task that you don&#8217;t want to show the results or command given to it when using -v (verbose) mode, the following task or playbook attribute can be useful:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: secret task
+  shell: /usr/bin/do_something --value={{ secret_value }}
+  no_log: True
 </pre></div>
 </div>
 <p>This can be used to keep verbose output but hide sensitive information from others who would otherwise like to be able to see the output.</p>
 <p>The no_log attribute can also apply to an entire play:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
-  <span class="l l-Scalar l-Scalar-Plain">no_log</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts: all
+  no_log: True
 </pre></div>
 </div>
 <p>Though this will make the play somewhat difficult to debug.  It&#8217;s recommended that this
 be applied to single tasks only, once a playbook is completed.</p>
 </div>
 <div class="section" id="i-don-t-see-my-question-here">
-<span id="i-dont-see-my-question"></span><h2>I don&#8217;t see my question here<a class="headerlink" href="#i-don-t-see-my-question-here" title="Permalink to this headline">¶</a></h2>
+<h2>I don&#8217;t see my question here<a class="headerlink" href="#i-don-t-see-my-question-here" title="Permalink to this headline">¶</a></h2>
 <p>Please see the section below for a link to IRC and the Google Group, where you can ask your question there.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -642,28 +633,19 @@ be applied to single tasks only, once a playbook is completed.</p>
         <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="test_strategies.html" class="btn btn-neutral" title="Testing Strategies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="galaxy.html" class="btn btn-neutral" title="Ansible Galaxy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
