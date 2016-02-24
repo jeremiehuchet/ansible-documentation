@@ -7,14 +7,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Tag Manager Data Layer -->
-  <script>
-   dataLayer = [];
-  </script>
-  <!-- End Google Tag Manager Data Layer -->
+<!-- begin analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29861888-3', 'ansible.com');
+  ga('send', 'pageview');
+
+</script>
+<!-- end analytics -->
 
   
-  <title>Conditionals &mdash; Ansible Documentation</title>
+  <title>Conditionals &mdash; Ansible v1.6.0 Documentation</title>
   
 
   
@@ -51,10 +58,10 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.6.0 Documentation" href="index.html"/>
         <link rel="up" title="Playbooks" href="playbooks.html"/>
         <link rel="next" title="Loops" href="playbooks_loops.html"/>
-        <link rel="prev" title="Jinja2 filters" href="playbooks_filters.html"/> 
+        <link rel="prev" title="Variables" href="playbooks_variables.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -76,41 +83,82 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
-
 </head>
 
 <body class="wy-body-for-nav">
-
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PSB293" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
-  <!-- End Google Tag Manager -->
-
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '015514069825911246756:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -124,9 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
@@ -134,42 +180,32 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_intro.html">Intro to Playbooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_roles.html">Playbook Roles and Include Statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_variables.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_filters.html">Jinja2 filters</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_vault.html">Vault</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_startnstep.html">Start and Step</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
 </ul>
@@ -179,45 +215,20 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_inventory.html">Developing Dynamic Inventory Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information &amp; Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="community.html#ansible-users">Ansible Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="community.html#for-current-and-prospective-developers">For Current and Prospective Developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="community.html#other-topics">Other Topics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="galaxy.html#the-website">The Website</a></li>
-<li class="toctree-l2"><a class="reference internal" href="galaxy.html#the-ansible-galaxy-command-line-tool">The ansible-galaxy command line tool</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="test_strategies.html">Testing Strategies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#integrating-testing-with-ansible-playbooks">Integrating Testing With Ansible Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#the-right-level-of-testing">The Right Level of Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#check-mode-as-a-drift-test">Check Mode As A Drift Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#modules-that-are-useful-for-testing">Modules That Are Useful for Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#testing-lifecycle">Testing Lifecycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#integrating-testing-with-rolling-updates">Integrating Testing With Rolling Updates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#achieving-continuous-deployment">Achieving Continuous Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +262,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +307,7 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
 </ul>
 
         
@@ -318,9 +315,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -340,19 +344,6 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
-
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
   <li><a href="">Conditionals</a></li>
@@ -367,17 +358,17 @@
           <div id="page-content">
           
   <div class="section" id="conditionals">
-<h1><a class="toc-backref" href="#id2">Conditionals</a><a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id8">Conditionals</a><a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="topics">
 <p class="topic-title first">Topics</p>
 <ul class="simple">
-<li><a class="reference internal" href="#conditionals" id="id2">Conditionals</a><ul>
-<li><a class="reference internal" href="#the-when-statement" id="id3">The When Statement</a></li>
-<li><a class="reference internal" href="#loading-in-custom-facts" id="id4">Loading in Custom Facts</a></li>
-<li><a class="reference internal" href="#applying-when-to-roles-and-includes" id="id5">Applying &#8216;when&#8217; to roles and includes</a></li>
-<li><a class="reference internal" href="#conditional-imports" id="id6">Conditional Imports</a></li>
-<li><a class="reference internal" href="#selecting-files-and-templates-based-on-variables" id="id7">Selecting Files And Templates Based On Variables</a></li>
-<li><a class="reference internal" href="#register-variables" id="id8">Register Variables</a></li>
+<li><a class="reference internal" href="#conditionals" id="id1">Conditionals</a><ul>
+<li><a class="reference internal" href="#the-when-statement" id="id2">The When Statement</a></li>
+<li><a class="reference internal" href="#loading-in-custom-facts" id="id3">Loading in Custom Facts</a></li>
+<li><a class="reference internal" href="#applying-when-to-roles-and-includes" id="id4">Applying &#8216;when&#8217; to roles and includes</a></li>
+<li><a class="reference internal" href="#conditional-imports" id="id5">Conditional Imports</a></li>
+<li><a class="reference internal" href="#selecting-files-and-templates-based-on-variables" id="id6">Selecting Files And Templates Based On Variables</a></li>
+<li><a class="reference internal" href="#register-variables" id="id7">Register Variables</a></li>
 </ul>
 </li>
 </ul>
@@ -387,51 +378,57 @@ or previous task result.  In some cases, the values of variables may depend on o
 Further, additional groups can be created to manage hosts based on
 whether the hosts match other criteria.   There are many options to control execution flow in Ansible.</p>
 <p>Let&#8217;s dig into what they are.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#conditionals" id="id8">Conditionals</a><ul>
+<li><a class="reference internal" href="#the-when-statement" id="id9">The When Statement</a></li>
+<li><a class="reference internal" href="#loading-in-custom-facts" id="id10">Loading in Custom Facts</a></li>
+<li><a class="reference internal" href="#applying-when-to-roles-and-includes" id="id11">Applying &#8216;when&#8217; to roles and includes</a></li>
+<li><a class="reference internal" href="#conditional-imports" id="id12">Conditional Imports</a></li>
+<li><a class="reference internal" href="#selecting-files-and-templates-based-on-variables" id="id13">Selecting Files And Templates Based On Variables</a></li>
+<li><a class="reference internal" href="#register-variables" id="id14">Register Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="the-when-statement">
-<span id="id1"></span><h2><a class="toc-backref" href="#id3">The When Statement</a><a class="headerlink" href="#the-when-statement" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">The When Statement</a><a class="headerlink" href="#the-when-statement" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes you will want to skip a particular step on a particular host.  This could be something
 as simple as not installing a certain package if the operating system is a particular version,
 or it could be something like performing some cleanup steps if a filesystem is getting full.</p>
 <p>This is easy to do in Ansible, with the <cite>when</cite> clause, which contains a Jinja2 expression (see <a class="reference internal" href="playbooks_variables.html"><em>Variables</em></a>).
 It&#8217;s actually pretty simple:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;shutdown</span><span class="nv"> </span><span class="s">Debian</span><span class="nv"> </span><span class="s">flavored</span><span class="nv"> </span><span class="s">systems&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/sbin/shutdown -t now</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_os_family == &quot;Debian&quot;</span>
-</pre></div>
-</div>
-<p>You can also use parentheses to group conditions:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;shutdown</span><span class="nv"> </span><span class="s">CentOS</span><span class="nv"> </span><span class="s">6</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Debian</span><span class="nv"> </span><span class="s">7</span><span class="nv"> </span><span class="s">systems&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/sbin/shutdown -t now</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">(ansible_distribution == &quot;CentOS&quot; and ansible_distribution_major_version == &quot;6&quot;) or</span>
-          <span class="l l-Scalar l-Scalar-Plain">(ansible_distribution == &quot;Debian&quot; and ansible_distribution_major_version == &quot;7&quot;)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+  - name: &quot;shutdown Debian flavored systems&quot;
+    command: /sbin/shutdown -t now
+    when: ansible_os_family == &quot;Debian&quot;
 </pre></div>
 </div>
 <p>A number of Jinja2 &#8220;filters&#8221; can also be used in when statements, some of which are unique
 and provided by Ansible.  Suppose we want to ignore the error of one statement and then
 decide to do something conditionally based on success or failure:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/bin/false</span>
-    <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result</span>
-    <span class="l l-Scalar l-Scalar-Plain">ignore_errors</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/bin/something</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|failed</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/bin/something_else</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|succeeded</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/bin/still/something_else</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|skipped</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+  - command: /bin/false
+    register: result
+    ignore_errors: True
+  - command: /bin/something
+    when: result|failed
+  - command: /bin/something_else
+    when: result|success
+  - command: /bin/still/something_else
+    when: result|skipped
 </pre></div>
 </div>
 <p>Note that was a little bit of foreshadowing on the &#8216;register&#8217; statement.  We&#8217;ll get to it a bit later in this chapter.</p>
 <p>As a reminder, to see what facts are available on a particular system, you can do:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible hostname.example.com -m setup</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible hostname.example.com -m setup
 </pre></div>
 </div>
 <p>Tip: Sometimes you&#8217;ll get back a variable that&#8217;s a string and you&#8217;ll want to do a math operation comparison on it.  You can do this like so:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;only on Red Hat 6, derivatives, and later&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_os_family == &quot;RedHat&quot; and ansible_lsb.major_release|int &gt;= 6</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+  - shell: echo &quot;only on Red Hat 6, derivatives, and later&quot;
+    when: ansible_os_family == &quot;RedHat&quot; and ansible_lsb.major_release|int &gt;= 6
 </pre></div>
 </div>
 <div class="admonition note">
@@ -439,78 +436,75 @@ decide to do something conditionally based on success or failure:</p>
 <p class="last">the above example requires the lsb_release package on the target host in order to return the ansible_lsb.major_release fact.</p>
 </div>
 <p>Variables defined in the playbooks or inventory can also be used.  An example may be the execution of a task based on a variable&#8217;s boolean value:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">vars</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">epic</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars:
+  epic: true
 </pre></div>
 </div>
 <p>Then a conditional execution might look like:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;This certainly is epic!&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">epic</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - shell: echo &quot;This certainly is epic!&quot;
+      when: epic
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;This certainly isn&#39;t epic!&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">not epic</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - shell: echo &quot;This certainly isn&#39;t epic!&quot;
+      when: not epic
 </pre></div>
 </div>
 <p>If a required variable has not been set, you can skip or fail using Jinja2&#8217;s
 <cite>defined</cite> test. For example:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;I&#39;ve got &#39;{{ foo }}&#39; and am not afraid to use it!&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">foo is defined</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - shell: echo &quot;I&#39;ve got &#39;{{ foo }}&#39; and am not afraid to use it!&quot;
+      when: foo is defined
 
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fail</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;Bailing out. this play requires &#39;bar&#39;&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bar is undefined</span>
+    - fail: msg=&quot;Bailing out. this play requires &#39;bar&#39;&quot;
+      when: bar is not defined
 </pre></div>
 </div>
 <p>This is especially useful in combination with the conditional import of vars
 files (see below).</p>
 <p>Note that when combining <cite>when</cite> with <cite>with_items</cite> (see <a class="reference internal" href="playbooks_loops.html"><em>Loops</em></a>), be aware that the <cite>when</cite> statement is processed separately for each item. This is by design:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo {{ item }}</span>
-      <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">2</span><span class="p p-Indicator">,</span> <span class="nv">4</span><span class="p p-Indicator">,</span> <span class="nv">6</span><span class="p p-Indicator">,</span> <span class="nv">8</span><span class="p p-Indicator">,</span> <span class="nv">10</span> <span class="p p-Indicator">]</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">item &gt; 5</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - command: echo {{ item }}
+      with_items: [ 0, 2, 4, 6, 8, 10 ]
+      when: item &gt; 5
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-in-custom-facts">
-<h2><a class="toc-backref" href="#id4">Loading in Custom Facts</a><a class="headerlink" href="#loading-in-custom-facts" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Loading in Custom Facts</a><a class="headerlink" href="#loading-in-custom-facts" title="Permalink to this headline">¶</a></h2>
 <p>It&#8217;s also easy to provide your own facts if you want, which is covered in <a class="reference internal" href="developing_modules.html"><em>Developing Modules</em></a>.  To run them, just
 make a call to your own custom fact gathering module at the top of your list of tasks, and variables returned
 there will be accessible to future tasks:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gather site specific fact data</span>
-      <span class="l l-Scalar l-Scalar-Plain">action</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">site_facts</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/bin/thingy</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">my_custom_fact_just_retrieved_from_the_remote_system == &#39;1234&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
+    - name: gather site specific fact data
+      action: site_facts
+    - command: /usr/bin/thingy
+      when: my_custom_fact_just_retrieved_from_the_remote_system == &#39;1234&#39;
 </pre></div>
 </div>
 </div>
 <div class="section" id="applying-when-to-roles-and-includes">
-<h2><a class="toc-backref" href="#id5">Applying &#8216;when&#8217; to roles and includes</a><a class="headerlink" href="#applying-when-to-roles-and-includes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Applying &#8216;when&#8217; to roles and includes</a><a class="headerlink" href="#applying-when-to-roles-and-includes" title="Permalink to this headline">¶</a></h2>
 <p>Note that if you have several tasks that all share the same conditional statement, you can affix the conditional
-to a task include statement as below.  All the tasks get evaluated, but the conditional is applied to each and every task:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">include</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tasks/sometasks.yml</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="s">&quot;&#39;reticulating</span><span class="nv"> </span><span class="s">splines&#39;</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">output&quot;</span>
+to a task include statement as below.  Note this does not work with playbook includes, just task includes.  All the tasks
+get evaluated, but the conditional is applied to each and every task:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- include: tasks/sometasks.yml
+  when: &quot;&#39;reticulating splines&#39; in output&quot;
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In versions prior to 2.0 this worked with task includes but not playbook includes.  2.0 allows it to work with both.</p>
-</div>
 <p>Or with a role:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
-  <span class="l l-Scalar l-Scalar-Plain">roles</span><span class="p p-Indicator">:</span>
-     <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span> <span class="nv">role</span><span class="p p-Indicator">:</span> <span class="nv">debian_stock_config</span><span class="p p-Indicator">,</span> <span class="nv">when</span><span class="p p-Indicator">:</span> <span class="nv">ansible_os_family == &#39;Debian&#39;</span> <span class="p p-Indicator">}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- hosts: webservers
+  roles:
+     - { role: debian_stock_config, when: ansible_os_family == &#39;Debian&#39; }
 </pre></div>
 </div>
 <p>You will note a lot of &#8216;skipped&#8217; output by default in Ansible when using this approach on systems that don&#8217;t match the criteria.
 Read up on the &#8216;group_by&#8217; module in the <a class="reference internal" href="modules.html"><em>About Modules</em></a> docs for a more streamlined way to accomplish the same thing.</p>
 </div>
 <div class="section" id="conditional-imports">
-<h2><a class="toc-backref" href="#id6">Conditional Imports</a><a class="headerlink" href="#conditional-imports" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Conditional Imports</a><a class="headerlink" href="#conditional-imports" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is an advanced topic that is infrequently used.  You can probably skip this section.</p>
@@ -519,15 +513,15 @@ Read up on the &#8216;group_by&#8217; module in the <a class="reference internal
 Having one playbook that works on multiple platforms and OS versions is a good example.</p>
 <p>As an example, the name of the Apache package may be different between CentOS and Debian,
 but it is easily handled with a minimum of syntax in an Ansible Playbook:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
-  <span class="l l-Scalar l-Scalar-Plain">remote_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-  <span class="l l-Scalar l-Scalar-Plain">vars_files</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;vars/common.yml&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span> <span class="s">&quot;vars/{{</span><span class="nv"> </span><span class="s">ansible_os_family</span><span class="nv"> </span><span class="s">}}.yml&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;vars/os_defaults.yml&quot;</span> <span class="p p-Indicator">]</span>
-  <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">make sure apache is running</span>
-    <span class="l l-Scalar l-Scalar-Plain">service</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">name={{ apache }} state=running</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+- hosts: all
+  remote_user: root
+  vars_files:
+    - &quot;vars/common.yml&quot;
+    - [ &quot;vars/{{ ansible_os_family }}.yml&quot;, &quot;vars/os_defaults.yml&quot; ]
+  tasks:
+  - name: make sure apache is running
+    service: name={{ apache }} state=running
 </pre></div>
 </div>
 <div class="admonition note">
@@ -536,10 +530,10 @@ but it is easily handled with a minimum of syntax in an Ansible Playbook:</p>
 the list of filenames being defined for vars_files.</p>
 </div>
 <p>As a reminder, the various YAML files contain just keys and values:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="c1"># for vars/CentOS.yml</span>
-<span class="l l-Scalar l-Scalar-Plain">apache</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
-<span class="l l-Scalar l-Scalar-Plain">somethingelse</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+# for vars/CentOS.yml
+apache: httpd
+somethingelse: 42
 </pre></div>
 </div>
 <p>How does this work?  If the operating system was &#8216;CentOS&#8217;, the first file Ansible would try to import
@@ -549,12 +543,12 @@ On Debian, it would instead first look towards &#8216;vars/Debian.yml&#8217; ins
 falling back on &#8216;vars/os_defaults.yml&#8217;. Pretty simple.</p>
 <p>To use this conditional import feature, you&#8217;ll need facter or ohai installed prior to running the playbook, but
 you can of course push this out with Ansible if you like:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1"># for facter</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible -m yum -a &quot;pkg=facter state=present&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible -m yum -a &quot;pkg=ruby-json state=present&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span># for facter
+ansible -m yum -a &quot;pkg=facter ensure=installed&quot;
+ansible -m yum -a &quot;pkg=ruby-json ensure=installed&quot;
 
-<span class="l l-Scalar l-Scalar-Plain"># for ohai</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible -m yum -a &quot;pkg=ohai state=present&quot;</span>
+# for ohai
+ansible -m yum -a &quot;pkg=ohai ensure=installed&quot;
 </pre></div>
 </div>
 <p>Ansible&#8217;s approach to configuration &#8211; separating variables from tasks, keeps your playbooks
@@ -563,7 +557,7 @@ in more streamlined &amp; auditable configuration rules &#8211; especially becau
 minimum of decision points to track.</p>
 </div>
 <div class="section" id="selecting-files-and-templates-based-on-variables">
-<h2><a class="toc-backref" href="#id7">Selecting Files And Templates Based On Variables</a><a class="headerlink" href="#selecting-files-and-templates-based-on-variables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Selecting Files And Templates Based On Variables</a><a class="headerlink" href="#selecting-files-and-templates-based-on-variables" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is an advanced topic that is infrequently used.  You can probably skip this section.</p>
@@ -571,34 +565,34 @@ minimum of decision points to track.</p>
 <p>Sometimes a configuration file you want to copy, or a template you will use may depend on a variable.
 The following construct selects the first available file appropriate for the variables of a given host, which is often much cleaner than putting a lot of if conditionals in a template.</p>
 <p>The following example shows how to template out a configuration file that was very different between, say, CentOS and Debian:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">template a file</span>
-  <span class="l l-Scalar l-Scalar-Plain">template</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">src={{ item }} dest=/etc/myapp/foo.conf</span>
-  <span class="l l-Scalar l-Scalar-Plain">with_first_found</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">files</span><span class="p p-Indicator">:</span>
-       <span class="p p-Indicator">-</span> <span class="p p-Indicator">{{</span> <span class="nv">ansible_distribution</span> <span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">.conf</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">default.conf</span>
-      <span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search_location_one/somedir/</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/opt/other_location/somedir/</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: template a file
+  template: src={{ item }} dest=/etc/myapp/foo.conf
+  with_first_found:
+    - files:
+       - {{ ansible_distribution }}.conf
+       - default.conf
+      paths:
+       - search_location_one/somedir/
+       - /opt/other_location/somedir/
 </pre></div>
 </div>
 </div>
 <div class="section" id="register-variables">
-<h2><a class="toc-backref" href="#id8">Register Variables</a><a class="headerlink" href="#register-variables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Register Variables</a><a class="headerlink" href="#register-variables" title="Permalink to this headline">¶</a></h2>
 <p>Often in a playbook it may be useful to store the result of a given command in a variable and access
 it later.  Use of the command module in this way can in many ways eliminate the need to write site specific facts, for
 instance, you could test for the existence of a particular program.</p>
 <p>The &#8216;register&#8217; keyword decides what variable to save a result in.  The resulting variables can be used in templates, action lines, or <em>when</em> statements.  It looks like this (in an obviously trivial example):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">test play</span>
-  <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: test play
+  hosts: all
 
-  <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
+  tasks:
 
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cat /etc/motd</span>
-        <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">motd_contents</span>
+      - shell: cat /etc/motd
+        register: motd_contents
 
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;motd contains the word hi&quot;</span>
-        <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">motd_contents.stdout.find(&#39;hi&#39;) != -1</span>
+      - shell: echo &quot;motd contains the word hi&quot;
+        when: motd_contents.stdout.find(&#39;hi&#39;) != -1
 </pre></div>
 </div>
 <p>As shown previously, the registered variable&#8217;s string contents are accessible with the &#8216;stdout&#8217; value.
@@ -606,19 +600,19 @@ The registered result can be used in the &#8220;with_items&#8221; of a task if i
 a list (or already is a list) as shown below.  &#8220;stdout_lines&#8221; is already available on the object as
 well though you could also call &#8220;home_dirs.stdout.split()&#8221; if you wanted, and could split by other
 fields:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">registered variable usage as a with_items list</span>
-  <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: registered variable usage as a with_items list
+  hosts: all
 
-  <span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
+  tasks:
 
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">retrieve the list of home directories</span>
-        <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ls /home</span>
-        <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">home_dirs</span>
+      - name: retrieve the list of home directories
+        command: ls /home
+        register: home_dirs
 
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">add home dirs to the backup spooler</span>
-        <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">path=/mnt/bkspool/{{ item }} src=/home/{{ item }} state=link</span>
-        <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">home_dirs.stdout_lines</span>
-        <span class="c1"># same as with_items: home_dirs.stdout.split()</span>
+      - name: add home dirs to the backup spooler
+        file: path=/mnt/bkspool/{{ item }} src=/home/{{ item }} state=link
+        with_items: home_dirs.stdout_lines
+        # same as with_items: home_dirs.stdout.split()
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -653,28 +647,19 @@ fields:</p>
         <a href="playbooks_loops.html" class="btn btn-neutral float-right" title="Loops"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="playbooks_filters.html" class="btn btn-neutral" title="Jinja2 filters"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="playbooks_variables.html" class="btn btn-neutral" title="Variables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2014 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
