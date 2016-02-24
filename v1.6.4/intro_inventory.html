@@ -7,14 +7,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Tag Manager Data Layer -->
-  <script>
-   dataLayer = [];
-  </script>
-  <!-- End Google Tag Manager Data Layer -->
+<!-- begin analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29861888-3', 'ansible.com');
+  ga('send', 'pageview');
+
+</script>
+<!-- end analytics -->
 
   
-  <title>Inventory &mdash; Ansible Documentation</title>
+  <title>Inventory &mdash; Ansible v1.6.4 Documentation</title>
   
 
   
@@ -51,7 +58,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.6.4 Documentation" href="index.html"/>
         <link rel="up" title="Introduction" href="intro.html"/>
         <link rel="next" title="Dynamic Inventory" href="intro_dynamic_inventory.html"/>
         <link rel="prev" title="Getting Started" href="intro_getting_started.html"/> 
@@ -76,41 +83,82 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
-
 </head>
 
 <body class="wy-body-for-nav">
-
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PSB293" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
-  <!-- End Google Tag Manager -->
-
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '015514069825911246756:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -124,9 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Video</a></li>
@@ -134,42 +180,32 @@
 <li class="toctree-l2"><a class="reference internal" href="playbooks_intro.html">Intro to Playbooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_roles.html">Playbook Roles and Include Statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_variables.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_filters.html">Jinja2 filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_conditionals.html">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_vault.html">Vault</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_startnstep.html">Start and Step</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
 </ul>
@@ -179,45 +215,20 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_inventory.html">Developing Dynamic Inventory Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
-<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information &amp; Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="community.html#ansible-users">Ansible Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="community.html#for-current-and-prospective-developers">For Current and Prospective Developers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="community.html#other-topics">Other Topics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="galaxy.html#the-website">The Website</a></li>
-<li class="toctree-l2"><a class="reference internal" href="galaxy.html#the-ansible-galaxy-command-line-tool">The ansible-galaxy command line tool</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="test_strategies.html">Testing Strategies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#integrating-testing-with-ansible-playbooks">Integrating Testing With Ansible Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#the-right-level-of-testing">The Right Level of Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#check-mode-as-a-drift-test">Check Mode As A Drift Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#modules-that-are-useful-for-testing">Modules That Are Useful for Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#testing-lifecycle">Testing Lifecycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#integrating-testing-with-rolling-updates">Integrating Testing With Rolling Updates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#achieving-continuous-deployment">Achieving Continuous Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_strategies.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">Community Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galaxy.html">Ansible Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +262,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +307,7 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guru.html">Ansible Guru</a></li>
 </ul>
 
         
@@ -318,9 +315,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -340,19 +344,6 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
-
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
   <li><a href="">Inventory</a></li>
@@ -391,17 +382,17 @@ multiple inventory files at the same time (explained below) and also
 pull inventory from dynamic or cloud sources, as described in <a class="reference internal" href="intro_dynamic_inventory.html"><em>Dynamic Inventory</em></a>.</p>
 <div class="section" id="hosts-and-groups">
 <span id="inventoryformat"></span><h2><a class="toc-backref" href="#id5">Hosts and Groups</a><a class="headerlink" href="#hosts-and-groups" title="Permalink to this headline">¶</a></h2>
-<p>The format for /etc/ansible/hosts is an INI-like format and looks like this:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">mail.example.com</span>
+<p>The format for /etc/ansible/hosts is an INI format and looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">mail</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 
-<span class="l l-Scalar l-Scalar-Plain">[webservers]</span>
-<span class="l l-Scalar l-Scalar-Plain">foo.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">bar.example.com</span>
+<span class="p">[</span><span class="n">webservers</span><span class="p">]</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">bar</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 
-<span class="l l-Scalar l-Scalar-Plain">[dbservers]</span>
-<span class="l l-Scalar l-Scalar-Plain">one.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">two.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">three.example.com</span>
+<span class="p">[</span><span class="n">dbservers</span><span class="p">]</span>
+<span class="n">one</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">two</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">three</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 <p>The things in brackets are group names, which are used in classifying systems
@@ -412,35 +403,31 @@ If you do, note that variables will come from all of the groups they are a membe
 after the hostname with a colon.  Ports listed in your SSH config file won&#8217;t be used with the paramiko
 connection but will be used with the openssh connection.</p>
 <p>To make things explicit, it is suggested that you set them if things are not running on the default port:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">badwolf.example.com:5309</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>badwolf.example.com:5309
 </pre></div>
 </div>
-<p>Suppose you have just static IPs and want to set up some aliases that live in your host file, or you are connecting through tunnels.  You can also describe hosts like this:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">jumper ansible_port=5555 ansible_host=192.168.1.50</span>
+<p>Suppose you have just static IPs and want to set up some aliases that don&#8217;t live in your host file, or you are connecting through tunnels.  You can do things like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>jumper ansible_ssh_port=5555 ansible_ssh_host=192.168.1.50
 </pre></div>
 </div>
 <p>In the above example, trying to ansible against the host alias &#8220;jumper&#8221; (which may not even be a real hostname) will contact 192.168.1.50 on port 5555.  Note that this is using a feature of the inventory file to define some special variables.  Generally speaking this is not the best
 way to define variables that describe your system policy, but we&#8217;ll share suggestions on doing this later.  We&#8217;re just getting started.</p>
 <p>Adding a lot of hosts?  If you have a lot of hosts following similar patterns you can do this rather than listing each hostname:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">webservers</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">www[01:50].example.com</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">webservers</span><span class="p">]</span>
+<span class="n">www</span><span class="p">[</span><span class="mo">01</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 <p>For numeric patterns, leading zeros can be included or removed, as desired. Ranges are inclusive.  You can also define alphabetic ranges:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">databases</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">db-[a:f].example.com</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[databases]
+db-[a:f].example.com
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Ansible 2.0 has deprecated the “ssh” from <code class="docutils literal"><span class="pre">ansible_ssh_user</span></code>, <code class="docutils literal"><span class="pre">ansible_ssh_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_ssh_port</span></code> to become <code class="docutils literal"><span class="pre">ansible_user</span></code>, <code class="docutils literal"><span class="pre">ansible_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_port</span></code>. If you are using a version of Ansible prior to 2.0,  you should continue using the older style variables (<code class="docutils literal"><span class="pre">ansible_ssh_*</span></code>). These shorter variables are ignored, without warning, in older versions of Ansible.</p>
-</div>
 <p>You can also select the connection type and user on a per host basis:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">targets</span><span class="p p-Indicator">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[targets]
 
-<span class="l l-Scalar l-Scalar-Plain">localhost              ansible_connection=local</span>
-<span class="l l-Scalar l-Scalar-Plain">other1.example.com     ansible_connection=ssh        ansible_user=mpdehaan</span>
-<span class="l l-Scalar l-Scalar-Plain">other2.example.com     ansible_connection=ssh        ansible_user=mdehaan</span>
+localhost              ansible_connection=local
+other1.example.com     ansible_connection=ssh        ansible_ssh_user=mpdehaan
+other2.example.com     ansible_connection=ssh        ansible_ssh_user=mdehaan
 </pre></div>
 </div>
 <p>As mentioned above, setting these in the inventory file is only a shorthand, and we&#8217;ll discuss how to store them in individual files
@@ -449,51 +436,53 @@ in the &#8216;host_vars&#8217; directory a bit later on.</p>
 <div class="section" id="host-variables">
 <span id="id2"></span><h2><a class="toc-backref" href="#id6">Host Variables</a><a class="headerlink" href="#host-variables" title="Permalink to this headline">¶</a></h2>
 <p>As alluded to above, it is easy to assign variables to hosts that will be used later in playbooks:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">atlanta</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">host1 http_port=80 maxRequestsPerChild=808</span>
-<span class="l l-Scalar l-Scalar-Plain">host2 http_port=303 maxRequestsPerChild=909</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[atlanta]
+host1 http_port=80 maxRequestsPerChild=808
+host2 http_port=303 maxRequestsPerChild=909
 </pre></div>
 </div>
 </div>
 <div class="section" id="group-variables">
 <span id="id3"></span><h2><a class="toc-backref" href="#id7">Group Variables</a><a class="headerlink" href="#group-variables" title="Permalink to this headline">¶</a></h2>
 <p>Variables can also be applied to an entire group at once:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">atlanta</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">host1</span>
-<span class="l l-Scalar l-Scalar-Plain">host2</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[atlanta]
+host1
+host2
 
-<span class="l l-Scalar l-Scalar-Plain">[atlanta:vars]</span>
-<span class="l l-Scalar l-Scalar-Plain">ntp_server=ntp.atlanta.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">proxy=proxy.atlanta.example.com</span>
+[atlanta:vars]
+ntp_server=ntp.atlanta.example.com
+proxy=proxy.atlanta.example.com
 </pre></div>
 </div>
 </div>
 <div class="section" id="groups-of-groups-and-group-variables">
 <span id="subgroups"></span><h2><a class="toc-backref" href="#id8">Groups of Groups, and Group Variables</a><a class="headerlink" href="#groups-of-groups-and-group-variables" title="Permalink to this headline">¶</a></h2>
-<p>It is also possible to make groups of groups using the <code class="docutils literal"><span class="pre">:children</span></code> suffix. Just like above, you can apply variables using <code class="docutils literal"><span class="pre">:vars</span></code>:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="nv">atlanta</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">host1</span>
-<span class="l l-Scalar l-Scalar-Plain">host2</span>
+<p>It is also possible to make groups of groups and assign
+variables to groups.  These variables can be used by /usr/bin/ansible-playbook, but not
+/usr/bin/ansible:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>[atlanta]
+host1
+host2
 
-<span class="l l-Scalar l-Scalar-Plain">[raleigh]</span>
-<span class="l l-Scalar l-Scalar-Plain">host2</span>
-<span class="l l-Scalar l-Scalar-Plain">host3</span>
+[raleigh]
+host2
+host3
 
-<span class="l l-Scalar l-Scalar-Plain">[southeast:children]</span>
-<span class="l l-Scalar l-Scalar-Plain">atlanta</span>
-<span class="l l-Scalar l-Scalar-Plain">raleigh</span>
+[southeast:children]
+atlanta
+raleigh
 
-<span class="l l-Scalar l-Scalar-Plain">[southeast:vars]</span>
-<span class="l l-Scalar l-Scalar-Plain">some_server=foo.southeast.example.com</span>
-<span class="l l-Scalar l-Scalar-Plain">halon_system_timeout=30</span>
-<span class="l l-Scalar l-Scalar-Plain">self_destruct_countdown=60</span>
-<span class="l l-Scalar l-Scalar-Plain">escape_pods=2</span>
+[southeast:vars]
+some_server=foo.southeast.example.com
+halon_system_timeout=30
+self_destruct_countdown=60
+escape_pods=2
 
-<span class="l l-Scalar l-Scalar-Plain">[usa:children]</span>
-<span class="l l-Scalar l-Scalar-Plain">southeast</span>
-<span class="l l-Scalar l-Scalar-Plain">northeast</span>
-<span class="l l-Scalar l-Scalar-Plain">southwest</span>
-<span class="l l-Scalar l-Scalar-Plain">northwest</span>
+[usa:children]
+southeast
+northeast
+southwest
+northwest
 </pre></div>
 </div>
 <p>If you need to store lists or hash data, or prefer to keep host and group specific variables
@@ -505,114 +494,67 @@ separate from the inventory file, see the next section.</p>
 <p>In addition to storing variables directly in the INI file, host
 and group variables can be stored in individual files relative to the
 inventory file.</p>
-<p>These variable files are in YAML format. Valid file extensions include &#8216;.yml&#8217;, &#8216;.yaml&#8217;, &#8216;.json&#8217;,
-or no file extension. See <a class="reference internal" href="YAMLSyntax.html"><em>YAML Syntax</em></a> if you are new to YAML.</p>
+<p>These variable files are in YAML format.  See <a class="reference internal" href="YAMLSyntax.html"><em>YAML Syntax</em></a> if you are new to YAML.</p>
 <p>Assuming the inventory file path is:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/etc/ansible/hosts</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>/etc/ansible/hosts
 </pre></div>
 </div>
 <p>If the host is named &#8216;foosball&#8217;, and in groups &#8216;raleigh&#8217; and &#8216;webservers&#8217;, variables
 in YAML files at the following locations will be made available to the host:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/etc/ansible/group_vars/raleigh</span> <span class="c1"># can optionally end in &#39;.yml&#39;, &#39;.yaml&#39;, or &#39;.json&#39;</span>
-<span class="l l-Scalar l-Scalar-Plain">/etc/ansible/group_vars/webservers</span>
-<span class="l l-Scalar l-Scalar-Plain">/etc/ansible/host_vars/foosball</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>/etc/ansible/group_vars/raleigh
+/etc/ansible/group_vars/webservers
+/etc/ansible/host_vars/foosball
 </pre></div>
 </div>
 <p>For instance, suppose you have hosts grouped by datacenter, and each datacenter
 uses some different servers.  The data in the groupfile &#8216;/etc/ansible/group_vars/raleigh&#8217; for
 the &#8216;raleigh&#8217; group might look like:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="l l-Scalar l-Scalar-Plain">ntp_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">acme.example.org</span>
-<span class="l l-Scalar l-Scalar-Plain">database_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">storage.example.org</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>---
+ntp_server: acme.example.org
+database_server: storage.example.org
 </pre></div>
 </div>
 <p>It is ok if these files do not exist, as this is an optional feature.</p>
-<p>As an advanced use-case, you can create <em>directories</em> named after your groups or hosts, and
-Ansible will read all the files in these directories. An example with the &#8216;raleigh&#8217; group:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/etc/ansible/group_vars/raleigh/db_settings</span>
-<span class="l l-Scalar l-Scalar-Plain">/etc/ansible/group_vars/raleigh/cluster_settings</span>
-</pre></div>
-</div>
-<p>All hosts that are in the &#8216;raleigh&#8217; group will have the variables defined in these files
-available to them. This can be very useful to keep your variables organized when a single
-file starts to be too big, or when you want to use <a class="reference internal" href="playbooks_vault.html"><em>Ansible Vault</em></a> on a part of a group&#8217;s
-variables. Note that this only works on Ansible 1.4 or later.</p>
-<p>Tip: In Ansible 1.2 or later the group_vars/ and host_vars/ directories can exist in
+<p>Tip: In Ansible 1.2 or later the group_vars/ and host_vars/ directories can exist in either
 the playbook directory OR the inventory directory. If both paths exist, variables in the playbook
-directory will override variables set in the inventory directory.</p>
+directory will be loaded second.</p>
 <p>Tip: Keeping your inventory file and variables in a git repo (or other version control)
 is an excellent way to track changes to your inventory and host variables.</p>
 </div>
 <div class="section" id="list-of-behavioral-inventory-parameters">
 <span id="behavioral-parameters"></span><h2><a class="toc-backref" href="#id10">List of Behavioral Inventory Parameters</a><a class="headerlink" href="#list-of-behavioral-inventory-parameters" title="Permalink to this headline">¶</a></h2>
-<p>As alluded to above, setting the following variables controls how ansible interacts with remote hosts.</p>
-<p>Host connection:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span>
-  <span class="l l-Scalar l-Scalar-Plain">Connection type to the host. Candidates are local, smart, ssh or paramiko.  The default is smart.</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Ansible 2.0 has deprecated the “ssh” from <code class="docutils literal"><span class="pre">ansible_ssh_user</span></code>, <code class="docutils literal"><span class="pre">ansible_ssh_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_ssh_port</span></code> to become <code class="docutils literal"><span class="pre">ansible_user</span></code>, <code class="docutils literal"><span class="pre">ansible_host</span></code>, and <code class="docutils literal"><span class="pre">ansible_port</span></code>. If you are using a version of Ansible prior to 2.0,  you should continue using the older style variables (<code class="docutils literal"><span class="pre">ansible_ssh_*</span></code>). These shorter variables are ignored, without warning, in older versions of Ansible.</p>
-</div>
-<p>SSH connection:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_host</span>
-  <span class="l l-Scalar l-Scalar-Plain">The name of the host to connect to, if different from the alias you wish to give to it.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_port</span>
-  <span class="l l-Scalar l-Scalar-Plain">The ssh port number, if not 22</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_user</span>
-  <span class="l l-Scalar l-Scalar-Plain">The default ssh user name to use.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span>
-  <span class="l l-Scalar l-Scalar-Plain">The ssh password to use (this is insecure, we strongly recommend using --ask-pass or SSH keys)</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_private_key_file</span>
-  <span class="l l-Scalar l-Scalar-Plain">Private key file used by ssh.  Useful if using multiple keys and you don&#39;t want to use SSH agent.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_common_args</span>
-  <span class="l l-Scalar l-Scalar-Plain">This setting is always appended to the default command line for</span>
-  <span class="l l-Scalar l-Scalar-Plain">sftp, scp, and ssh. Useful to configure a ``ProxyCommand`` for a</span>
-  <span class="l l-Scalar l-Scalar-Plain">certain host (or group).</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_sftp_extra_args</span>
-  <span class="l l-Scalar l-Scalar-Plain">This setting is always appended to the default sftp command line.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_scp_extra_args</span>
-  <span class="l l-Scalar l-Scalar-Plain">This setting is always appended to the default scp command line.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_extra_args</span>
-  <span class="l l-Scalar l-Scalar-Plain">This setting is always appended to the default ssh command line.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pipelining</span>
-  <span class="l l-Scalar l-Scalar-Plain">Determines whether or not to use SSH pipelining. This can override the</span>
-  <span class="l l-Scalar l-Scalar-Plain">``pipelining`` setting in ``ansible.cfg``.</span>
-</pre></div>
-</div>
-<p>Privilege escalation (see <a class="reference internal" href="become.html"><em>Ansible Privilege Escalation</em></a> for further details):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_become</span>
-  <span class="l l-Scalar l-Scalar-Plain">Equivalent to ansible_sudo or ansible_su, allows to force privilege escalation</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become_method</span>
-  <span class="l l-Scalar l-Scalar-Plain">Allows to set privilege escalation method</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become_user</span>
-  <span class="l l-Scalar l-Scalar-Plain">Equivalent to ansible_sudo_user or ansible_su_user, allows to set the user you become through privilege escalation</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become_pass</span>
-  <span class="l l-Scalar l-Scalar-Plain">Equivalent to ansible_sudo_pass or ansible_su_pass, allows you to set the privilege escalation password</span>
-</pre></div>
-</div>
-<p>Remote host environment parameters:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_shell_type</span>
-  <span class="l l-Scalar l-Scalar-Plain">The shell type of the target system. You should not use this setting unless you have set the &#39;executable&#39; to a non sh compatible shell.</span>
-  <span class="l l-Scalar l-Scalar-Plain">By default commands are formatted using &#39;sh&#39;-style syntax.</span>
-  <span class="l l-Scalar l-Scalar-Plain">Setting this to &#39;csh&#39; or &#39;fish&#39; will cause commands executed on target systems to follow those shell&#39;s syntax instead.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_python_interpreter</span>
-  <span class="l l-Scalar l-Scalar-Plain">The target host python path. This is useful for systems with more</span>
-  <span class="l l-Scalar l-Scalar-Plain">than one Python or not located at &quot;/usr/bin/python&quot; such as \*BSD, or where /usr/bin/python</span>
-  <span class="l l-Scalar l-Scalar-Plain">is not a 2.X series Python.  We do not use the &quot;/usr/bin/env&quot; mechanism as that requires the remote user&#39;s</span>
-  <span class="l l-Scalar l-Scalar-Plain">path to be set right and also assumes the &quot;python&quot; executable is named python, where the executable might</span>
-  <span class="l l-Scalar l-Scalar-Plain">be named something like &quot;python26&quot;.</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible\_\*\_interpreter</span>
-  <span class="l l-Scalar l-Scalar-Plain">Works for anything such as ruby or perl and works just like ansible_python_interpreter.</span>
-  <span class="l l-Scalar l-Scalar-Plain">This replaces shebang of modules which will run on that host.</span>
+<p>As alluded to above, setting the following variables controls how ansible interacts with remote hosts. Some we have already
+mentioned:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ansible_ssh_host
+  The name of the host to connect to, if different from the alias you wish to give to it.
+ansible_ssh_port
+  The ssh port number, if not 22
+ansible_ssh_user
+  The default ssh user name to use.
+ansible_ssh_pass
+  The ssh password to use (this is insecure, we strongly recommend using --ask-pass or SSH keys)
+ansible_sudo_pass
+  The sudo password to use (this is insecure, we strongly recommend using --ask-sudo-pass)
+ansible_connection
+  Connection type of the host. Candidates are local, ssh or paramiko.  The default is paramiko before Ansible 1.2, and &#39;smart&#39; afterwards which detects whether usage of &#39;ssh&#39; would be feasible based on whether ControlPersist is supported.
+ansible_ssh_private_key_file
+  Private key file used by ssh.  Useful if using multiple keys and you don&#39;t want to use SSH agent.
+ansible_python_interpreter
+  The target host python path. This is useful for systems with more
+  than one Python or not located at &quot;/usr/bin/python&quot; such as \*BSD, or where /usr/bin/python
+  is not a 2.X series Python.  We do not use the &quot;/usr/bin/env&quot; mechanism as that requires the remote user&#39;s
+  path to be set right and also assumes the &quot;python&quot; executable is named python, where the executable might
+  be named something like &quot;python26&quot;.
+ansible\_\*\_interpreter
+  Works for anything such as ruby or perl and works just like ansible_python_interpreter.
+  This replaces shebang of modules which will run on that host.
 </pre></div>
 </div>
 <p>Examples from a host file:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">some_host         ansible_port=2222     ansible_user=manager</span>
-<span class="l l-Scalar l-Scalar-Plain">aws_host          ansible_ssh_private_key_file=/home/example/.ssh/aws.pem</span>
-<span class="l l-Scalar l-Scalar-Plain">freebsd_host      ansible_python_interpreter=/usr/local/bin/python</span>
-<span class="l l-Scalar l-Scalar-Plain">ruby_module_host  ansible_ruby_interpreter=/usr/bin/ruby.1.9.3</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>some_host         ansible_ssh_port=2222     ansible_ssh_user=manager
+aws_host          ansible_ssh_private_key_file=/home/example/.ssh/aws.pem
+freebsd_host      ansible_python_interpreter=/usr/local/bin/python
+ruby_module_host  ansible_ruby_interpreter=/usr/bin/ruby.1.9.3
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -623,7 +565,7 @@ is an excellent way to track changes to your inventory and host variables.</p>
 <dt><a class="reference internal" href="intro_adhoc.html"><em>Introduction To Ad-Hoc Commands</em></a></dt>
 <dd>Examples of basic commands</dd>
 <dt><a class="reference internal" href="playbooks.html"><em>Playbooks</em></a></dt>
-<dd>Learning Ansible’s configuration, deployment, and orchestration language.</dd>
+<dd>Learning ansible&#8217;s configuration management language</dd>
 <dt><a class="reference external" href="http://groups.google.com/group/ansible-project">Mailing List</a></dt>
 <dd>Questions? Help? Ideas?  Stop by the list on Google Groups</dd>
 <dt><a class="reference external" href="http://irc.freenode.net">irc.freenode.net</a></dt>
@@ -650,21 +592,12 @@ is an excellent way to track changes to your inventory and host variables.</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2014 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
