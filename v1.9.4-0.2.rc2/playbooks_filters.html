@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Jinja2 filters &mdash; Ansible Documentation</title>
+  <title>Jinja2 filters &mdash; Ansible v1.9.4-0.2.rc2 Documentation</title>
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v1.9.4-0.2.rc2 Documentation" href="index.html"/>
         <link rel="up" title="Playbooks" href="playbooks.html"/>
         <link rel="next" title="Conditionals" href="playbooks_conditionals.html"/>
         <link rel="prev" title="Variables" href="playbooks_variables.html"/> 
@@ -76,8 +76,23 @@
      }
   </style>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
-    rel='stylesheet' type='text/css'>
+  <!-- Google Code for Remarketing Tag -->
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 972577926;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt=""
+              src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/972577926/?value=0&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+  <!-- End of Google Code for Remarketing Tag -->
 
 </head>
 
@@ -88,29 +103,78 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PSB293');</script>
   <!-- End Google Tag Manager -->
 
-  <a class="DocSite-nav" href="http://docs.ansible.com/">
-    <img class="DocSiteNav-logo"
-      src="_static/images/logo_invert.png"
-      alt="Ansible Logo">
-    <div class="DocSiteNav-title">
-      Documentation
-    </div>
-  </a>
-
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div style='background-color:#64C5C7'>
+        <br/>
+        <center><a href="index.html"><img src="http://cdn2.hubspot.net/hub/330046/file-445792629-png/ANSI_logotype_web_white.png" style="border-radius:0;background-color:#64C5C7;width:214px;height:26px;margin:'auto auto auto auto'"></a></center>
+        <br/>      
+      </div>
+      <div class="wy-side-nav-search" style="background-color:#64C5C7;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
 
-      <div style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
-        <a class="DocSiteProduct-header DocSiteProduct-header--core"
-          href="http://docs.ansible.com/ansible/">
-          <div class="DocSiteProduct-productName">
-            <div class="DocSiteProduct-logoText">
-              ANSIBLE
-            </div>
-          </div>
-        </a>
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
       </div>
 
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
@@ -124,8 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_dynamic_inventory.html">Dynamic Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">The Ansible Configuration File</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -137,20 +200,16 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Jinja2 filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_conditionals.html">Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_blocks.html">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_strategies.html">Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_best_practices.html">Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -159,19 +218,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">About Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_core.html">Core Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules_extra.html">Extras Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_return_values.html">Common Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#introduction">Introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides.html">Detailed Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide_aws.html">Amazon Web Services Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rax.html">Rackspace Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_gce.html">Google Cloud Platform Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_cloudstack.html">CloudStack Cloud Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_vagrant.html">Using Vagrant and Ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_strategies.html">Testing Strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Developer Information</a><ul>
@@ -180,7 +236,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -207,17 +262,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-set-the-path-or-any-other-environment-variable-for-a-task-or-entire-playbook">How can I set the PATH or any other environment variable for a task or entire playbook?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-different-machines-needing-different-user-accounts-or-ports-to-log-in-with">How do I handle different machines needing different user accounts or ports to log in with?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-get-ansible-to-reuse-connections-enable-kerberized-ssh-or-have-ansible-pay-attention-to-my-local-ssh-config-file">How do I get ansible to reuse connections, enable Kerberized SSH, or have Ansible pay attention to my local SSH config file?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to">How do I configure a jump host to access servers that I have no direct access to?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-speed-up-management-inside-ec2">How do I speed up management inside EC2?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-handle-python-pathing-not-having-a-python-2-x-in-usr-bin-python-on-a-remote-machine">How do I handle python pathing not having a Python 2.X in /usr/bin/python on a remote machine?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-best-way-to-make-content-reusable-redistributable">What is the best way to make content reusable/redistributable?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#where-does-the-configuration-file-live-and-what-can-i-configure-in-it">Where does the configuration file live and what can I configure in it?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-disable-cowsay">How do I disable cowsay?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-a-list-of-all-of-the-ansible-variables">How do I see a list of all of the ansible_ variables?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-see-all-the-inventory-vars-defined-for-my-host">How do I see all the inventory vars defined for my host?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-loop-over-a-list-of-hosts-in-a-group-inside-of-a-template">How do I loop over a list of hosts in a group, inside of a template?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-name-programmatically">How do I access a variable name programmatically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#how-do-i-access-a-variable-of-the-first-host-in-a-group">How do I access a variable of the first host in a group?</a></li>
@@ -251,21 +303,21 @@
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host">Host</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-specifier">Host Specifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#host-vars">Host Vars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#idempotency">Idempotency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#includes">Includes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#inventory-script">Inventory Script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#jinja2">Jinja2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lazy-evaluation">Lazy Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#library">Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#limit-groups">Limit Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#local-connection">Local Connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#lookup-plugin">Lookup Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#local-action">Local Action</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#loops">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html#multi-tier">Multi-Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#notify">Notify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#orchestration">Orchestration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html#paramiko">paramiko</a></li>
@@ -296,21 +348,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +355,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +385,17 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+<!-- AnsibleFest and free eBook preview stuff -->
+<center>
+<a href="http://www.ansible.com/tower?utm_source=docs">
+<img src="http://www.ansible.com/hubfs/Docs_Ads/TowerDocs.png">
+</a>
+<a href="https://www.eventbrite.com/e/ansiblefest-nyc-2015-tickets-16058031003">
+<img src="http://www.ansible.com/hubfs/Docs_Ads/Untitled_design_1.png">
+</a>
+<br/>&nbsp;<br/>
+<br/>&nbsp;<br/>
+</center>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -367,28 +411,25 @@
           <div id="page-content">
           
   <div class="section" id="jinja2-filters">
-<h1><a class="toc-backref" href="#id9">Jinja2 filters</a><a class="headerlink" href="#jinja2-filters" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id8">Jinja2 filters</a><a class="headerlink" href="#jinja2-filters" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="topics">
 <p class="topic-title first">Topics</p>
 <ul class="simple">
-<li><a class="reference internal" href="#jinja2-filters" id="id9">Jinja2 filters</a><ul>
-<li><a class="reference internal" href="#filters-for-formatting-data" id="id10">Filters For Formatting Data</a></li>
-<li><a class="reference internal" href="#filters-often-used-with-conditionals" id="id11">Filters Often Used With Conditionals</a></li>
-<li><a class="reference internal" href="#forcing-variables-to-be-defined" id="id12">Forcing Variables To Be Defined</a></li>
-<li><a class="reference internal" href="#defaulting-undefined-variables" id="id13">Defaulting Undefined Variables</a></li>
-<li><a class="reference internal" href="#omitting-undefined-variables-and-parameters" id="id14">Omitting Undefined Variables and Parameters</a></li>
-<li><a class="reference internal" href="#list-filters" id="id15">List Filters</a></li>
-<li><a class="reference internal" href="#set-theory-filters" id="id16">Set Theory Filters</a></li>
-<li><a class="reference internal" href="#version-comparison-filters" id="id17">Version Comparison Filters</a></li>
-<li><a class="reference internal" href="#random-number-filter" id="id18">Random Number Filter</a></li>
-<li><a class="reference internal" href="#shuffle-filter" id="id19">Shuffle Filter</a></li>
-<li><a class="reference internal" href="#math" id="id20">Math</a></li>
-<li><a class="reference internal" href="#ip-address-filter" id="id21">IP address filter</a></li>
-<li><a class="reference internal" href="#hashing-filters" id="id22">Hashing filters</a></li>
-<li><a class="reference internal" href="#combining-hashes-dictionaries" id="id23">Combining hashes/dictionaries</a></li>
-<li><a class="reference internal" href="#extracting-values-from-containers" id="id24">Extracting values from containers</a></li>
-<li><a class="reference internal" href="#comment-filter" id="id25">Comment Filter</a></li>
-<li><a class="reference internal" href="#other-useful-filters" id="id26">Other Useful Filters</a></li>
+<li><a class="reference internal" href="#jinja2-filters" id="id8">Jinja2 filters</a><ul>
+<li><a class="reference internal" href="#filters-for-formatting-data" id="id9">Filters For Formatting Data</a></li>
+<li><a class="reference internal" href="#filters-often-used-with-conditionals" id="id10">Filters Often Used With Conditionals</a></li>
+<li><a class="reference internal" href="#forcing-variables-to-be-defined" id="id11">Forcing Variables To Be Defined</a></li>
+<li><a class="reference internal" href="#defaulting-undefined-variables" id="id12">Defaulting Undefined Variables</a></li>
+<li><a class="reference internal" href="#omitting-undefined-variables-and-parameters" id="id13">Omitting Undefined Variables and Parameters</a></li>
+<li><a class="reference internal" href="#list-filters" id="id14">List Filters</a></li>
+<li><a class="reference internal" href="#set-theory-filters" id="id15">Set Theory Filters</a></li>
+<li><a class="reference internal" href="#version-comparison-filters" id="id16">Version Comparison Filters</a></li>
+<li><a class="reference internal" href="#random-number-filter" id="id17">Random Number Filter</a></li>
+<li><a class="reference internal" href="#shuffle-filter" id="id18">Shuffle Filter</a></li>
+<li><a class="reference internal" href="#math" id="id19">Math</a></li>
+<li><a class="reference internal" href="#ip-address-filter" id="id20">IP address filter</a></li>
+<li><a class="reference internal" href="#hashing-filters" id="id21">Hashing filters</a></li>
+<li><a class="reference internal" href="#other-useful-filters" id="id22">Other Useful Filters</a></li>
 </ul>
 </li>
 </ul>
@@ -397,536 +438,323 @@
 ships with many of these. See <a class="reference external" href="http://jinja.pocoo.org/docs/templates/#builtin-filters">builtin filters</a> in the official Jinja2 template documentation.</p>
 <p>In addition to those, Ansible supplies many more.</p>
 <div class="section" id="filters-for-formatting-data">
-<span id="id1"></span><h2><a class="toc-backref" href="#id10">Filters For Formatting Data</a><a class="headerlink" href="#filters-for-formatting-data" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id9">Filters For Formatting Data</a><a class="headerlink" href="#filters-for-formatting-data" title="Permalink to this headline">¶</a></h2>
 <p>The following filters will take a data structure in a template and render it in a slightly different format.  These
 are occasionally useful for debugging:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">some_variable | to_json</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">some_variable | to_yaml</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>For human readable output, you can use:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">some_variable | to_nice_json</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">some_variable | to_nice_yaml</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>Alternatively, you may be reading in some already formatted data:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">some_variable | from_json</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">some_variable | from_yaml</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>for example:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cat /some/path/to/file.json</span>
-    <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result</span>
-
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">set_fact</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myvar=&quot;{{ result.stdout | from_json }}&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">some_variable</span> <span class="o">|</span> <span class="n">to_nice_json</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">some_variable</span> <span class="o">|</span> <span class="n">to_nice_yaml</span> <span class="p">}}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="filters-often-used-with-conditionals">
-<span id="filters-used-with-conditionals"></span><h2><a class="toc-backref" href="#id11">Filters Often Used With Conditionals</a><a class="headerlink" href="#filters-often-used-with-conditionals" title="Permalink to this headline">¶</a></h2>
+<span id="filters-used-with-conditionals"></span><h2><a class="toc-backref" href="#id10">Filters Often Used With Conditionals</a><a class="headerlink" href="#filters-often-used-with-conditionals" title="Permalink to this headline">¶</a></h2>
 <p>The following tasks are illustrative of how filters can be used with conditionals:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tasks:
 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/bin/foo</span>
-    <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result</span>
-    <span class="l l-Scalar l-Scalar-Plain">ignore_errors</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  - shell: /usr/bin/foo
+    register: result
+    ignore_errors: True
 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;it failed&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|failed</span>
+  - debug: msg=&quot;it failed&quot;
+    when: result|failed
 
-  <span class="c1"># in most cases you&#39;ll want a handler, but if you want to do something right now, this is nice</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;it changed&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|changed</span>
+  # in most cases you&#39;ll want a handler, but if you want to do something right now, this is nice
+  - debug: msg=&quot;it changed&quot;
+    when: result|changed
 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;it succeeded in Ansible &gt;= 2.1&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|succeeded</span>
+  - debug: msg=&quot;it succeeded&quot;
+    when: result|success
 
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;it succeeded&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|success</span>
-
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=&quot;it was skipped&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">result|skipped</span>
+  - debug: msg=&quot;it was skipped&quot;
+    when: result|skipped
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">From 2.1 You can also use success, failure, change, skip so the grammer matches, for those that want to be strict about it.</p>
 </div>
 </div>
 <div class="section" id="forcing-variables-to-be-defined">
-<span id="id2"></span><h2><a class="toc-backref" href="#id12">Forcing Variables To Be Defined</a><a class="headerlink" href="#forcing-variables-to-be-defined" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id11">Forcing Variables To Be Defined</a><a class="headerlink" href="#forcing-variables-to-be-defined" title="Permalink to this headline">¶</a></h2>
 <p>The default behavior from ansible and ansible.cfg is to fail if variables are undefined, but you can turn this off.</p>
 <p>This allows an explicit check with this feature off:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">variable | mandatory</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">variable</span> <span class="o">|</span> <span class="n">mandatory</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>The variable value will be used as is, but the template evaluation will raise an error if it is undefined.</p>
 </div>
 <div class="section" id="defaulting-undefined-variables">
-<span id="id3"></span><h2><a class="toc-backref" href="#id13">Defaulting Undefined Variables</a><a class="headerlink" href="#defaulting-undefined-variables" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id12">Defaulting Undefined Variables</a><a class="headerlink" href="#defaulting-undefined-variables" title="Permalink to this headline">¶</a></h2>
 <p>Jinja2 provides a useful &#8216;default&#8217; filter, that is often a better approach to failing if a variable is not defined:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">some_variable | default(5)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">some_variable</span> <span class="o">|</span> <span class="n">default</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>In the above example, if the variable &#8216;some_variable&#8217; is not defined, the value used will be 5, rather than an error
 being raised.</p>
 </div>
 <div class="section" id="omitting-undefined-variables-and-parameters">
-<span id="omitting-undefined-variables"></span><h2><a class="toc-backref" href="#id14">Omitting Undefined Variables and Parameters</a><a class="headerlink" href="#omitting-undefined-variables-and-parameters" title="Permalink to this headline">¶</a></h2>
+<span id="omitting-undefined-variables"></span><h2><a class="toc-backref" href="#id13">Omitting Undefined Variables and Parameters</a><a class="headerlink" href="#omitting-undefined-variables-and-parameters" title="Permalink to this headline">¶</a></h2>
 <p>As of Ansible 1.8, it is possible to use the default filter to omit variables and module parameters using the special
 <cite>omit</cite> variable:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">touch files with an optional mode</span>
-  <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dest={{item.path}} state=touch mode={{item.mode|default(omit)}}</span>
-  <span class="l l-Scalar l-Scalar-Plain">with_items</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/tmp/foo</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/tmp/bar</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/tmp/baz</span>
-      <span class="l l-Scalar l-Scalar-Plain">mode</span><span class="p p-Indicator">:</span> <span class="s">&quot;0444&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- name: touch files with an optional mode
+  file: dest={{item.path}} state=touch mode={{item.mode|default(omit)}}
+  with_items:
+    - path: /tmp/foo
+    - path: /tmp/bar
+    - path: /tmp/baz
+      mode: &quot;0444&quot;
 </pre></div>
 </div>
 <p>For the first two files in the list, the default mode will be determined by the umask of the system as the <cite>mode=</cite>
 parameter will not be sent to the file module while the final file will receive the <cite>mode=0444</cite> option.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you are &#8220;chaining&#8221; additional filters after the <cite>default(omit)</cite> filter, you should instead do something like this:
-<cite>&#8220;{{ foo | default(None) | some_filter or omit }}&#8221;</cite>. In this example, the default <cite>None</cite> (python null) value will cause the
-later filters to fail, which will trigger the <cite>or omit</cite> portion of the logic. Using omit in this manner is very specific to
-the later filters you&#8217;re chaining though, so be prepared for some trial and error if you do this.</p>
-</div>
 </div>
 <div class="section" id="list-filters">
-<span id="id4"></span><h2><a class="toc-backref" href="#id15">List Filters</a><a class="headerlink" href="#list-filters" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id14">List Filters</a><a class="headerlink" href="#list-filters" title="Permalink to this headline">¶</a></h2>
 <p>These filters all operate on list variables.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.8.</span></p>
 </div>
 <p>To get the minimum value from list of numbers:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | min</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="nb">min</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the maximum value from a list of numbers:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ [3, 4, 2] | max }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">|</span> <span class="nb">max</span> <span class="p">}}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="set-theory-filters">
-<span id="id5"></span><h2><a class="toc-backref" href="#id16">Set Theory Filters</a><a class="headerlink" href="#set-theory-filters" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2><a class="toc-backref" href="#id15">Set Theory Filters</a><a class="headerlink" href="#set-theory-filters" title="Permalink to this headline">¶</a></h2>
 <p>All these functions return a unique set from sets or lists.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.</span></p>
 </div>
 <p>To get a unique set from a list:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | unique</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="n">unique</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get a union of two lists:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | union(list2)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="n">union</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the intersection of 2 lists (unique list of all items in both):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | intersect(list2)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="n">intersect</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the difference of 2 lists (items in 1 that don&#8217;t exist in 2):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | difference(list2)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="n">difference</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the symmetric difference of 2 lists (items exclusive to each list):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list1 | symmetric_difference(list2)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">list1</span> <span class="o">|</span> <span class="n">symmetric_difference</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="version-comparison-filters">
-<span id="id6"></span><h2><a class="toc-backref" href="#id17">Version Comparison Filters</a><a class="headerlink" href="#version-comparison-filters" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2><a class="toc-backref" href="#id16">Version Comparison Filters</a><a class="headerlink" href="#version-comparison-filters" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.</span></p>
 </div>
 <p>To compare a version number, such as checking if the <code class="docutils literal"><span class="pre">ansible_distribution_version</span></code>
 version is greater than or equal to &#8216;12.04&#8217;, you can use the <code class="docutils literal"><span class="pre">version_compare</span></code> filter.</p>
 <p>The <code class="docutils literal"><span class="pre">version_compare</span></code> filter can also be used to evaluate the <code class="docutils literal"><span class="pre">ansible_distribution_version</span></code>:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">ansible_distribution_version | version_compare(&#39;12.04&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&gt;=&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">ansible_distribution_version</span> <span class="o">|</span> <span class="n">version_compare</span><span class="p">(</span><span class="s1">&#39;12.04&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>If <code class="docutils literal"><span class="pre">ansible_distribution_version</span></code> is greater than or equal to 12, this filter will return True, otherwise it will return False.</p>
 <p>The <code class="docutils literal"><span class="pre">version_compare</span></code> filter accepts the following operators:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">&lt;, lt, &lt;=, le, &gt;, gt, &gt;=, ge, ==, =, eq, !=, &lt;&gt;, ne</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;, lt, &lt;=, le, &gt;, gt, &gt;=, ge, ==, =, eq, !=, &lt;&gt;, ne
 </pre></div>
 </div>
 <p>This filter also accepts a 3rd parameter, <code class="docutils literal"><span class="pre">strict</span></code> which defines if strict version parsing should
 be used.  The default is <code class="docutils literal"><span class="pre">False</span></code>, and if set as <code class="docutils literal"><span class="pre">True</span></code> will use more strict version parsing:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">sample_version_var | version_compare(&#39;1.0&#39;</span><span class="p p-Indicator">,</span> <span class="nv">operator=&#39;lt&#39;</span><span class="p p-Indicator">,</span> <span class="nv">strict=True)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">sample_version_var</span> <span class="o">|</span> <span class="n">version_compare</span><span class="p">(</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="n">operator</span><span class="o">=</span><span class="s1">&#39;lt&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="random-number-filter">
-<span id="random-filter"></span><h2><a class="toc-backref" href="#id18">Random Number Filter</a><a class="headerlink" href="#random-number-filter" title="Permalink to this headline">¶</a></h2>
+<span id="random-filter"></span><h2><a class="toc-backref" href="#id17">Random Number Filter</a><a class="headerlink" href="#random-number-filter" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.</span></p>
 </div>
 <p>This filter can be used similar to the default jinja2 random filter (returning a random item from a sequence of
 items), but can also generate a random number based on a range.</p>
 <p>To get a random item from a list:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]|random }} =&gt; &#39;c&#39;
+<div class="highlight-python"><div class="highlight"><pre><span></span>{{ [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]|random }} =&gt; &#39;c&#39;
 </pre></div>
 </div>
 <p>To get a random number from 0 to supplied end:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ 59 |random}} * * * * root /script/from/cron
+<div class="highlight-python"><div class="highlight"><pre><span></span>{{ 59 |random}} * * * * root /script/from/cron
 </pre></div>
 </div>
 <p>Get a random number from 0 to 100 but in steps of 10:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">100 |random(step=10)</span> <span class="p p-Indicator">}}</span>  <span class="l l-Scalar l-Scalar-Plain">=&gt; 70</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{{ 100 |random(step=10) }}  =&gt; 70
 </pre></div>
 </div>
 <p>Get a random number from 1 to 100 but in steps of 10:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">100 |random(1</span><span class="p p-Indicator">,</span> <span class="nv">10)</span> <span class="p p-Indicator">}}</span>    <span class="l l-Scalar l-Scalar-Plain">=&gt; 31</span>
-<span class="l l-Scalar l-Scalar-Plain">{{ 100 |random(start=1, step=10) }}    =&gt; 51</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>{{ 100 |random(1, 10) }}    =&gt; 31
+{{ 100 |random(start=1, step=10) }}    =&gt; 51
 </pre></div>
 </div>
 </div>
 <div class="section" id="shuffle-filter">
-<h2><a class="toc-backref" href="#id19">Shuffle Filter</a><a class="headerlink" href="#shuffle-filter" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Shuffle Filter</a><a class="headerlink" href="#shuffle-filter" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.8.</span></p>
 </div>
 <p>This filter will randomize an existing list, giving a different order every invocation.</p>
 <p>To get a random list from an existing  list:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]|shuffle }} =&gt; [&#39;c&#39;,&#39;a&#39;,&#39;b&#39;]
+<div class="highlight-python"><div class="highlight"><pre><span></span>{{ [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]|shuffle }} =&gt; [&#39;c&#39;,&#39;a&#39;,&#39;b&#39;]
 {{ [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]|shuffle }} =&gt; [&#39;b&#39;,&#39;c&#39;,&#39;a&#39;]
 </pre></div>
 </div>
 <p>note that when used with a non &#8216;listable&#8217; item it is a noop, otherwise it always returns a list</p>
 </div>
 <div class="section" id="math">
-<span id="math-stuff"></span><h2><a class="toc-backref" href="#id20">Math</a><a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<span id="math-stuff"></span><h2><a class="toc-backref" href="#id19">Math</a><a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.9.</span></p>
 </div>
 <p>To see if something is actually a number:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | isnan</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">isnan</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Get the logarithm (default is e):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | log</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">log</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Get the base 10 logarithm:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | log(10)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Give me the power of 2! (or 5):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | pow(2)</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">myvar | pow(5)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Square root, or the 5th:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | root</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">myvar | root(5)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">root</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">root</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Note that jinja2 already provides some like abs() and round().</p>
 </div>
 <div class="section" id="ip-address-filter">
-<span id="ipaddr-filter"></span><h2><a class="toc-backref" href="#id21">IP address filter</a><a class="headerlink" href="#ip-address-filter" title="Permalink to this headline">¶</a></h2>
+<span id="ipaddr-filter"></span><h2><a class="toc-backref" href="#id20">IP address filter</a><a class="headerlink" href="#ip-address-filter" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.9.</span></p>
 </div>
 <p>To test if a string is a valid IP address:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | ipaddr</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">ipaddr</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>You can also require a specific IP protocol version:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">myvar | ipv4</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">myvar | ipv6</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">ipv4</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">myvar</span> <span class="o">|</span> <span class="n">ipv6</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>IP address filter can also be used to extract specific information from an IP
 address. For example, to get the IP address itself from a CIDR, you can use:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;192.0.2.1/24&#39; | ipaddr(&#39;address&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;192.0.2.1/24&#39;</span> <span class="o">|</span> <span class="n">ipaddr</span><span class="p">(</span><span class="s1">&#39;address&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>More information about <code class="docutils literal"><span class="pre">ipaddr</span></code> filter and complete usage guide can be found
 in <a class="reference internal" href="playbooks_filters_ipaddr.html"><em>Jinja2 &#8216;ipaddr()&#8217; filter</em></a>.</p>
 </div>
 <div class="section" id="hashing-filters">
-<span id="hash-filters"></span><h2><a class="toc-backref" href="#id22">Hashing filters</a><a class="headerlink" href="#hashing-filters" title="Permalink to this headline">¶</a></h2>
+<span id="hash-filters"></span><h2><a class="toc-backref" href="#id21">Hashing filters</a><a class="headerlink" href="#hashing-filters" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.9.</span></p>
 </div>
 <p>To get the sha1 hash of a string:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;test1&#39;|hash(&#39;sha1&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;test1&#39;</span><span class="o">|</span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;sha1&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the md5 hash of a string:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;test1&#39;|hash(&#39;md5&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;test1&#39;</span><span class="o">|</span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;md5&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Get a string checksum:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;test2&#39;|checksum }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;test2&#39;</span><span class="o">|</span><span class="n">checksum</span> <span class="p">}}</span>
 </pre></div>
 </div>
-<p>Other hashes (platform dependent):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;test2&#39;|hash(&#39;blowfish&#39;) }}
+<p>Other hashes (platform dependant):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;test2&#39;</span><span class="o">|</span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;blowfish&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get a sha512 password hash (random salt):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;passwordsaresecret&#39;|password_hash(&#39;sha512&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;passwordsaresecret&#39;</span><span class="o">|</span><span class="n">password_hash</span><span class="p">(</span><span class="s1">&#39;sha512&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get a sha256 password hash with a specific salt:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &#39;secretpassword&#39;|password_hash(&#39;sha256&#39;, &#39;mysecretsalt&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="s1">&#39;secretpassword&#39;</span><span class="o">|</span><span class="n">password_hash</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span> <span class="s1">&#39;mysecretsalt&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>Hash types available depend on the master system running ansible,
 &#8216;hash&#8217; depends on hashlib password_hash depends on crypt.</p>
 </div>
-<div class="section" id="combining-hashes-dictionaries">
-<span id="combine-filter"></span><h2><a class="toc-backref" href="#id23">Combining hashes/dictionaries</a><a class="headerlink" href="#combining-hashes-dictionaries" title="Permalink to this headline">¶</a></h2>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.0.</span></p>
-</div>
-<p>The <cite>combine</cite> filter allows hashes to be merged. For example, the
-following would override keys in one hash:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ {&#39;a&#39;:1, &#39;b&#39;:2}|combine({&#39;b&#39;:3}) }}
-</pre></div>
-</div>
-<p>The resulting hash would be:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&#39;a&#39;</span><span class="p p-Indicator">:</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;b&#39;</span><span class="p p-Indicator">:</span><span class="nv">3</span><span class="p p-Indicator">}</span>
-</pre></div>
-</div>
-<p>The filter also accepts an optional <cite>recursive=True</cite> parameter to not
-only override keys in the first hash, but also recurse into nested
-hashes and merge their keys too:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ {&#39;a&#39;:{&#39;foo&#39;:1, &#39;bar&#39;:2}, &#39;b&#39;:2}|combine({&#39;a&#39;:{&#39;bar&#39;:3, &#39;baz&#39;:4}}, recursive=True) }}
-</pre></div>
-</div>
-<p>This would result in:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="s">&#39;a&#39;</span><span class="p p-Indicator">:{</span><span class="s">&#39;foo&#39;</span><span class="p p-Indicator">:</span><span class="nv">1</span><span class="p p-Indicator">,</span> <span class="s">&#39;bar&#39;</span><span class="p p-Indicator">:</span><span class="nv">3</span><span class="p p-Indicator">,</span> <span class="s">&#39;baz&#39;</span><span class="p p-Indicator">:</span><span class="nv">4</span><span class="p p-Indicator">},</span> <span class="s">&#39;b&#39;</span><span class="p p-Indicator">:</span><span class="nv">2</span><span class="p p-Indicator">}</span>
-</pre></div>
-</div>
-<p>The filter can also take multiple arguments to merge:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">a|combine(b</span><span class="p p-Indicator">,</span> <span class="nv">c</span><span class="p p-Indicator">,</span> <span class="nv">d)</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>In this case, keys in <cite>d</cite> would override those in <cite>c</cite>, which would
-override those in <cite>b</cite>, and so on.</p>
-<p>This behaviour does not depend on the value of the <cite>hash_behaviour</cite>
-setting in <cite>ansible.cfg</cite>.</p>
-</div>
-<div class="section" id="extracting-values-from-containers">
-<span id="extract-filter"></span><h2><a class="toc-backref" href="#id24">Extracting values from containers</a><a class="headerlink" href="#extracting-values-from-containers" title="Permalink to this headline">¶</a></h2>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.1.</span></p>
-</div>
-<p>The <cite>extract</cite> filter is used to map from a list of indices to a list of
-values from a container (hash or array):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ [0,2]|map(&#39;extract&#39;, [&#39;x&#39;,&#39;y&#39;,&#39;z&#39;])|list }}
-{{ [&#39;x&#39;,&#39;y&#39;]|map(&#39;extract&#39;, {&#39;x&#39;: 42, &#39;y&#39;: 31})|list }}
-</pre></div>
-</div>
-<p>The results of the above expressions would be:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">[</span><span class="s">&#39;x&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;z&#39;</span><span class="p p-Indicator">]</span>
-<span class="p p-Indicator">[</span><span class="nv">42</span><span class="p p-Indicator">,</span> <span class="nv">31</span><span class="p p-Indicator">]</span>
-</pre></div>
-</div>
-<p>The filter can take another argument:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ groups[&#39;x&#39;]|map(&#39;extract&#39;, hostvars, &#39;ec2_ip_address&#39;)|list }}
-</pre></div>
-</div>
-<p>This takes the list of hosts in group &#8216;x&#8217;, looks them up in <cite>hostvars</cite>,
-and then looks up the <cite>ec2_ip_address</cite> of the result. The final result
-is a list of IP addresses for the hosts in group &#8216;x&#8217;.</p>
-<p>The third argument to the filter can also be a list, for a recursive
-lookup inside the container:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ [&#39;a&#39;]|map(&#39;extract&#39;, b, [&#39;x&#39;,&#39;y&#39;])|list }}
-</pre></div>
-</div>
-<p>This would return a list containing the value of <cite>b[&#8216;a&#8217;][&#8216;x&#8217;][&#8216;y&#8217;]</cite>.</p>
-</div>
-<div class="section" id="comment-filter">
-<span id="id7"></span><h2><a class="toc-backref" href="#id25">Comment Filter</a><a class="headerlink" href="#comment-filter" title="Permalink to this headline">¶</a></h2>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.0.</span></p>
-</div>
-<p>The <cite>comment</cite> filter allows to decorate the text with a chosen comment
-style. For example the following:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &quot;Plain style (default)&quot; | comment }}
-</pre></div>
-</div>
-<p>will produce this output:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="c1"># Plain style (default)</span>
-<span class="c1">#</span>
-</pre></div>
-</div>
-<p>Similar way can be applied style for C (<code class="docutils literal"><span class="pre">//...</span></code>), C block
-(<code class="docutils literal"><span class="pre">/*...*/</span></code>), Erlang (<code class="docutils literal"><span class="pre">%...</span></code>) and XML (<code class="docutils literal"><span class="pre">&lt;!--...--&gt;</span></code>):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &quot;C style&quot; | comment(&#39;c&#39;) }}
-{{ &quot;C block style&quot; | comment(&#39;cblock&#39;) }}
-{{ &quot;Erlang style&quot; | comment(&#39;erlang&#39;) }}
-{{ &quot;XML style&quot; | comment(&#39;xml&#39;) }}
-</pre></div>
-</div>
-<p>It is also possible to fully customize the comment style:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>{{ &quot;Custom style&quot; | comment(&#39;plain&#39;, prefix=&#39;#######\n#&#39;, postfix=&#39;#\n#######\n   ###\n    #&#39;) }}
-</pre></div>
-</div>
-<p>That will create the following output:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1">#######</span>
-<span class="c1">#</span>
-<span class="c1"># Custom style</span>
-<span class="c1">#</span>
-<span class="c1">#######</span>
-   <span class="c1">###</span>
-    <span class="c1">#</span>
-</pre></div>
-</div>
-<p>The filter can also be applied to any Ansible variable. For example to
-make the output of the <code class="docutils literal"><span class="pre">ansible_managed</span></code> variable more readable, we can
-change the definition in the <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file to this:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span>[defaults]
-
-ansible_managed = This file is managed by Ansible.%n
-  template: {file}
-  date: %Y-%m-%d %H:%M:%S
-  user: {uid}
-  host: {host}
-</pre></div>
-</div>
-<p>and then use the variable with the <cite>comment</cite> filter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">ansible_managed | comment</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>which will produce this output:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="c1"># This file is managed by Ansible.</span>
-<span class="c1">#</span>
-<span class="c1"># template: /home/ansible/env/dev/ansible_managed/roles/role1/templates/test.j2</span>
-<span class="c1"># date: 2015-09-10 11:02:58</span>
-<span class="c1"># user: ansible</span>
-<span class="c1"># host: myhost</span>
-<span class="c1">#</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="other-useful-filters">
-<span id="id8"></span><h2><a class="toc-backref" href="#id26">Other Useful Filters</a><a class="headerlink" href="#other-useful-filters" title="Permalink to this headline">¶</a></h2>
-<p>To add quotes for shell usage:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo {{ string_value | quote }}</span>
-</pre></div>
-</div>
-<p>To use one value on true and another on false (new in version 1.9):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">(name == &quot;John&quot;) | ternary(&#39;Mr&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;Ms&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+<span id="id7"></span><h2><a class="toc-backref" href="#id22">Other Useful Filters</a><a class="headerlink" href="#other-useful-filters" title="Permalink to this headline">¶</a></h2>
+<p>To use one value on true and another on false (since 1.9):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;John&quot;</span> <span class="o">|</span> <span class="n">ternary</span><span class="p">(</span><span class="s1">&#39;Mr&#39;</span><span class="p">,</span><span class="s1">&#39;Ms&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To concatenate a list into a string:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">list | join(&quot; &quot;)</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the last name of a file path, like &#8216;foo.txt&#8217; out of &#8216;/etc/asdf/foo.txt&#8217;:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | basename</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get the last name of a windows style file path (new in version 2.0):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | win_basename</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To separate the windows drive letter from the rest of a file path (new in version 2.0):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | win_splitdrive</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get only the windows drive letter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | win_splitdrive | first</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get the rest of the path without the drive letter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | win_splitdrive | last</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">path</span> <span class="o">|</span> <span class="n">basename</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the directory from a path:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | dirname</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get the directory from a windows path (new version 2.0):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | win_dirname</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">path</span> <span class="o">|</span> <span class="n">dirname</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To expand a path containing a tilde (<cite>~</cite>) character (new in version 1.5):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | expanduser</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">path</span> <span class="o">|</span> <span class="n">expanduser</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To get the real path of a link (new in version 1.8):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | realpath</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get the relative path of a link, from a start point (new in version 1.7):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">path | relpath(&#39;/etc&#39;)</span> <span class="p p-Indicator">}}</span>
-</pre></div>
-</div>
-<p>To get the root and extension of a path or filename (new in version 2.0):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1"># with path == &#39;nginx.conf&#39; the return would be (&#39;nginx&#39;, &#39;.conf&#39;)</span>
-<span class="p p-Indicator">{{</span> <span class="nv">path | splitext</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">path</span> <span class="o">|</span> <span class="n">realpath</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To work with Base64 encoded strings:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">encoded | b64decode</span> <span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span> <span class="nv">decoded | b64encode</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">encoded</span> <span class="o">|</span> <span class="n">b64decode</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">decoded</span> <span class="o">|</span> <span class="n">b64encode</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To create a UUID from a string (new in version 1.9):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span> <span class="nv">hostname | to_uuid</span> <span class="p p-Indicator">}}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">hostname</span> <span class="o">|</span> <span class="n">to_uuid</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>To cast values as certain types, such as when you input a string as &#8220;True&#8221; from a vars_prompt and the system
 doesn&#8217;t know it is a boolean value:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">msg=test</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some_string_value | bool</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>- debug: msg=test
+  when: some_string_value | bool
 </pre></div>
 </div>
 <p>To match strings against a regex, use the &#8220;match&#8221; or &#8220;search&#8221; filter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">vars</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="s">&quot;http://example.com/users/foo/resources/bar&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>vars:
+  url: &quot;http://example.com/users/foo/resources/bar&quot;
 
-<span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shell</span><span class="p p-Indicator">:</span> <span class="s">&quot;msg=&#39;matched</span><span class="nv"> </span><span class="s">pattern</span><span class="nv"> </span><span class="s">1&#39;&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">url | match(&quot;http://example.com/users/.*/resources/.*&quot;)</span>
+tasks:
+    - shell: &quot;msg=&#39;matched pattern 1&#39;&quot;
+      when: url | match(&quot;http://example.com/users/.*/resources/.*&quot;)
 
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="s">&quot;msg=&#39;matched</span><span class="nv"> </span><span class="s">pattern</span><span class="nv"> </span><span class="s">2&#39;&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">url | search(&quot;/users/.*/resources/.*&quot;)</span>
+    - debug: &quot;msg=&#39;matched pattern 2&#39;&quot;
+      when: url | search(&quot;/users/.*/resources/.*&quot;)
 </pre></div>
 </div>
 <p>&#8216;match&#8217; will require a complete match in the string, while &#8216;search&#8217; will require a match inside of the string.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 1.6.</span></p>
-</div>
 <p>To replace text in a string with regex, use the &#8220;regex_replace&#8221; filter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span># convert &quot;ansible&quot; to &quot;able&quot;
-{{ &#39;ansible&#39; | regex_replace(&#39;^a.*i(.*)$&#39;, &#39;a\\1&#39;) }}
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># convert &quot;ansible&quot; to &quot;able&quot;</span>
+<span class="p">{{</span> <span class="s1">&#39;ansible&#39;</span> <span class="o">|</span> <span class="n">regex_replace</span><span class="p">(</span><span class="s1">&#39;^a.*i(.*)$&#39;</span><span class="p">,</span> <span class="s1">&#39;a</span><span class="se">\\</span><span class="s1">1&#39;</span><span class="p">)</span> <span class="p">}}</span>
 
-# convert &quot;foobar&quot; to &quot;bar&quot;
-{{ &#39;foobar&#39; | regex_replace(&#39;^f.*o(.*)$&#39;, &#39;\\1&#39;) }}
-
-# convert &quot;localhost:80&quot; to &quot;localhost, 80&quot; using named groups
-{{ &#39;localhost:80&#39; | regex_replace(&#39;^(?P&lt;host&gt;.+):(?P&lt;port&gt;\\d+)$&#39;, &#39;\\g&lt;host&gt;, \\g&lt;port&gt;&#39;) }}
+<span class="c1"># convert &quot;foobar&quot; to &quot;bar&quot;</span>
+<span class="p">{{</span> <span class="s1">&#39;foobar&#39;</span> <span class="o">|</span> <span class="n">regex_replace</span><span class="p">(</span><span class="s1">&#39;^f.*o(.*)$&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">1&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Prior to ansible 2.0, if &#8220;regex_replace&#8221; filter was used with variables inside YAML arguments (as opposed to simpler &#8216;key=value&#8217; arguments),
-then you needed to escape backreferences (e.g. <code class="docutils literal"><span class="pre">\\1</span></code>) with 4 backslashes (<code class="docutils literal"><span class="pre">\\\\</span></code>) instead of 2 (<code class="docutils literal"><span class="pre">\\</span></code>).</p>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.0.</span></p>
-</div>
-<p>To escape special characters within a regex, use the &#8220;regex_escape&#8221; filter:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span># convert &#39;^f.*o(.*)$&#39; to &#39;\^f\.\*o\(\.\*\)\$&#39;
-{{ &#39;^f.*o(.*)$&#39; | regex_escape() }}
-</pre></div>
-</div>
-<p>To make use of one attribute from each item in a list of complex variables, use the &#8220;map&#8221; filter (see the <a class="reference external" href="http://jinja.pocoo.org/docs/dev/templates/#map">Jinja2 map() docs</a> for more):</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1"># get a comma-separated list of the mount points (e.g. &quot;/,/mnt/stuff&quot;) on a host</span>
-<span class="p p-Indicator">{{</span> <span class="nv">ansible_mounts|map(attribute=&#39;mount&#39;)|join(&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;)</span><span class="nv"> </span><span class="s">}}</span>
-</pre></div>
+<p class="last">If &#8220;regex_replace&#8221; filter is used with variables inside YAML arguments (as opposed to simpler &#8216;key=value&#8217; arguments),
+then you need to escape backreferences (e.g. <code class="docutils literal"><span class="pre">\\1</span></code>) with 4 backslashes (<code class="docutils literal"><span class="pre">\\\\</span></code>) instead of 2 (<code class="docutils literal"><span class="pre">\\</span></code>).</p>
 </div>
 <p>A few useful filters are typically added with each new Ansible release.  The development documentation shows
 how to extend Ansible filters by writing your own as plugins, though in general, we encourage new ones
@@ -972,21 +800,12 @@ to be added to core so everyone can make use of them.</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
+Ansible docs are generated from <a href="http://github.com/ansible/ansible">GitHub sources</A> using <A HREF="http://sphinx-doc.org/">Sphinx</A> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
