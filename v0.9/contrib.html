@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ansible Resources &mdash; Ansible v0.9 Documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-scrollspy.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Ansible v0.9 Documentation" href="index.html" />
+    <link rel="prev" title="Who Uses Ansible" href="who_uses_ansible.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($span, minLevel) {
+    var $tocList = $("<ul/>").attr('class', "dropdown-menu"),
+      findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 10 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          // Add list element.
+          $tocList.append($("<li/>").append($item));
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    // Start construction and return.
+    findA($span);
+
+    // Wipe out old list and patch in new one.
+    return $span.empty("ul").append($tocList);
+  };
+
+  $(document).ready(function () {
+    // Patch the global and local TOC's to be bootstrap-compliant.
+    patchToc($("span.globaltoc"), 1);
+    patchToc($("span.localtoc"), 2);
+
+    // Activate.
+    $('#topbar').dropdown();
+  });
+}());
+</script>
+
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-29861888-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+
+
+  </head>
+  <body role="document">
+  <div class="topbar" data-scrollspy="scrollspy" >
+    <div class="topbar-inner">
+      <div class="container">
+        <!-- <a class="brand" href="index.html">Ansible v0.9</a> -->
+        <ul class="nav">
+          
+            <li><a href="/">Home</A>
+	    <li class="dropdown" data-dropdown="dropdown">
+  <a href="index.html"
+     class="dropdown-toggle">Chapter</a>
+  <span class="globaltoc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patterns.html">Inventory &amp; Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Command Line Examples And Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Ansible Modules</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="playbooks.html">Playbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playbooks2.html">Advanced Playbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="YAMLSyntax.html">YAML Syntax</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API &amp; Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduledev.html">Module Development</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="who_uses_ansible.html">Who Uses Ansible</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Ansible Resources</a></li>
+</ul>
+</span>
+</li>
+            <li class="dropdown" data-dropdown="dropdown">
+  <a href="#"
+     class="dropdown-toggle">Page</a>
+  <span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Ansible Resources</a><ul>
+<li><a class="reference internal" href="#ansible-modules">Ansible Modules</a></li>
+<li><a class="reference internal" href="#selected-playbooks">Selected Playbooks</a></li>
+<li><a class="reference internal" href="#callbacks-and-plugins">Callbacks and Plugins</a></li>
+<li><a class="reference internal" href="#scripts-and-misc">Scripts And Misc</a></li>
+<li><a class="reference internal" href="#blogs-articles">Blogs &amp; Articles</a></li>
+<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+</ul>
+</li>
+</ul>
+</span>
+</li>
+          
+        </ul>
+        <ul class="nav secondary-nav">
+          
+            
+<form class="pull-left" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+   
+  <div class="section" id="ansible-resources">
+<h1>Ansible Resources<a class="headerlink" href="#ansible-resources" title="Permalink to this headline">¶</a></h1>
+<p>User contributed playbooks, modules, and articles. This is a small
+curated list, but growing. Everyone is encouraged to add to this
+document, just send in a github pull request to docsite/rst/contrib.rst!</p>
+<div class="section" id="ansible-modules">
+<h2>Ansible Modules<a class="headerlink" href="#ansible-modules" title="Permalink to this headline">¶</a></h2>
+<p>Ansible modules are a way of adding new client-side logic to ansible.
+They can be written in any language.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ansible.cc/docs/modules.html">Official &#8220;core&#8221; ansible modules</a> - various</li>
+<li><a class="reference external" href="https://github.com/bradobro/ansible-module-mercurial">mercurial</a> - bradobro</li>
+<li><a class="reference external" href="https://github.com/jpmens/ansible-zypp">zypper (bash module example)</a> - jp_mens</li>
+<li><a class="reference external" href="https://gist.github.com/3170079">homebrew</a> - swehack</li>
+<li><a class="reference external" href="https://github.com/ansible-provisioning">additional provisioning-related modules</a> - jhoekx and dagwieers</li>
+<li><a class="reference external" href="https://github.com/jpmens/ansible-m-dnsupdate">dynamic dns updates</a> - jp_mens</li>
+</ul>
+<p>Python modules using 0.6 and later can and should use the common &#8220;AnsibleModule&#8221;
+class to dramatically reduce the amount of boilerplate code required.
+Not all modules above yet take advantage of this feature. See the
+official documentation for more details.</p>
+</div>
+<div class="section" id="selected-playbooks">
+<h2>Selected Playbooks<a class="headerlink" href="#selected-playbooks" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://ansible.cc/docs/playbooks.html">Playbooks</a> are Ansible&#8217;s
+configuration management language. It should be easy to write your own
+from scratch for most applications, but it&#8217;s always helpful to look at
+what others have done for reference.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/jkleint/ansible-hadoop">Hadoop</a> - jkleint</li>
+<li><a class="reference external" href="https://github.com/fourkitchens/server-playbooks">LAMP</a> - <a class="reference external" href="http://fourkitchens.com">Four Kitchens</a></li>
+<li><a class="reference external" href="https://github.com/mpdehaan/ansible-examples">Ganglia (demo)</a> - mpdehaan</li>
+<li><a class="reference external" href="http://www.capsunlock.net/2012/04/ansible-nginx-playbook.html">Nginx</a> - cocoy</li>
+<li><a class="reference external" href="http://github.com/lorin/openstack-ansible">OpenStack</a> - lorin</li>
+<li><a class="reference external" href="https://github.com/cegeddin/ansible-contrib">Systems Configuration</a> - cegeddin</li>
+<li><a class="reference external" href="http://infrastructure.fedoraproject.org/cgit/ansible.git/tree/">Fedora Infrastructure</a> - <a class="reference external" href="http://fedoraproject.org">Fedora</a></li>
+</ul>
+</div>
+<div class="section" id="callbacks-and-plugins">
+<h2>Callbacks and Plugins<a class="headerlink" href="#callbacks-and-plugins" title="Permalink to this headline">¶</a></h2>
+<p>The Ansible project has a whole repo devoted to extending ansible with
+new connection types, logging/event callbacks, and inventory data
+storage. Talk to Cobbler and EC2, tweak the way things are logged, or
+even add sound effects.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ansible/ansible/tree/devel/plugins">Ansible-Plugins</a></li>
+</ul>
+</div>
+<div class="section" id="scripts-and-misc">
+<h2>Scripts And Misc<a class="headerlink" href="#scripts-and-misc" title="Permalink to this headline">¶</a></h2>
+<p>Ansible isn&#8217;t just a program, it&#8217;s also an API. Here&#8217;s some examples of
+some clever integrations with the &#8220;Runner&#8221; and also Playbook APIs, and
+integrations with other interesting pieces of software.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/dsander/vagrant-ansible">Ansible Vagrant plugin</a> - dsander</li>
+<li><a class="reference external" href="https://github.com/mattupstate/vagrant-ansible-tutorial">Ansible+Vagrant Tutorial</a> - mattupstate -</li>
+<li><a class="reference external" href="http://fedorapeople.org/cgit/skvidal/public_git/scripts.git/tree/ansible/start-prov-boot.py">virt-install</a> - skvidal</li>
+<li><a class="reference external" href="http://fedorapeople.org/cgit/skvidal/public_git/scripts.git/tree/ansible/host-reboot">rebooting hosts</a> - skvidal</li>
+<li><a class="reference external" href="https://github.com/ansible/ansible/blob/devel/examples/scripts/uptime.py">uptime (API demo)</a> - mpdehaan</li>
+<li><a class="reference external" href="https://github.com/bleader/ansible_snippet_generator">vim snippet generator</a> - bleader</li>
+</ul>
+</div>
+<div class="section" id="blogs-articles">
+<h2>Blogs &amp; Articles<a class="headerlink" href="#blogs-articles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://highscalability.com/blog/2012/4/18/ansible-a-simple-model-driven-configuration-management-and-c.html">HighScalability.com</a> - mpdehaan</li>
+<li><a class="reference external" href="http://www.coloandcloud.com/editorial/an-interview-with-ansible-author-michael-dehaan/">ColoAndCloud.com interview</a> - mpdehaan</li>
+<li><a class="reference external" href="http://server.dzone.com/articles/ansible-cm-deployment-and-ad">dzone</a> - Mitch Pronschinske</li>
+<li><a class="reference external" href="http://jpmens.net/2012/06/06/configuration-management-with-ansible/">Configuration Management With Ansible</a> - jp_mens</li>
+<li><a class="reference external" href="http://jpmens.net/2012/07/05/shell-scripts-as-ansible-modules/">Shell Scripts As Ansible Modules</a> - jp_mens</li>
+<li><a class="reference external" href="http://jpmens.net/2012/07/15/ansible-it-s-a-fact/">Ansible Facts</a> - jp_mens</li>
+<li><a class="reference external" href="http://www.capsunlock.net/2012/04/ansible-infrastructure-as-data-not-infrastructure-as-code.html">Infrastructure as Data</a> - cocoy</li>
+<li><a class="reference external" href="http://www.capsunlock.net/2012/05/using-ansible-pull-and-user-data-to-setup-ec2-or-openstack-servers.html">Ansible Pull Mode</a> - cocoy</li>
+<li><a class="reference external" href="http://palominodb.com/blog/2012/08/01/exploring-configuration-management-ansible">Exploring Configuration Management With Ansible</a> - Palamino DB</li>
+<li><a class="reference external" href="http://www.lshift.net/blog/2012/07/30/you-should-consider-using-ssh-based-configuration-management">You Should Consider Using SSH Based Configuration Management</a> - LShift Ltd</li>
+<li><a class="reference external" href="http://mattupstate.github.com/python/devops/2012/08/07/flask-wsgi-application-deployment-with-ubuntu-ansible-nginx-supervisor-and-uwsgi.html">Deploying Flask/uWSGI, Nginx, and Supervisorctl</a> - mattupstate</li>
+<li><a class="reference external" href="http://www.danielhall.me/2012/10/ansible-talk-infra-coders/">Infracoders Presentation</a> - Daniel Hall</li>
+<li><a class="reference external" href="https://speakerdeck.com/jpmens/ansible-an-introduction">Ansible - an introduction</a> - jp_mens</li>
+</ul>
+</div>
+<div class="section" id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<p>Modules and playbooks here may not be using the latest in Ansible
+features. When in doubt to the features of a particular version of
+Ansbile, always consult <a class="reference external" href="http://ansible.cc">ansible.cc</a> and in
+particular see <a class="reference external" href="http://ansible.cc/docs/bestpractices.html">Best Practices</a> for some tips
+and tricks that may be useful.</p>
+<p>Ansible is (C) 2012, <a class="reference external" href="http://twitter.com/laserllama">Michael DeHaan</a>
+and others and is available under the GPLv3 license. Content here is as
+specified by individual contributors.</p>
+</div>
+</div>
+
+
+<br/>
+</div>
+<footer class="footer">
+<p>
+        &copy; Copyright 2012 Michael DeHaan.<br/>
+      Last updated on Feb 24, 2016.<br/>
+    </p>
+</div>
+</footer>
+  </body>
+</html>
