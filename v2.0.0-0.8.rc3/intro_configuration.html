@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Configuration file &mdash; Ansible Documentation</title>
+  <title>Configuration file &mdash; Ansible v2.0.0-0.8.rc3 Documentation</title>
   
 
   
@@ -51,9 +51,9 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v2.0.0-0.8.rc3 Documentation" href="index.html"/>
         <link rel="up" title="Introduction" href="intro.html"/>
-        <link rel="next" title="BSD Support" href="intro_bsd.html"/>
+        <link rel="next" title="BSD support" href="intro_bsd.html"/>
         <link rel="prev" title="Introduction To Ad-Hoc Commands" href="intro_adhoc.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -93,7 +93,7 @@
       src="_static/images/logo_invert.png"
       alt="Ansible Logo">
     <div class="DocSiteNav-title">
-      Documentation
+      Documentation v2.0.0-0.8.rc3
     </div>
   </a>
 
@@ -113,6 +113,71 @@
         </a>
       </div>
 
+      <div class="wy-side-nav-search" style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
+
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
+      </div>
+
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
@@ -125,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -143,14 +208,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become.html">Ansible Privilege Escalation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -180,7 +244,6 @@
 <li class="toctree-l2"><a class="reference internal" href="developing_modules.html">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -296,21 +359,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +366,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +396,15 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+          <!-- Tower ads -->
+          <a class="DocSiteBanner" href="http://www.ansible.com/tower?utm_source=docs">
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_1.png">
+            </div>
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_2.png">
+            </div>
+          </a>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -388,81 +441,79 @@
 <li><a class="reference internal" href="#command-warnings" id="id79">command_warnings</a></li>
 <li><a class="reference internal" href="#connection-plugins" id="id80">connection_plugins</a></li>
 <li><a class="reference internal" href="#deprecation-warnings" id="id81">deprecation_warnings</a></li>
-<li><a class="reference internal" href="#display-args-to-stdout" id="id82">display_args_to_stdout</a></li>
-<li><a class="reference internal" href="#display-skipped-hosts" id="id83">display_skipped_hosts</a></li>
-<li><a class="reference internal" href="#error-on-undefined-vars" id="id84">error_on_undefined_vars</a></li>
-<li><a class="reference internal" href="#executable" id="id85">executable</a></li>
-<li><a class="reference internal" href="#filter-plugins" id="id86">filter_plugins</a></li>
-<li><a class="reference internal" href="#force-color" id="id87">force_color</a></li>
-<li><a class="reference internal" href="#force-handlers" id="id88">force_handlers</a></li>
-<li><a class="reference internal" href="#forks" id="id89">forks</a></li>
-<li><a class="reference internal" href="#gathering" id="id90">gathering</a></li>
-<li><a class="reference internal" href="#hash-behaviour" id="id91">hash_behaviour</a></li>
-<li><a class="reference internal" href="#hostfile" id="id92">hostfile</a></li>
-<li><a class="reference internal" href="#host-key-checking" id="id93">host_key_checking</a></li>
-<li><a class="reference internal" href="#inventory" id="id94">inventory</a></li>
-<li><a class="reference internal" href="#jinja2-extensions" id="id95">jinja2_extensions</a></li>
-<li><a class="reference internal" href="#library" id="id96">library</a></li>
-<li><a class="reference internal" href="#log-path" id="id97">log_path</a></li>
-<li><a class="reference internal" href="#lookup-plugins" id="id98">lookup_plugins</a></li>
-<li><a class="reference internal" href="#module-lang" id="id99">module_lang</a></li>
-<li><a class="reference internal" href="#module-name" id="id100">module_name</a></li>
-<li><a class="reference internal" href="#nocolor" id="id101">nocolor</a></li>
-<li><a class="reference internal" href="#nocows" id="id102">nocows</a></li>
-<li><a class="reference internal" href="#pattern" id="id103">pattern</a></li>
-<li><a class="reference internal" href="#poll-interval" id="id104">poll_interval</a></li>
-<li><a class="reference internal" href="#private-key-file" id="id105">private_key_file</a></li>
-<li><a class="reference internal" href="#remote-port" id="id106">remote_port</a></li>
-<li><a class="reference internal" href="#remote-tmp" id="id107">remote_tmp</a></li>
-<li><a class="reference internal" href="#remote-user" id="id108">remote_user</a></li>
-<li><a class="reference internal" href="#retry-files-enabled" id="id109">retry_files_enabled</a></li>
-<li><a class="reference internal" href="#retry-files-save-path" id="id110">retry_files_save_path</a></li>
-<li><a class="reference internal" href="#roles-path" id="id111">roles_path</a></li>
-<li><a class="reference internal" href="#sudo-exe" id="id112">sudo_exe</a></li>
-<li><a class="reference internal" href="#sudo-flags" id="id113">sudo_flags</a></li>
-<li><a class="reference internal" href="#sudo-user" id="id114">sudo_user</a></li>
-<li><a class="reference internal" href="#system-warnings" id="id115">system_warnings</a></li>
-<li><a class="reference internal" href="#timeout" id="id116">timeout</a></li>
-<li><a class="reference internal" href="#transport" id="id117">transport</a></li>
-<li><a class="reference internal" href="#vars-plugins" id="id118">vars_plugins</a></li>
-<li><a class="reference internal" href="#vault-password-file" id="id119">vault_password_file</a></li>
+<li><a class="reference internal" href="#display-skipped-hosts" id="id82">display_skipped_hosts</a></li>
+<li><a class="reference internal" href="#error-on-undefined-vars" id="id83">error_on_undefined_vars</a></li>
+<li><a class="reference internal" href="#executable" id="id84">executable</a></li>
+<li><a class="reference internal" href="#filter-plugins" id="id85">filter_plugins</a></li>
+<li><a class="reference internal" href="#force-color" id="id86">force_color</a></li>
+<li><a class="reference internal" href="#force-handlers" id="id87">force_handlers</a></li>
+<li><a class="reference internal" href="#forks" id="id88">forks</a></li>
+<li><a class="reference internal" href="#gathering" id="id89">gathering</a></li>
+<li><a class="reference internal" href="#hash-behaviour" id="id90">hash_behaviour</a></li>
+<li><a class="reference internal" href="#hostfile" id="id91">hostfile</a></li>
+<li><a class="reference internal" href="#host-key-checking" id="id92">host_key_checking</a></li>
+<li><a class="reference internal" href="#inventory" id="id93">inventory</a></li>
+<li><a class="reference internal" href="#jinja2-extensions" id="id94">jinja2_extensions</a></li>
+<li><a class="reference internal" href="#library" id="id95">library</a></li>
+<li><a class="reference internal" href="#log-path" id="id96">log_path</a></li>
+<li><a class="reference internal" href="#lookup-plugins" id="id97">lookup_plugins</a></li>
+<li><a class="reference internal" href="#module-lang" id="id98">module_lang</a></li>
+<li><a class="reference internal" href="#module-name" id="id99">module_name</a></li>
+<li><a class="reference internal" href="#nocolor" id="id100">nocolor</a></li>
+<li><a class="reference internal" href="#nocows" id="id101">nocows</a></li>
+<li><a class="reference internal" href="#pattern" id="id102">pattern</a></li>
+<li><a class="reference internal" href="#poll-interval" id="id103">poll_interval</a></li>
+<li><a class="reference internal" href="#private-key-file" id="id104">private_key_file</a></li>
+<li><a class="reference internal" href="#remote-port" id="id105">remote_port</a></li>
+<li><a class="reference internal" href="#remote-tmp" id="id106">remote_tmp</a></li>
+<li><a class="reference internal" href="#remote-user" id="id107">remote_user</a></li>
+<li><a class="reference internal" href="#retry-files-enabled" id="id108">retry_files_enabled</a></li>
+<li><a class="reference internal" href="#retry-files-save-path" id="id109">retry_files_save_path</a></li>
+<li><a class="reference internal" href="#roles-path" id="id110">roles_path</a></li>
+<li><a class="reference internal" href="#sudo-exe" id="id111">sudo_exe</a></li>
+<li><a class="reference internal" href="#sudo-flags" id="id112">sudo_flags</a></li>
+<li><a class="reference internal" href="#sudo-user" id="id113">sudo_user</a></li>
+<li><a class="reference internal" href="#system-warnings" id="id114">system_warnings</a></li>
+<li><a class="reference internal" href="#timeout" id="id115">timeout</a></li>
+<li><a class="reference internal" href="#transport" id="id116">transport</a></li>
+<li><a class="reference internal" href="#vars-plugins" id="id117">vars_plugins</a></li>
+<li><a class="reference internal" href="#vault-password-file" id="id118">vault_password_file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#privilege-escalation-settings" id="id120">Privilege Escalation Settings</a><ul>
-<li><a class="reference internal" href="#become" id="id121">become</a></li>
-<li><a class="reference internal" href="#become-method" id="id122">become_method</a></li>
-<li><a class="reference internal" href="#become-user" id="id123">become_user</a></li>
-<li><a class="reference internal" href="#become-ask-pass" id="id124">become_ask_pass</a></li>
-<li><a class="reference internal" href="#become-allow-same-user" id="id125">become_allow_same_user</a></li>
+<li><a class="reference internal" href="#privilege-escalation-settings" id="id119">Privilege Escalation Settings</a><ul>
+<li><a class="reference internal" href="#become" id="id120">become</a></li>
+<li><a class="reference internal" href="#become-method" id="id121">become_method</a></li>
+<li><a class="reference internal" href="#become-user" id="id122">become_user</a></li>
+<li><a class="reference internal" href="#become-ask-pass" id="id123">become_ask_pass</a></li>
+<li><a class="reference internal" href="#become-allow-same-user" id="id124">become_allow_same_user</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#paramiko-specific-settings" id="id126">Paramiko Specific Settings</a><ul>
-<li><a class="reference internal" href="#record-host-keys" id="id127">record_host_keys</a></li>
-<li><a class="reference internal" href="#proxy-command" id="id128">proxy_command</a></li>
+<li><a class="reference internal" href="#paramiko-specific-settings" id="id125">Paramiko Specific Settings</a><ul>
+<li><a class="reference internal" href="#record-host-keys" id="id126">record_host_keys</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#openssh-specific-settings" id="id129">OpenSSH Specific Settings</a><ul>
-<li><a class="reference internal" href="#ssh-args" id="id130">ssh_args</a></li>
-<li><a class="reference internal" href="#control-path" id="id131">control_path</a></li>
-<li><a class="reference internal" href="#scp-if-ssh" id="id132">scp_if_ssh</a></li>
-<li><a class="reference internal" href="#pipelining" id="id133">pipelining</a></li>
+<li><a class="reference internal" href="#openssh-specific-settings" id="id127">OpenSSH Specific Settings</a><ul>
+<li><a class="reference internal" href="#ssh-args" id="id128">ssh_args</a></li>
+<li><a class="reference internal" href="#control-path" id="id129">control_path</a></li>
+<li><a class="reference internal" href="#scp-if-ssh" id="id130">scp_if_ssh</a></li>
+<li><a class="reference internal" href="#pipelining" id="id131">pipelining</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#accelerated-mode-settings" id="id134">Accelerated Mode Settings</a><ul>
-<li><a class="reference internal" href="#accelerate-port" id="id135">accelerate_port</a></li>
-<li><a class="reference internal" href="#accelerate-timeout" id="id136">accelerate_timeout</a></li>
-<li><a class="reference internal" href="#accelerate-connect-timeout" id="id137">accelerate_connect_timeout</a></li>
-<li><a class="reference internal" href="#accelerate-daemon-timeout" id="id138">accelerate_daemon_timeout</a></li>
-<li><a class="reference internal" href="#accelerate-multi-key" id="id139">accelerate_multi_key</a></li>
+<li><a class="reference internal" href="#accelerated-mode-settings" id="id132">Accelerated Mode Settings</a><ul>
+<li><a class="reference internal" href="#accelerate-port" id="id133">accelerate_port</a></li>
+<li><a class="reference internal" href="#accelerate-timeout" id="id134">accelerate_timeout</a></li>
+<li><a class="reference internal" href="#accelerate-connect-timeout" id="id135">accelerate_connect_timeout</a></li>
+<li><a class="reference internal" href="#accelerate-daemon-timeout" id="id136">accelerate_daemon_timeout</a></li>
+<li><a class="reference internal" href="#accelerate-multi-key" id="id137">accelerate_multi_key</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#selinux-specific-settings" id="id140">Selinux Specific Settings</a><ul>
-<li><a class="reference internal" href="#special-context-filesystems" id="id141">special_context_filesystems</a></li>
+<li><a class="reference internal" href="#selinux-specific-settings" id="id138">Selinux Specific Settings</a><ul>
+<li><a class="reference internal" href="#special-context-filesystems" id="id139">special_context_filesystems</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#galaxy-settings" id="id142">Galaxy Settings</a><ul>
-<li><a class="reference internal" href="#server" id="id143">server</a></li>
-<li><a class="reference internal" href="#ignore-certs" id="id144">ignore_certs</a></li>
+<li><a class="reference internal" href="#galaxy-settings" id="id140">Galaxy Settings</a><ul>
+<li><a class="reference internal" href="#server" id="id141">server</a></li>
+<li><a class="reference internal" href="#ignore-certs" id="id142">ignore_certs</a></li>
 </ul>
 </li>
 </ul>
@@ -644,33 +695,8 @@ different locations:</p>
 </div>
 <p>Deprecation warnings indicate usage of legacy features that are slated for removal in a future release of Ansible.</p>
 </div>
-<div class="section" id="display-args-to-stdout">
-<h4><a class="toc-backref" href="#id82">display_args_to_stdout</a><a class="headerlink" href="#display-args-to-stdout" title="Permalink to this headline">¶</a></h4>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.1.0.</span></p>
-</div>
-<p>By default, ansible-playbook will print a header for each task that is run to
-stdout.  These headers will contain the <code class="docutils literal"><span class="pre">name:</span></code> field from the task if you
-specified one.  If you didn&#8217;t then ansible-playbook uses the task&#8217;s action to
-help you tell which task is presently running.  Sometimes you run many of the
-same action and so you want more information about the task to differentiate
-it from others of the same action.  If you set this variable to <code class="docutils literal"><span class="pre">True</span></code> in
-the config then ansible-playbook will also include the task&#8217;s arguments in the
-header.</p>
-<p>This setting defaults to <code class="docutils literal"><span class="pre">False</span></code> because there is a chance that you have
-sensitive values in your parameters and do not want those to be printed to
-stdout:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">display_args_to_stdout</span><span class="o">=</span>False
-</pre></div>
-</div>
-<p>If you set this to <code class="docutils literal"><span class="pre">True</span></code> you should be sure that you have secured your
-environment&#8217;s stdout (no one can shoulder surf your screen and you aren&#8217;t
-saving stdout to an insecure file) or made sure that all of your playbooks
-explicitly added the <code class="docutils literal"><span class="pre">no_log:</span> <span class="pre">True</span></code> parameter to tasks which have sensistive
-values   See <a class="reference internal" href="faq.html#keep-secret-data"><span>How do I keep secret data in my playbook?</span></a> for more information.</p>
-</div>
 <div class="section" id="display-skipped-hosts">
-<span id="id16"></span><h4><a class="toc-backref" href="#id83">display_skipped_hosts</a><a class="headerlink" href="#display-skipped-hosts" title="Permalink to this headline">¶</a></h4>
+<span id="id16"></span><h4><a class="toc-backref" href="#id82">display_skipped_hosts</a><a class="headerlink" href="#display-skipped-hosts" title="Permalink to this headline">¶</a></h4>
 <p>If set to <cite>False</cite>, ansible will not display any status for a task that is skipped. The default behavior is to display skipped tasks:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">display_skipped_hosts</span><span class="o">=</span>True
 </pre></div>
@@ -678,7 +704,7 @@ values   See <a class="reference internal" href="faq.html#keep-secret-data"><spa
 <p>Note that Ansible will always show the task header for any task, regardless of whether or not the task is skipped.</p>
 </div>
 <div class="section" id="error-on-undefined-vars">
-<span id="id17"></span><h4><a class="toc-backref" href="#id84">error_on_undefined_vars</a><a class="headerlink" href="#error-on-undefined-vars" title="Permalink to this headline">¶</a></h4>
+<span id="id17"></span><h4><a class="toc-backref" href="#id83">error_on_undefined_vars</a><a class="headerlink" href="#error-on-undefined-vars" title="Permalink to this headline">¶</a></h4>
 <p>On by default since Ansible 1.3, this causes ansible to fail steps that reference variable names that are likely
 typoed:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">error_on_undefined_vars</span><span class="o">=</span>True
@@ -688,14 +714,14 @@ typoed:</p>
 or ansible action line exactly as written.</p>
 </div>
 <div class="section" id="executable">
-<span id="id18"></span><h4><a class="toc-backref" href="#id85">executable</a><a class="headerlink" href="#executable" title="Permalink to this headline">¶</a></h4>
+<span id="id18"></span><h4><a class="toc-backref" href="#id84">executable</a><a class="headerlink" href="#executable" title="Permalink to this headline">¶</a></h4>
 <p>This indicates the command to use to spawn a shell under a sudo environment.  Users may need to change this to /bin/bash in rare instances when sudo is constrained, but in most cases it may be left as is:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">executable</span> <span class="o">=</span> /bin/bash
 </pre></div>
 </div>
 </div>
 <div class="section" id="filter-plugins">
-<span id="id19"></span><h4><a class="toc-backref" href="#id86">filter_plugins</a><a class="headerlink" href="#filter-plugins" title="Permalink to this headline">¶</a></h4>
+<span id="id19"></span><h4><a class="toc-backref" href="#id85">filter_plugins</a><a class="headerlink" href="#filter-plugins" title="Permalink to this headline">¶</a></h4>
 <p>Filters are specific functions that can be used to extend the template system.</p>
 <p>This is a developer-centric feature that allows low-level extensions around Ansible to be loaded from
 different locations:</p>
@@ -705,14 +731,14 @@ different locations:</p>
 <p>Most users will not need to use this feature.  See <a class="reference internal" href="developing_plugins.html"><em>Developing Plugins</em></a> for more details</p>
 </div>
 <div class="section" id="force-color">
-<span id="id20"></span><h4><a class="toc-backref" href="#id87">force_color</a><a class="headerlink" href="#force-color" title="Permalink to this headline">¶</a></h4>
+<span id="id20"></span><h4><a class="toc-backref" href="#id86">force_color</a><a class="headerlink" href="#force-color" title="Permalink to this headline">¶</a></h4>
 <p>This options forces color mode even when running without a TTY:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">force_color</span> <span class="o">=</span> 1
 </pre></div>
 </div>
 </div>
 <div class="section" id="force-handlers">
-<span id="id21"></span><h4><a class="toc-backref" href="#id88">force_handlers</a><a class="headerlink" href="#force-handlers" title="Permalink to this headline">¶</a></h4>
+<span id="id21"></span><h4><a class="toc-backref" href="#id87">force_handlers</a><a class="headerlink" href="#force-handlers" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.9.1.</span></p>
 </div>
@@ -724,7 +750,7 @@ different locations:</p>
 This can also be set per play or on the command line. See <a class="reference internal" href="playbooks_error_handling.html#handlers-and-failure"><span>Handlers and Failure</span></a> for more details.</p>
 </div>
 <div class="section" id="forks">
-<span id="id22"></span><h4><a class="toc-backref" href="#id89">forks</a><a class="headerlink" href="#forks" title="Permalink to this headline">¶</a></h4>
+<span id="id22"></span><h4><a class="toc-backref" href="#id88">forks</a><a class="headerlink" href="#forks" title="Permalink to this headline">¶</a></h4>
 <p>This is the default number of parallel processes to spawn when communicating with remote hosts.  Since Ansible 1.3,
 the fork number is automatically limited to the number of possible hosts, so this is really a limit of how much
 network and CPU load you think you can handle.  Many users may set this to 50, some set it to 500 or more.  If you
@@ -735,7 +761,7 @@ is very very conservative:</p>
 </div>
 </div>
 <div class="section" id="gathering">
-<span id="id23"></span><h4><a class="toc-backref" href="#id90">gathering</a><a class="headerlink" href="#gathering" title="Permalink to this headline">¶</a></h4>
+<span id="id23"></span><h4><a class="toc-backref" href="#id89">gathering</a><a class="headerlink" href="#gathering" title="Permalink to this headline">¶</a></h4>
 <p>New in 1.6, the &#8216;gathering&#8217; setting controls the default policy of facts gathering (variables discovered about remote systems).</p>
 <p>The value &#8216;implicit&#8217; is the default, which means that the fact cache will be ignored and facts will be gathered per play unless &#8216;gather_facts: False&#8217; is set.
 The value &#8216;explicit&#8217; is the inverse, facts will not be gathered unless directly requested in the play.
@@ -746,7 +772,7 @@ This option can be useful for those wishing to save fact gathering time. Both &#
 </div>
 </div>
 <div class="section" id="hash-behaviour">
-<h4><a class="toc-backref" href="#id91">hash_behaviour</a><a class="headerlink" href="#hash-behaviour" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id90">hash_behaviour</a><a class="headerlink" href="#hash-behaviour" title="Permalink to this headline">¶</a></h4>
 <p>Ansible by default will override variables in specific precedence orders, as described in <a class="reference internal" href="playbooks_variables.html"><em>Variables</em></a>.  When a variable
 of higher precedence wins, it will replace the other value.</p>
 <p>Some users prefer that variables that are hashes (aka &#8216;dictionaries&#8217; in Python terms) are merged.  This setting is called &#8216;merge&#8217;. This is not the default behavior and it does not affect variables whose values are scalars (integers, strings) or
@@ -760,11 +786,11 @@ official examples repos do not use this setting:</p>
 the <cite>combine</cite> filter described in <a class="reference internal" href="playbooks_filters.html"><em>Jinja2 filters</em></a>.</p>
 </div>
 <div class="section" id="hostfile">
-<span id="id24"></span><h4><a class="toc-backref" href="#id92">hostfile</a><a class="headerlink" href="#hostfile" title="Permalink to this headline">¶</a></h4>
+<span id="id24"></span><h4><a class="toc-backref" href="#id91">hostfile</a><a class="headerlink" href="#hostfile" title="Permalink to this headline">¶</a></h4>
 <p>This is a deprecated setting since 1.9, please look at <a class="reference internal" href="#inventory-file"><span>inventory</span></a> for the new setting.</p>
 </div>
 <div class="section" id="host-key-checking">
-<span id="id25"></span><h4><a class="toc-backref" href="#id93">host_key_checking</a><a class="headerlink" href="#host-key-checking" title="Permalink to this headline">¶</a></h4>
+<span id="id25"></span><h4><a class="toc-backref" href="#id92">host_key_checking</a><a class="headerlink" href="#host-key-checking" title="Permalink to this headline">¶</a></h4>
 <p>As described in <a class="reference internal" href="intro_getting_started.html"><em>Getting Started</em></a>, host key checking is on by default in Ansible 1.3 and later.  If you understand the
 implications and wish to disable it, you may do so here by setting the value to False:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">host_key_checking</span><span class="o">=</span>True
@@ -772,7 +798,7 @@ implications and wish to disable it, you may do so here by setting the value to 
 </div>
 </div>
 <div class="section" id="inventory">
-<span id="inventory-file"></span><h4><a class="toc-backref" href="#id94">inventory</a><a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h4>
+<span id="inventory-file"></span><h4><a class="toc-backref" href="#id93">inventory</a><a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h4>
 <p>This is the default location of the inventory file, script, or directory that Ansible will use to determine what hosts it has available
 to talk to:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">inventory</span> <span class="o">=</span> /etc/ansible/hosts
@@ -781,7 +807,7 @@ to talk to:</p>
 <p>It used to be called hostfile in Ansible before 1.9</p>
 </div>
 <div class="section" id="jinja2-extensions">
-<span id="id26"></span><h4><a class="toc-backref" href="#id95">jinja2_extensions</a><a class="headerlink" href="#jinja2-extensions" title="Permalink to this headline">¶</a></h4>
+<span id="id26"></span><h4><a class="toc-backref" href="#id94">jinja2_extensions</a><a class="headerlink" href="#jinja2-extensions" title="Permalink to this headline">¶</a></h4>
 <p>This is a developer-specific feature that allows enabling additional Jinja2 extensions:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">jinja2_extensions</span> <span class="o">=</span> jinja2.ext.do,jinja2.ext.i18n
 </pre></div>
@@ -789,7 +815,7 @@ to talk to:</p>
 <p>If you do not know what these do, you probably don&#8217;t need to change this setting :)</p>
 </div>
 <div class="section" id="library">
-<span id="id27"></span><h4><a class="toc-backref" href="#id96">library</a><a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h4>
+<span id="id27"></span><h4><a class="toc-backref" href="#id95">library</a><a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h4>
 <p>This is the default location Ansible looks to find modules:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">library</span> <span class="o">=</span> /usr/share/ansible
 </pre></div>
@@ -798,7 +824,7 @@ to talk to:</p>
 &#8221;./library&#8221; directory alongside a playbook.</p>
 </div>
 <div class="section" id="log-path">
-<span id="id28"></span><h4><a class="toc-backref" href="#id97">log_path</a><a class="headerlink" href="#log-path" title="Permalink to this headline">¶</a></h4>
+<span id="id28"></span><h4><a class="toc-backref" href="#id96">log_path</a><a class="headerlink" href="#log-path" title="Permalink to this headline">¶</a></h4>
 <p>If present and configured in ansible.cfg, Ansible will log information about executions at the designated location.  Be sure
 the user running Ansible has permissions on the logfile:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">log_path</span><span class="o">=</span>/var/log/ansible.log
@@ -809,7 +835,7 @@ syslog of managed machines.  Password arguments are excluded.</p>
 <p>For Enterprise users seeking more detailed logging history, you may be interested in <a class="reference internal" href="tower.html"><em>Ansible Tower</em></a>.</p>
 </div>
 <div class="section" id="lookup-plugins">
-<span id="id29"></span><h4><a class="toc-backref" href="#id98">lookup_plugins</a><a class="headerlink" href="#lookup-plugins" title="Permalink to this headline">¶</a></h4>
+<span id="id29"></span><h4><a class="toc-backref" href="#id97">lookup_plugins</a><a class="headerlink" href="#lookup-plugins" title="Permalink to this headline">¶</a></h4>
 <p>This is a developer-centric feature that allows low-level extensions around Ansible to be loaded from
 different locations:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">lookup_plugins</span> <span class="o">=</span> ~/.ansible/plugins/lookup_plugins/:/usr/share/ansible_plugins/lookup_plugins
@@ -818,14 +844,14 @@ different locations:</p>
 <p>Most users will not need to use this feature.  See <a class="reference internal" href="developing_plugins.html"><em>Developing Plugins</em></a> for more details</p>
 </div>
 <div class="section" id="module-lang">
-<span id="id30"></span><h4><a class="toc-backref" href="#id99">module_lang</a><a class="headerlink" href="#module-lang" title="Permalink to this headline">¶</a></h4>
+<span id="id30"></span><h4><a class="toc-backref" href="#id98">module_lang</a><a class="headerlink" href="#module-lang" title="Permalink to this headline">¶</a></h4>
 <p>This is to set the default language to communicate between the module and the system. By default, the value is &#8216;C&#8217;:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">module_lang</span> <span class="o">=</span> en_US.UTF-8
 </pre></div>
 </div>
 </div>
 <div class="section" id="module-name">
-<span id="id31"></span><h4><a class="toc-backref" href="#id100">module_name</a><a class="headerlink" href="#module-name" title="Permalink to this headline">¶</a></h4>
+<span id="id31"></span><h4><a class="toc-backref" href="#id99">module_name</a><a class="headerlink" href="#module-name" title="Permalink to this headline">¶</a></h4>
 <p>This is the default module name (-m) value for /usr/bin/ansible.  The default is the &#8216;command&#8217; module.
 Remember the command module doesn&#8217;t support shell variables, pipes, or quotes, so you might wish to change
 it to &#8216;shell&#8217;:</p>
@@ -834,7 +860,7 @@ it to &#8216;shell&#8217;:</p>
 </div>
 </div>
 <div class="section" id="nocolor">
-<span id="id32"></span><h4><a class="toc-backref" href="#id101">nocolor</a><a class="headerlink" href="#nocolor" title="Permalink to this headline">¶</a></h4>
+<span id="id32"></span><h4><a class="toc-backref" href="#id100">nocolor</a><a class="headerlink" href="#nocolor" title="Permalink to this headline">¶</a></h4>
 <p>By default ansible will try to colorize output to give a better indication of failure and status information.
 If you dislike this behavior you can turn it off by setting &#8216;nocolor&#8217; to 1:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">nocolor</span><span class="o">=</span>0
@@ -842,7 +868,7 @@ If you dislike this behavior you can turn it off by setting &#8216;nocolor&#8217
 </div>
 </div>
 <div class="section" id="nocows">
-<span id="id33"></span><h4><a class="toc-backref" href="#id102">nocows</a><a class="headerlink" href="#nocows" title="Permalink to this headline">¶</a></h4>
+<span id="id33"></span><h4><a class="toc-backref" href="#id101">nocows</a><a class="headerlink" href="#nocows" title="Permalink to this headline">¶</a></h4>
 <p>By default ansible will take advantage of cowsay if installed to make /usr/bin/ansible-playbook runs more exciting.
 Why?  We believe systems management should be a happy experience.  If you do not like the cows, you can disable them
 by setting &#8216;nocows&#8217; to 1:</p>
@@ -851,7 +877,7 @@ by setting &#8216;nocows&#8217; to 1:</p>
 </div>
 </div>
 <div class="section" id="pattern">
-<span id="id34"></span><h4><a class="toc-backref" href="#id103">pattern</a><a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h4>
+<span id="id34"></span><h4><a class="toc-backref" href="#id102">pattern</a><a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h4>
 <p>This is the default group of hosts to talk to in a playbook if no &#8220;hosts:&#8221; stanza is supplied.  The default is to talk
 to all hosts.  You may wish to change this to protect yourself from surprises:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">hosts</span><span class="o">=</span>*
@@ -860,7 +886,7 @@ to all hosts.  You may wish to change this to protect yourself from surprises:</
 <p>Note that /usr/bin/ansible always requires a host pattern and does not use this setting, only /usr/bin/ansible-playbook.</p>
 </div>
 <div class="section" id="poll-interval">
-<span id="id35"></span><h4><a class="toc-backref" href="#id104">poll_interval</a><a class="headerlink" href="#poll-interval" title="Permalink to this headline">¶</a></h4>
+<span id="id35"></span><h4><a class="toc-backref" href="#id103">poll_interval</a><a class="headerlink" href="#poll-interval" title="Permalink to this headline">¶</a></h4>
 <p>For asynchronous tasks in Ansible (covered in <a class="reference internal" href="playbooks_async.html"><em>Asynchronous Actions and Polling</em></a>), this is how often to check back on the status of those
 tasks when an explicit poll interval is not supplied.  The default is a reasonably moderate 15 seconds which is a tradeoff
 between checking in frequently and providing a quick turnaround when something may have completed:</p>
@@ -869,7 +895,7 @@ between checking in frequently and providing a quick turnaround when something m
 </div>
 </div>
 <div class="section" id="private-key-file">
-<span id="id36"></span><h4><a class="toc-backref" href="#id105">private_key_file</a><a class="headerlink" href="#private-key-file" title="Permalink to this headline">¶</a></h4>
+<span id="id36"></span><h4><a class="toc-backref" href="#id104">private_key_file</a><a class="headerlink" href="#private-key-file" title="Permalink to this headline">¶</a></h4>
 <p>If you are using a pem file to authenticate with machines rather than SSH agent or passwords, you can set the default
 value here to avoid re-specifying <code class="docutils literal"><span class="pre">--private-key</span></code> with every invocation:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">private_key_file</span><span class="o">=</span>/path/to/file.pem
@@ -877,7 +903,7 @@ value here to avoid re-specifying <code class="docutils literal"><span class="pr
 </div>
 </div>
 <div class="section" id="remote-port">
-<span id="id37"></span><h4><a class="toc-backref" href="#id106">remote_port</a><a class="headerlink" href="#remote-port" title="Permalink to this headline">¶</a></h4>
+<span id="id37"></span><h4><a class="toc-backref" href="#id105">remote_port</a><a class="headerlink" href="#remote-port" title="Permalink to this headline">¶</a></h4>
 <p>This sets the default SSH port on all of your systems, for systems that didn&#8217;t specify an alternative value in inventory.
 The default is the standard 22:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">remote_port</span> <span class="o">=</span> 22
@@ -885,7 +911,7 @@ The default is the standard 22:</p>
 </div>
 </div>
 <div class="section" id="remote-tmp">
-<span id="id38"></span><h4><a class="toc-backref" href="#id107">remote_tmp</a><a class="headerlink" href="#remote-tmp" title="Permalink to this headline">¶</a></h4>
+<span id="id38"></span><h4><a class="toc-backref" href="#id106">remote_tmp</a><a class="headerlink" href="#remote-tmp" title="Permalink to this headline">¶</a></h4>
 <p>Ansible works by transferring modules to your remote machines, running them, and then cleaning up after itself.  In some
 cases, you may not wish to use the default location and would like to change the path.  You can do so by altering this
 setting:</p>
@@ -896,7 +922,7 @@ setting:</p>
 inside this location.</p>
 </div>
 <div class="section" id="remote-user">
-<span id="id39"></span><h4><a class="toc-backref" href="#id108">remote_user</a><a class="headerlink" href="#remote-user" title="Permalink to this headline">¶</a></h4>
+<span id="id39"></span><h4><a class="toc-backref" href="#id107">remote_user</a><a class="headerlink" href="#remote-user" title="Permalink to this headline">¶</a></h4>
 <p>This is the default username ansible will connect as for /usr/bin/ansible-playbook.  Note that /usr/bin/ansible will
 always default to the current user if this is not defined:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">remote_user</span> <span class="o">=</span> root
@@ -904,14 +930,14 @@ always default to the current user if this is not defined:</p>
 </div>
 </div>
 <div class="section" id="retry-files-enabled">
-<span id="id40"></span><h4><a class="toc-backref" href="#id109">retry_files_enabled</a><a class="headerlink" href="#retry-files-enabled" title="Permalink to this headline">¶</a></h4>
+<span id="id40"></span><h4><a class="toc-backref" href="#id108">retry_files_enabled</a><a class="headerlink" href="#retry-files-enabled" title="Permalink to this headline">¶</a></h4>
 <p>This controls whether a failed Ansible playbook should create a .retry file. The default setting is True:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">retry_files_enabled</span> <span class="o">=</span> False
 </pre></div>
 </div>
 </div>
 <div class="section" id="retry-files-save-path">
-<span id="id41"></span><h4><a class="toc-backref" href="#id110">retry_files_save_path</a><a class="headerlink" href="#retry-files-save-path" title="Permalink to this headline">¶</a></h4>
+<span id="id41"></span><h4><a class="toc-backref" href="#id109">retry_files_save_path</a><a class="headerlink" href="#retry-files-save-path" title="Permalink to this headline">¶</a></h4>
 <p>The retry files save path is where Ansible will save .retry files when a playbook fails and retry_files_enabled is True (the default).
 The default location is ~/ and can be changed to any writeable path:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">retry_files_save_path</span> <span class="o">=</span> ~/.ansible-retry
@@ -920,7 +946,7 @@ The default location is ~/ and can be changed to any writeable path:</p>
 <p>The directory will be created if it does not already exist.</p>
 </div>
 <div class="section" id="roles-path">
-<span id="cfg-roles-path"></span><h4><a class="toc-backref" href="#id111">roles_path</a><a class="headerlink" href="#roles-path" title="Permalink to this headline">¶</a></h4>
+<span id="cfg-roles-path"></span><h4><a class="toc-backref" href="#id110">roles_path</a><a class="headerlink" href="#roles-path" title="Permalink to this headline">¶</a></h4>
 <p>The roles path indicate additional directories beyond the &#8216;roles/&#8217; subdirectory of a playbook project to search to find Ansible
 roles.  For instance, if there was a source control repository of common roles and a different repository of playbooks, you might
 choose to establish a convention to checkout roles in /opt/mysite/roles like so:</p>
@@ -935,7 +961,7 @@ choose to establish a convention to checkout roles in /opt/mysite/roles like so:
 that were searched.</p>
 </div>
 <div class="section" id="sudo-exe">
-<span id="id42"></span><h4><a class="toc-backref" href="#id112">sudo_exe</a><a class="headerlink" href="#sudo-exe" title="Permalink to this headline">¶</a></h4>
+<span id="id42"></span><h4><a class="toc-backref" href="#id111">sudo_exe</a><a class="headerlink" href="#sudo-exe" title="Permalink to this headline">¶</a></h4>
 <p>If using an alternative sudo implementation on remote machines, the path to sudo can be replaced here provided
 the sudo implementation is matching CLI flags with the standard sudo:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">sudo_exe</span><span class="o">=</span>sudo
@@ -943,17 +969,16 @@ the sudo implementation is matching CLI flags with the standard sudo:</p>
 </div>
 </div>
 <div class="section" id="sudo-flags">
-<span id="id43"></span><h4><a class="toc-backref" href="#id113">sudo_flags</a><a class="headerlink" href="#sudo-flags" title="Permalink to this headline">¶</a></h4>
-<p>Additional flags to pass to sudo when engaging sudo support. The default is &#8216;-H -S -n&#8217; which sets the HOME environment
-variable, prompts for passwords via STDIN, and avoids prompting the user for input of any kind. Note that &#8216;-n&#8217; will conflict
-with using password-less sudo auth, such as pam_ssh_agent_auth. In some situations you may wish to add or remove flags, but
-in general most users will not need to change this setting::</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">sudo_flags</span><span class="o">=</span>-H -S -n
+<span id="id43"></span><h4><a class="toc-backref" href="#id112">sudo_flags</a><a class="headerlink" href="#sudo-flags" title="Permalink to this headline">¶</a></h4>
+<p>Additional flags to pass to sudo when engaging sudo support.  The default is &#8216;-H&#8217; which preserves the $HOME environment variable
+of the original user.  In some situations you may wish to add or remove flags, but in general most users
+will not need to change this setting:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">sudo_flags</span><span class="o">=</span>-H
 </pre></div>
 </div>
 </div>
 <div class="section" id="sudo-user">
-<span id="id44"></span><h4><a class="toc-backref" href="#id114">sudo_user</a><a class="headerlink" href="#sudo-user" title="Permalink to this headline">¶</a></h4>
+<span id="id44"></span><h4><a class="toc-backref" href="#id113">sudo_user</a><a class="headerlink" href="#sudo-user" title="Permalink to this headline">¶</a></h4>
 <p>This is the default user to sudo to if <code class="docutils literal"><span class="pre">--sudo-user</span></code> is not specified or &#8216;sudo_user&#8217; is not specified in an Ansible
 playbook.  The default is the most logical: &#8216;root&#8217;:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">sudo_user</span><span class="o">=</span>root
@@ -961,7 +986,7 @@ playbook.  The default is the most logical: &#8216;root&#8217;:</p>
 </div>
 </div>
 <div class="section" id="system-warnings">
-<span id="id45"></span><h4><a class="toc-backref" href="#id115">system_warnings</a><a class="headerlink" href="#system-warnings" title="Permalink to this headline">¶</a></h4>
+<span id="id45"></span><h4><a class="toc-backref" href="#id114">system_warnings</a><a class="headerlink" href="#system-warnings" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.</span></p>
 </div>
@@ -972,14 +997,14 @@ playbook.  The default is the most logical: &#8216;root&#8217;:</p>
 <p>These may include warnings about 3rd party packages or other conditions that should be resolved if possible.</p>
 </div>
 <div class="section" id="timeout">
-<span id="id46"></span><h4><a class="toc-backref" href="#id116">timeout</a><a class="headerlink" href="#timeout" title="Permalink to this headline">¶</a></h4>
+<span id="id46"></span><h4><a class="toc-backref" href="#id115">timeout</a><a class="headerlink" href="#timeout" title="Permalink to this headline">¶</a></h4>
 <p>This is the default SSH timeout to use on connection attempts:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">timeout</span> <span class="o">=</span> 10
 </pre></div>
 </div>
 </div>
 <div class="section" id="transport">
-<span id="id47"></span><h4><a class="toc-backref" href="#id117">transport</a><a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h4>
+<span id="id47"></span><h4><a class="toc-backref" href="#id116">transport</a><a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h4>
 <p>This is the default transport to use if &#8220;-c &lt;transport_name&gt;&#8221; is not specified to /usr/bin/ansible or /usr/bin/ansible-playbook.
 The default is &#8216;smart&#8217;, which will use &#8216;ssh&#8217; (OpenSSH based) if the local operating system is new enough to support ControlPersist
 technology, and then will otherwise use &#8216;paramiko&#8217;.  Other transport options include &#8216;local&#8217;, &#8216;chroot&#8217;, &#8216;jail&#8217;, and so on.</p>
@@ -990,7 +1015,7 @@ technology, and then will otherwise use &#8216;paramiko&#8217;.  Other transport
 </div>
 </div>
 <div class="section" id="vars-plugins">
-<span id="id48"></span><h4><a class="toc-backref" href="#id118">vars_plugins</a><a class="headerlink" href="#vars-plugins" title="Permalink to this headline">¶</a></h4>
+<span id="id48"></span><h4><a class="toc-backref" href="#id117">vars_plugins</a><a class="headerlink" href="#vars-plugins" title="Permalink to this headline">¶</a></h4>
 <p>This is a developer-centric feature that allows low-level extensions around Ansible to be loaded from
 different locations:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">vars_plugins</span> <span class="o">=</span> ~/.ansible/plugins/vars_plugins/:/usr/share/ansible_plugins/vars_plugins
@@ -999,7 +1024,7 @@ different locations:</p>
 <p>Most users will not need to use this feature.  See <a class="reference internal" href="developing_plugins.html"><em>Developing Plugins</em></a> for more details</p>
 </div>
 <div class="section" id="vault-password-file">
-<span id="id49"></span><h4><a class="toc-backref" href="#id119">vault_password_file</a><a class="headerlink" href="#vault-password-file" title="Permalink to this headline">¶</a></h4>
+<span id="id49"></span><h4><a class="toc-backref" href="#id118">vault_password_file</a><a class="headerlink" href="#vault-password-file" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.7.</span></p>
 </div>
@@ -1011,38 +1036,38 @@ different locations:</p>
 </div>
 </div>
 <div class="section" id="privilege-escalation-settings">
-<span id="privilege-escalation"></span><h3><a class="toc-backref" href="#id120">Privilege Escalation Settings</a><a class="headerlink" href="#privilege-escalation-settings" title="Permalink to this headline">¶</a></h3>
+<span id="privilege-escalation"></span><h3><a class="toc-backref" href="#id119">Privilege Escalation Settings</a><a class="headerlink" href="#privilege-escalation-settings" title="Permalink to this headline">¶</a></h3>
 <p>Ansible can use existing privilege escalation systems to allow a user to execute tasks as another. As of 1.9 ‘become’ supersedes the old sudo/su, while still being backwards compatible.  Settings live under the [privilege_escalation] header.</p>
 <div class="section" id="become">
-<span id="id50"></span><h4><a class="toc-backref" href="#id121">become</a><a class="headerlink" href="#become" title="Permalink to this headline">¶</a></h4>
+<span id="id50"></span><h4><a class="toc-backref" href="#id120">become</a><a class="headerlink" href="#become" title="Permalink to this headline">¶</a></h4>
 <p>The equivalent of adding sudo: or su: to a play or task, set to true/yes to activate privilege escalation. The default behavior is no:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">become</span><span class="o">=</span>True
 </pre></div>
 </div>
 </div>
 <div class="section" id="become-method">
-<span id="id51"></span><h4><a class="toc-backref" href="#id122">become_method</a><a class="headerlink" href="#become-method" title="Permalink to this headline">¶</a></h4>
+<span id="id51"></span><h4><a class="toc-backref" href="#id121">become_method</a><a class="headerlink" href="#become-method" title="Permalink to this headline">¶</a></h4>
 <p>Set the privilege escalation method. The default is <code class="docutils literal"><span class="pre">sudo</span></code>, other options are <code class="docutils literal"><span class="pre">su</span></code>, <code class="docutils literal"><span class="pre">pbrun</span></code>, <code class="docutils literal"><span class="pre">pfexec</span></code>, <code class="docutils literal"><span class="pre">doas</span></code>:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">become_method</span><span class="o">=</span>su
 </pre></div>
 </div>
 </div>
 <div class="section" id="become-user">
-<span id="id52"></span><h4><a class="toc-backref" href="#id123">become_user</a><a class="headerlink" href="#become-user" title="Permalink to this headline">¶</a></h4>
+<span id="id52"></span><h4><a class="toc-backref" href="#id122">become_user</a><a class="headerlink" href="#become-user" title="Permalink to this headline">¶</a></h4>
 <p>The equivalent to ansible_sudo_user or ansible_su_user, allows to set the user you become through privilege escalation. The default is &#8216;root&#8217;:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">become_user</span><span class="o">=</span>root
 </pre></div>
 </div>
 </div>
 <div class="section" id="become-ask-pass">
-<span id="id53"></span><h4><a class="toc-backref" href="#id124">become_ask_pass</a><a class="headerlink" href="#become-ask-pass" title="Permalink to this headline">¶</a></h4>
+<span id="id53"></span><h4><a class="toc-backref" href="#id123">become_ask_pass</a><a class="headerlink" href="#become-ask-pass" title="Permalink to this headline">¶</a></h4>
 <p>Ask for privilege escalation password, the default is False:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">become_ask_pass</span><span class="o">=</span>True
 </pre></div>
 </div>
 </div>
 <div class="section" id="become-allow-same-user">
-<span id="id54"></span><h4><a class="toc-backref" href="#id125">become_allow_same_user</a><a class="headerlink" href="#become-allow-same-user" title="Permalink to this headline">¶</a></h4>
+<span id="id54"></span><h4><a class="toc-backref" href="#id124">become_allow_same_user</a><a class="headerlink" href="#become-allow-same-user" title="Permalink to this headline">¶</a></h4>
 <p>Most of the time, using <em>sudo</em> to run a command as the same user who is running
 <em>sudo</em> itself is unnecessary overhead, so Ansible does not allow it. However,
 depending on the <em>sudo</em> configuration, it may be necessary to run a command as
@@ -1052,11 +1077,11 @@ optimization.</p>
 </div>
 </div>
 <div class="section" id="paramiko-specific-settings">
-<span id="paramiko-settings"></span><h3><a class="toc-backref" href="#id126">Paramiko Specific Settings</a><a class="headerlink" href="#paramiko-specific-settings" title="Permalink to this headline">¶</a></h3>
+<span id="paramiko-settings"></span><h3><a class="toc-backref" href="#id125">Paramiko Specific Settings</a><a class="headerlink" href="#paramiko-specific-settings" title="Permalink to this headline">¶</a></h3>
 <p>Paramiko is the default SSH connection implementation on Enterprise Linux 6 or earlier, and is not used by default on other
 platforms.  Settings live under the [paramiko] header.</p>
 <div class="section" id="record-host-keys">
-<span id="id55"></span><h4><a class="toc-backref" href="#id127">record_host_keys</a><a class="headerlink" href="#record-host-keys" title="Permalink to this headline">¶</a></h4>
+<span id="id55"></span><h4><a class="toc-backref" href="#id126">record_host_keys</a><a class="headerlink" href="#record-host-keys" title="Permalink to this headline">¶</a></h4>
 <p>The default setting of yes will record newly discovered and approved (if host key checking is enabled) hosts in the user&#8217;s hostfile.
 This setting may be inefficient for large numbers of hosts, and in those situations, using the ssh transport is definitely recommended
 instead.  Setting it to False will improve performance and is recommended when host key checking is disabled:</p>
@@ -1064,23 +1089,13 @@ instead.  Setting it to False will improve performance and is recommended when h
 </pre></div>
 </div>
 </div>
-<div class="section" id="proxy-command">
-<h4><a class="toc-backref" href="#id128">proxy_command</a><a class="headerlink" href="#proxy-command" title="Permalink to this headline">¶</a></h4>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.1.</span></p>
-</div>
-<p>Use an OpenSSH like ProxyCommand for proxying all Paramiko SSH connections through a bastion or jump host. Requires a minimum of Paramiko version 1.9.0. On Enterprise Linux 6 this is provided by <code class="docutils literal"><span class="pre">python-paramiko1.10</span></code> in the EPEL repository:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">proxy_command</span> <span class="o">=</span> ssh -W <span class="s2">&quot;%h:%p&quot;</span> bastion
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="openssh-specific-settings">
-<span id="openssh-settings"></span><h3><a class="toc-backref" href="#id129">OpenSSH Specific Settings</a><a class="headerlink" href="#openssh-specific-settings" title="Permalink to this headline">¶</a></h3>
+<span id="openssh-settings"></span><h3><a class="toc-backref" href="#id127">OpenSSH Specific Settings</a><a class="headerlink" href="#openssh-specific-settings" title="Permalink to this headline">¶</a></h3>
 <p>Under the [ssh_connection] header, the following settings are tunable for SSH connections.  OpenSSH is the default connection type for Ansible
 on OSes that are new enough to support ControlPersist.  (This means basically all operating systems except Enterprise Linux 6 or earlier).</p>
 <div class="section" id="ssh-args">
-<span id="id56"></span><h4><a class="toc-backref" href="#id130">ssh_args</a><a class="headerlink" href="#ssh-args" title="Permalink to this headline">¶</a></h4>
+<span id="id56"></span><h4><a class="toc-backref" href="#id128">ssh_args</a><a class="headerlink" href="#ssh-args" title="Permalink to this headline">¶</a></h4>
 <p>If set, this will pass a specific set of options to Ansible rather than Ansible&#8217;s usual defaults:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">ssh_args</span> <span class="o">=</span> -o <span class="nv">ControlMaster</span><span class="o">=</span>auto -o <span class="nv">ControlPersist</span><span class="o">=</span>60s
 </pre></div>
@@ -1089,7 +1104,7 @@ on OSes that are new enough to support ControlPersist.  (This means basically al
 be appropriate. If <cite>ssh_args</cite> is set, the default <code class="docutils literal"><span class="pre">control_path</span></code> setting is not used.</p>
 </div>
 <div class="section" id="control-path">
-<span id="id57"></span><h4><a class="toc-backref" href="#id131">control_path</a><a class="headerlink" href="#control-path" title="Permalink to this headline">¶</a></h4>
+<span id="id57"></span><h4><a class="toc-backref" href="#id129">control_path</a><a class="headerlink" href="#control-path" title="Permalink to this headline">¶</a></h4>
 <p>This is the location to save ControlPath sockets. This defaults to:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">control_path</span><span class="o">=</span>%<span class="o">(</span>directory<span class="o">)</span>s/ansible-ssh-%%h-%%p-%%r
 </pre></div>
@@ -1106,7 +1121,7 @@ and if so it is easy to tell there is too long of a Control Path filename.  This
 encountered on EC2. This setting is ignored if <code class="docutils literal"><span class="pre">ssh_args</span></code> is set.</p>
 </div>
 <div class="section" id="scp-if-ssh">
-<span id="id58"></span><h4><a class="toc-backref" href="#id132">scp_if_ssh</a><a class="headerlink" href="#scp-if-ssh" title="Permalink to this headline">¶</a></h4>
+<span id="id58"></span><h4><a class="toc-backref" href="#id130">scp_if_ssh</a><a class="headerlink" href="#scp-if-ssh" title="Permalink to this headline">¶</a></h4>
 <p>Occasionally users may be managing a remote system that doesn&#8217;t have SFTP enabled.  If set to True, we can
 cause scp to be used to transfer remote files instead:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">scp_if_ssh</span><span class="o">=</span>False
@@ -1116,7 +1131,7 @@ cause scp to be used to transfer remote files instead:</p>
 to managing the switch.  Most environments support SFTP by default and this doesn&#8217;t usually need to be changed.</p>
 </div>
 <div class="section" id="pipelining">
-<span id="id59"></span><h4><a class="toc-backref" href="#id133">pipelining</a><a class="headerlink" href="#pipelining" title="Permalink to this headline">¶</a></h4>
+<span id="id59"></span><h4><a class="toc-backref" href="#id131">pipelining</a><a class="headerlink" href="#pipelining" title="Permalink to this headline">¶</a></h4>
 <p>Enabling pipelining reduces the number of SSH operations required to
 execute a module on the remote server, by executing many ansible modules without actual file transfer.
 This can result in a very significant performance improvement when enabled, however when using &#8220;sudo:&#8221; operations you must
@@ -1130,12 +1145,12 @@ recommended if you can enable it, eliminating the need for <a class="reference i
 </div>
 </div>
 <div class="section" id="accelerated-mode-settings">
-<span id="accelerate-settings"></span><h3><a class="toc-backref" href="#id134">Accelerated Mode Settings</a><a class="headerlink" href="#accelerated-mode-settings" title="Permalink to this headline">¶</a></h3>
+<span id="accelerate-settings"></span><h3><a class="toc-backref" href="#id132">Accelerated Mode Settings</a><a class="headerlink" href="#accelerated-mode-settings" title="Permalink to this headline">¶</a></h3>
 <p>Under the [accelerate] header, the following settings are tunable for <a class="reference internal" href="playbooks_acceleration.html"><em>Accelerated Mode</em></a>.  Acceleration is
 a useful performance feature to use if you cannot enable <a class="reference internal" href="#pipelining"><span>pipelining</span></a> in your environment, but is probably
 not needed if you can.</p>
 <div class="section" id="accelerate-port">
-<span id="id60"></span><h4><a class="toc-backref" href="#id135">accelerate_port</a><a class="headerlink" href="#accelerate-port" title="Permalink to this headline">¶</a></h4>
+<span id="id60"></span><h4><a class="toc-backref" href="#id133">accelerate_port</a><a class="headerlink" href="#accelerate-port" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.3.</span></p>
 </div>
@@ -1145,7 +1160,7 @@ not needed if you can.</p>
 </div>
 </div>
 <div class="section" id="accelerate-timeout">
-<span id="id61"></span><h4><a class="toc-backref" href="#id136">accelerate_timeout</a><a class="headerlink" href="#accelerate-timeout" title="Permalink to this headline">¶</a></h4>
+<span id="id61"></span><h4><a class="toc-backref" href="#id134">accelerate_timeout</a><a class="headerlink" href="#accelerate-timeout" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.</span></p>
 </div>
@@ -1155,7 +1170,7 @@ not needed if you can.</p>
 </div>
 </div>
 <div class="section" id="accelerate-connect-timeout">
-<span id="id62"></span><h4><a class="toc-backref" href="#id137">accelerate_connect_timeout</a><a class="headerlink" href="#accelerate-connect-timeout" title="Permalink to this headline">¶</a></h4>
+<span id="id62"></span><h4><a class="toc-backref" href="#id135">accelerate_connect_timeout</a><a class="headerlink" href="#accelerate-connect-timeout" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.</span></p>
 </div>
@@ -1166,7 +1181,7 @@ not needed if you can.</p>
 <p>Note, this value can be set to less than one second, however it is probably not a good idea to do so unless you&#8217;re on a very fast and reliable LAN. If you&#8217;re connecting to systems over the internet, it may be necessary to increase this timeout.</p>
 </div>
 <div class="section" id="accelerate-daemon-timeout">
-<span id="id63"></span><h4><a class="toc-backref" href="#id138">accelerate_daemon_timeout</a><a class="headerlink" href="#accelerate-daemon-timeout" title="Permalink to this headline">¶</a></h4>
+<span id="id63"></span><h4><a class="toc-backref" href="#id136">accelerate_daemon_timeout</a><a class="headerlink" href="#accelerate-daemon-timeout" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.</span></p>
 </div>
@@ -1177,7 +1192,7 @@ not needed if you can.</p>
 <p>Note, prior to 1.6, the timeout was hard-coded from the time of the daemon&#8217;s launch. For version 1.6+, the timeout is now based on the last activity to the daemon and is configurable via this option.</p>
 </div>
 <div class="section" id="accelerate-multi-key">
-<span id="id64"></span><h4><a class="toc-backref" href="#id139">accelerate_multi_key</a><a class="headerlink" href="#accelerate-multi-key" title="Permalink to this headline">¶</a></h4>
+<span id="id64"></span><h4><a class="toc-backref" href="#id137">accelerate_multi_key</a><a class="headerlink" href="#accelerate-multi-key" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.</span></p>
 </div>
@@ -1189,10 +1204,10 @@ not needed if you can.</p>
 </div>
 </div>
 <div class="section" id="selinux-specific-settings">
-<span id="selinux-settings"></span><h3><a class="toc-backref" href="#id140">Selinux Specific Settings</a><a class="headerlink" href="#selinux-specific-settings" title="Permalink to this headline">¶</a></h3>
+<span id="selinux-settings"></span><h3><a class="toc-backref" href="#id138">Selinux Specific Settings</a><a class="headerlink" href="#selinux-specific-settings" title="Permalink to this headline">¶</a></h3>
 <p>These are settings that control SELinux interactions.</p>
 <div class="section" id="special-context-filesystems">
-<h4><a class="toc-backref" href="#id141">special_context_filesystems</a><a class="headerlink" href="#special-context-filesystems" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id139">special_context_filesystems</a><a class="headerlink" href="#special-context-filesystems" title="Permalink to this headline">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.9.</span></p>
 </div>
@@ -1205,14 +1220,14 @@ The default list is: nfs,vboxsf,fuse,ramfs:</p>
 </div>
 </div>
 <div class="section" id="galaxy-settings">
-<h3><a class="toc-backref" href="#id142">Galaxy Settings</a><a class="headerlink" href="#galaxy-settings" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id140">Galaxy Settings</a><a class="headerlink" href="#galaxy-settings" title="Permalink to this headline">¶</a></h3>
 <p>The following options can be set in the [galaxy] section of ansible.cfg:</p>
 <div class="section" id="server">
-<h4><a class="toc-backref" href="#id143">server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id141">server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h4>
 <p>Override the default Galaxy server value of <a class="reference external" href="https://galaxy.ansible.com">https://galaxy.ansible.com</a>. Useful if you have a hosted version of the Galaxy web app or want to point to the testing site <a class="reference external" href="https://galaxy-qa.ansible.com">https://galaxy-qa.ansible.com</a>. It does not work against private, hosted repos, which Galaxy can use for fetching and installing roles.</p>
 </div>
 <div class="section" id="ignore-certs">
-<h4><a class="toc-backref" href="#id144">ignore_certs</a><a class="headerlink" href="#ignore-certs" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id142">ignore_certs</a><a class="headerlink" href="#ignore-certs" title="Permalink to this headline">¶</a></h4>
 <p>If set to <em>yes</em>, ansible-galaxy will not validate TLS certificates. Handy for testing against a server with a self-signed certificate
 .</p>
 </div>
@@ -1227,7 +1242,7 @@ The default list is: nfs,vboxsf,fuse,ramfs:</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="intro_bsd.html" class="btn btn-neutral float-right" title="BSD Support"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="intro_bsd.html" class="btn btn-neutral float-right" title="BSD support"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="intro_adhoc.html" class="btn btn-neutral" title="Introduction To Ad-Hoc Commands"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1237,17 +1252,8 @@ The default list is: nfs,vboxsf,fuse,ramfs:</p>
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 

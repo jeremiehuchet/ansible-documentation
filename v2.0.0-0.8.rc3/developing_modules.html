@@ -14,7 +14,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>Developing Modules &mdash; Ansible Documentation</title>
+  <title>Developing Modules &mdash; Ansible v2.0.0-0.8.rc3 Documentation</title>
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="top" title="Ansible Documentation" href="index.html"/>
+    <link rel="top" title="Ansible v2.0.0-0.8.rc3 Documentation" href="index.html"/>
         <link rel="up" title="Developer Information" href="developing.html"/>
         <link rel="next" title="Developing Plugins" href="developing_plugins.html"/>
         <link rel="prev" title="Developing Dynamic Inventory Sources" href="developing_inventory.html"/> 
@@ -93,7 +93,7 @@
       src="_static/images/logo_invert.png"
       alt="Ansible Logo">
     <div class="DocSiteNav-title">
-      Documentation
+      Documentation v2.0.0-0.8.rc3
     </div>
   </a>
 
@@ -113,6 +113,71 @@
         </a>
       </div>
 
+      <div class="wy-side-nav-search" style="background-color:#5bbdbf;height=80px;margin:'auto auto auto auto'">
+        <!-- <a href="index.html" class="icon icon-home"> Ansible Documentation</a> -->
+        <!-- <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form> -->
+
+<script>
+  (function() {
+    var cx = '006019874985968165468:eu5pbnxp4po';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<form id="search-form-id" action="">
+  <input type="text" name="query" id="search-box-id" />
+  <a class="search-reset-start" id="search-reset"><i class="fa fa-times"></i></a>
+  <a class="search-reset-start" id="search-start"><i class="fa fa-search"></i></a>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=search-form-id&inputbox=search-box-id"></script>
+
+<script>
+  function executeQuery() {
+      var input = document.getElementById('search-box-id');
+      var element = google.search.cse.element.getElement('searchresults-only0');
+      element.resultsUrl = '/htmlout/search.html'
+      if (input.value == '') {
+          element.clearAllResults();
+          $('#page-content, .rst-footer-buttons, #search-start').show();
+          $('#search-results, #search-reset').hide();
+      } else {
+          $('#page-content, .rst-footer-buttons, #search-start').hide();
+          $('#search-results, #search-reset').show();
+          element.execute(input.value);
+      }
+      return false;
+      }
+
+  $('#search-reset').hide();
+
+  $('#search-box-id').css('background-position', '1em center');
+
+  $('#search-box-id').on('blur', function() {
+    $('#search-box-id').css('background-position', '1em center');
+  });
+
+  $('#search-start').click(function(e) { executeQuery(); });
+  $('#search-reset').click(function(e) { $('#search-box-id').val(''); executeQuery(); });
+
+  $('#search-form-id').submit(function(e) {
+      console.log('submitting!');
+      executeQuery();
+      e.preventDefault();
+      });
+</script>
+      </div>
+
       <div id="menu-id" class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
@@ -125,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_patterns.html">Patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_adhoc.html">Introduction To Ad-Hoc Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_configuration.html">Configuration file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_bsd.html">BSD support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_windows.html">Windows Support</a></li>
 </ul>
 </li>
@@ -143,14 +208,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="playbooks_special_topics.html">Playbooks: Special Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="become.html">Become (Privilege Escalation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become.html">Ansible Privilege Escalation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_acceleration.html">Accelerated Mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_async.html">Asynchronous Actions and Polling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_checkmode.html">Check Mode (&#8220;Dry Run&#8221;)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_delegation.html">Delegation, Rolling Updates, and Local Actions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_environment.html">Setting the Environment (and Working With Proxies)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_error_handling.html">Error Handling In Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="playbooks_advanced_syntax.html">Advanced Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_lookups.html">Using Lookups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="playbooks_tags.html">Tags</a></li>
@@ -180,7 +244,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Developing Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_plugins.html">Developing Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developing_test_pr.html">Helping Testing PRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developing_releases.html">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tower.html">Ansible Tower</a></li>
@@ -296,21 +359,6 @@
 <li class="toctree-l2"><a class="reference internal" href="YAMLSyntax.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html">Porting Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#playbook">Playbook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#deprecated">Deprecated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#other-caveats">Other caveats</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-plugins">Porting plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#lookup-plugins">Lookup plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#connection-plugins">Connection plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#action-plugins">Action plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#callback-plugins">Callback plugins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="porting_guide_2.0.html#id1">Connection plugins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="porting_guide_2.0.html#porting-custom-scripts">Porting custom scripts</a></li>
 </ul>
 
         
@@ -318,9 +366,16 @@
 <!-- changeable widget -->
 <center>
 <br/>
-<a href="http://www.ansible.com/docs-left?utm_source=docs">
-    <img style="border-width:0px;" src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-left-rail.png" />
-</a>
+<span class="hs-cta-wrapper" id="hs-cta-wrapper-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+    <span class="hs-cta-node hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e" id="hs-cta-71d47584-8ef5-4b06-87ae-8d25bc2a837e">
+        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+        <a href="http://cta-redirect.hubspot.com/cta/redirect/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e"><img class="hs-cta-img" id="hs-cta-img-71d47584-8ef5-4b06-87ae-8d25bc2a837e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/330046/71d47584-8ef5-4b06-87ae-8d25bc2a837e.png" /></a>
+    </span>
+    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+        <script type="text/javascript">
+            hbspt.cta.load(330046, '71d47584-8ef5-4b06-87ae-8d25bc2a837e');
+        </script>
+</span>
 </center>
 
 
@@ -341,17 +396,15 @@
       <div class="wy-nav-content">
         <div class="rst-content">
 
-          <!-- Banner ads -->
-          <div class="DocSiteBanner">
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-left.png">
-            </a>
-            <a class="DocSiteBanner-imgWrapper"
-                href="http://www.ansible.com/docs-top?utm_source=docs">
-                <img src="https://cdn2.hubspot.net/hubfs/330046/docs-graphics/ASB-docs-top-right.png">
-            </a>
-        </div>
+          <!-- Tower ads -->
+          <a class="DocSiteBanner" href="http://www.ansible.com/tower?utm_source=docs">
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_1.png">
+            </div>
+            <div class="DocSiteBanner-imgWrapper">
+              <img src="_static/images/banner_ad_2.png">
+            </div>
+          </a>
 
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
@@ -559,7 +612,7 @@ print json.dumps({
 </pre></div>
 </div>
 <p>Let&#8217;s test that module:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible/hacking/test-module -m ./timetest.py -a &quot;time=\&quot;March 14 12:23\&quot;&quot;</span>
+<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible/hacking/test-module -m ./time -a &quot;time=\&quot;March 14 12:23\&quot;&quot;</span>
 </pre></div>
 </div>
 <p>This should return something like:</p>
@@ -607,7 +660,7 @@ only shorter in terms of code, they are actually FASTER in terms of execution ti
     <span class="l l-Scalar l-Scalar-Plain">argument_spec = dict(</span>
         <span class="l l-Scalar l-Scalar-Plain">state     = dict(default=&#39;present&#39;, choices=[&#39;present&#39;, &#39;absent&#39;]),</span>
         <span class="l l-Scalar l-Scalar-Plain">name      = dict(required=True),</span>
-        <span class="l l-Scalar l-Scalar-Plain">enabled   = dict(required=True, type=&#39;bool&#39;),</span>
+        <span class="l l-Scalar l-Scalar-Plain">enabled   = dict(required=True, choices=BOOLEANS),</span>
         <span class="l l-Scalar l-Scalar-Plain">something = dict(aliases=[&#39;whatever&#39;])</span>
     <span class="l l-Scalar l-Scalar-Plain">)</span>
 <span class="l l-Scalar l-Scalar-Plain">)</span>
@@ -624,7 +677,7 @@ for you, and allows you to check inputs.</p>
 </pre></div>
 </div>
 <p>There are also other useful functions in the module class, such as module.sha1(path).  See
-lib/ansible/module_utils/basic.py in the source checkout for implementation details.</p>
+lib/ansible/module_common.py in the source checkout for implementation details.</p>
 <p>Again, modules developed this way are best tested with the hacking/test-module script in the git
 source checkout.  Because of the magic involved, this is really the only way the scripts
 can function outside of Ansible.</p>
@@ -679,13 +732,13 @@ and guidelines:</p>
 <ul class="simple">
 <li>If the module is addressing an object, the parameter for that object should be called &#8216;name&#8217; whenever possible, or accept &#8216;name&#8217; as an alias.</li>
 <li>If you have a company module that returns facts specific to your installations, a good name for this module is <cite>site_facts</cite>.</li>
-<li>Modules accepting boolean status should generally accept &#8216;yes&#8217;, &#8216;no&#8217;, &#8216;true&#8217;, &#8216;false&#8217;, or anything else a user may likely throw at them.  The AnsibleModule common code supports this with &#8220;type=&#8217;bool&#8217;&#8221;.</li>
+<li>Modules accepting boolean status should generally accept &#8216;yes&#8217;, &#8216;no&#8217;, &#8216;true&#8217;, &#8216;false&#8217;, or anything else a user may likely throw at them.  The AnsibleModule common code supports this with &#8220;choices=BOOLEANS&#8221; and a module.boolean(value) casting function.</li>
 <li>Include a minimum of dependencies if possible.  If there are dependencies, document them at the top of the module file, and have the module raise JSON error messages when the import fails.</li>
 <li>Modules must be self-contained in one file to be auto-transferred by ansible.</li>
 <li>If packaging modules in an RPM, they only need to be installed on the control machine and should be dropped into /usr/share/ansible.  This is entirely optional and up to you.</li>
 <li>Modules must output valid JSON only. The toplevel return type must be a hash (dictionary) although they can be nested.  Lists or simple scalar values are not supported, though they can be trivially contained inside a dictionary.</li>
 <li>In the event of failure, a key of &#8216;failed&#8217; should be included, along with a string explanation in &#8216;msg&#8217;.  Modules that raise tracebacks (stacktraces) are generally considered &#8216;poor&#8217; modules, though Ansible can deal with these returns and will automatically convert anything unparseable into a failed result.  If you are using the AnsibleModule common Python code, the &#8216;failed&#8217; element will be included for you automatically when you call &#8216;fail_json&#8217;.</li>
-<li>Return codes from modules are actually not significant, but continue on with 0=success and non-zero=failure for reasons of future proofing.</li>
+<li>Return codes from modules are not actually not significant, but continue on with 0=success and non-zero=failure for reasons of future proofing.</li>
 <li>As results from many hosts will be aggregated at once, modules should return only relevant output.  Returning the entire contents of a log file is generally bad form.</li>
 </ul>
 </div>
@@ -800,13 +853,11 @@ gives them slightly higher development priority (though they&#8217;ll work in ex
 <ul>
 <li><p class="first">The shebang should always be #!/usr/bin/python, this allows ansible_python_interpreter to work</p>
 </li>
-<li><p class="first">Modules must be written to support Python 2.4. If this is not possible, required minimum python version and rationale should be explained in the requirements section in DOCUMENTATION.</p>
-</li>
 <li><dl class="first docutils">
 <dt>Documentation: Make sure it exists</dt>
 <dd><ul class="first last simple">
 <li><cite>required</cite> should always be present, be it true or false</li>
-<li>If <cite>required</cite> is false you need to document <cite>default</cite>, even if the default is &#8216;null&#8217; (which is the default if no parameter is supplied). Make sure default parameter in docs matches default parameter in code.</li>
+<li>If <cite>required</cite> is false you need to document <cite>default</cite>, even if the default is &#8216;None&#8217; (which is the default if no parameter is supplied). Make sure default parameter in docs matches default parameter in code.</li>
 <li><cite>default</cite> is not needed for <cite>required: true</cite></li>
 <li>Remove unnecessary doc like <cite>aliases: []</cite> or <cite>choices: []</cite></li>
 <li>The version is not a float number and value the current development version</li>
@@ -892,20 +943,18 @@ rather than urllib2; urllib2 does not natively verify TLS certificates and so is
 <div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1">#!powershell</span>
 </pre></div>
 </div>
-<p>then:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">&lt;GPL header&gt;</span>
-</pre></div>
-</div>
-<p>then:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="c1"># WANT_JSON</span>
-<span class="c1"># POWERSHELL_COMMON</span>
-</pre></div>
-</div>
-<p>then, to parse all arguments into a variable modules generally use:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$params = Parse-Args $args</span>
-</pre></div>
-</div>
 </li>
+</ul>
+<dl class="docutils">
+<dt>then::</dt>
+<dd>&lt;GPL header&gt;</dd>
+<dt>then::</dt>
+<dd># WANT_JSON
+# POWERSHELL_COMMON</dd>
+<dt>then, to parse all arguments into a variable modules generally use::</dt>
+<dd>$params = Parse-Args $args</dd>
+</dl>
+<ul>
 <li><dl class="first docutils">
 <dt>Arguments:</dt>
 <dd><ul class="first last">
@@ -913,20 +962,23 @@ rather than urllib2; urllib2 does not natively verify TLS certificates and so is
 </li>
 <li><p class="first">You need to check that all your mandatory args are present. You can do this using the builtin Get-AnsibleParam function.</p>
 </li>
-<li><p class="first">Required arguments:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$package =  Get-AnsibleParam -obj $params -name name -failifempty $true</span>
-</pre></div>
-</div>
+<li><dl class="first docutils">
+<dt>Required arguments::</dt>
+<dd><p class="first last">$package =  Get-AnsibleParam -obj $params -name name -failifempty $true</p>
+</dd>
+</dl>
 </li>
-<li><p class="first">Required arguments with name validation:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$state = Get-AnsibleParam -obj $params -name &quot;State&quot; -ValidateSet &quot;Present&quot;,&quot;Absent&quot; -resultobj $resultobj -failifempty $true</span>
-</pre></div>
-</div>
+<li><dl class="first docutils">
+<dt>Required arguments with name validation::</dt>
+<dd><p class="first last">$state = Get-AnsibleParam -obj $params -name &#8220;State&#8221; -ValidateSet &#8220;Present&#8221;,&#8221;Absent&#8221; -resultobj $resultobj -failifempty $true</p>
+</dd>
+</dl>
 </li>
-<li><p class="first">Optional arguments with name validation:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$state = Get-AnsibleParam -obj $params -name &quot;State&quot; -default &quot;Present&quot; -ValidateSet &quot;Present&quot;,&quot;Absent&quot;</span>
-</pre></div>
-</div>
+<li><dl class="first docutils">
+<dt>Optional arguments with name validation::</dt>
+<dd><p class="first last">$state = Get-AnsibleParam -obj $params -name &#8220;State&#8221; -default &#8220;Present&#8221; -ValidateSet &#8220;Present&#8221;,&#8221;Absent&#8221;</p>
+</dd>
+</dl>
 </li>
 <li><p class="first">the If &#8220;FailIfEmpty&#8221; is true, the resultobj parameter is used to specify the object returned to fail-json. You can also override the default message
 using $emptyattributefailmessage (for missing required attributes) and $ValidateSetErrorMessage (for attribute validation errors)</p>
@@ -974,14 +1026,13 @@ using $emptyattributefailmessage (for missing required attributes) and $Validate
 <p>Starting in 1.8 you can deprecate modules by renaming them with a preceding _, i.e. old_cloud.py to
 _old_cloud.py, This will keep the module available but hide it from the primary docs and listing.</p>
 <p>You can also rename modules and keep an alias to the old name by using a symlink that starts with _.
-This example allows the stat module to be called with fileinfo, making the following examples equivalent:</p>
-<div class="highlight-YAML"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">EXAMPLES = &#39;&#39;&#39;</span>
-<span class="l l-Scalar l-Scalar-Plain">ln -s stat.py _fileinfo.py</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible -m stat -a &quot;path=/tmp&quot; localhost</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible -m fileinfo -a &quot;path=/tmp&quot; localhost</span>
-<span class="l l-Scalar l-Scalar-Plain">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
+This example allows the stat module to be called with fileinfo, making the following examples equivalent</p>
+<blockquote>
+<div>EXAMPLES = &#8216;&#8217;&#8217;
+ln -s stat.py _fileinfo.py
+ansible -m stat -a &#8220;path=/tmp&#8221; localhost
+ansible -m fileinfo -a &#8220;path=/tmp&#8221; localhost
+&#8216;&#8217;&#8216;</div></blockquote>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <dl class="last docutils">
@@ -1021,17 +1072,8 @@ This example allows the stat module to be called with fileinfo, making the follo
 
   <hr/>
 
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
-</script>
-
   <p>
-  &copy; Copyright 2016 <a href="http://ansible.com">Ansible, Inc.</a>.
+  &copy; Copyright 2015 <a href="http://ansible.com">Ansible, Inc.</a>.
     Last updated on Feb 24, 2016.
   </p>
 
