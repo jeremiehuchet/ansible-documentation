@@ -14,10 +14,11 @@ test -d $basedir/_ansible || git clone git@github.com:ansible/ansible.git $based
 test -d $basedir/_docs || git clone git@github.com:jeremiehuchet/ansible-documentation.git $basedir/_docs
 (cd $basedir/_docs ; git fetch origin ; git checkout -f gh-pages)
 
-for tag in $(cd $basedir/_ansible ; git tag -l | grep  -v '^0' | grep -v '^v0' | grep -v '^v1.0' | grep -v '^v1.1' | grep -v '^v1.2' | grep -v '^v1.3') ; do
+for tag in $(cd $basedir/_ansible ; git tag -l) ; do
   echo
   echo ">>> $tag"
   echo
+  test -d $basedir/_docs/$tag && continue
   (cd $basedir/_ansible ; git checkout -f $tag ; git clean -f)
   sed -i "s/html_short_title =.*$/html_short_title = 'Ansible $tag'/g" $basedir/_ansible/docsite/conf.py
   sed -i "s/html_title =.*$/html_title = 'Ansible $tag Documentation'/g" $basedir/_ansible/docsite/conf.py
